@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ALARSI — Soluciones Inteligentes con IA</title>
+
+  <!-- 🔗 FAVICON (puedes cambiarlo después) -->
+  <link rel="icon" href="/assets/img/favicon.png" />
+
+  <!-- 🧠 META -->
+  <meta name="description" content="ALARSI transforma ideas en estrategias inteligentes basadas en IA. Marketing, integración digital y consultoría para marcas y profesionales." />
+  <meta name="theme-color" content="#000" />
+
+  <!-- 🌐 OPEN GRAPH / SOCIAL -->
+  <meta property="og:title" content="ALARSI — Soluciones Inteligentes con IA" />
+  <meta property="og:description" content="Estrategia + IA + Integración Digital. Transformamos ideas en resultados." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://alarsi.com" />
+  <meta property="og:image" content="https://alarsi.com/assets/img/preview.jpg" />
+
+  <!-- 🛠️ ESTILOS BÁSICOS -->
+  <style>
+    body { margin: 0; font-family: sans-serif; background: #0d0d0d; color: #fff; }
+    a { color: #4ea3ff; text-decoration: none; }
+    .container { max-width: 1200px; margin: auto; padding: 2rem; }
+    .hero { text-align: center; padding: 8rem 2rem; }
+    .hero h1 { font-size: 3rem; font-weight: 700; }
+    .hero p { font-size: 1.2rem; max-width: 700px; margin: 1rem auto; opacity: 0.85; }
+    footer { text-align: center; padding: 2rem 0; opacity: 0.5; font-size: 0.85rem; }
+    .debug-box { border: 1px dashed #444; padding: 1rem; margin: 1rem; text-align: center; }
+  </style>
+</head>
+
+<body>
+
+  <!-- 🔄 MENÚ (cargado desde /blocks/menu.html) -->
+  <header id="menu-container" class="debug-box">Cargando menú…</header>
+
+  <main>
+
+    <!-- 🟣 HERO PRINCIPAL -->
+    <section class="hero">
+      <h1>Transformamos ideas en soluciones inteligentes.</h1>
+      <p>Estrategia, IA e integración digital para marcas y profesionales.</p>
+    </section>
+
+    <!-- 📌 CONTENIDO PRINCIPAL (placeholder) -->
+    <section class="container">
+      <h2>Bienvenido a ALARSI</h2>
+      <p>Este sitio está en construcción, pero ya puedes organizar la estructura de imágenes y contenido.</p>
+      <ul>
+        <li>/assets/img → imágenes y logos</li>
+        <li>/blocks/menu.html → menú superior</li>
+        <li>/blocks/footer.html → footer reutilizable</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- 🔄 FOOTER (cargado desde /blocks/footer.html) -->
+  <footer id="footer-container" class="debug-box">Cargando footer…</footer>
+
+  <!-- 🔧 SCRIPTS (carga modular de menú y footer) -->
+  <script>
+    async function loadBlock(id, url) {
+      try {
+        const res = await fetch(url);
+        if (!res.ok) throw new Error(url + " no encontrado");
+        document.getElementById(id).innerHTML = await res.text();
+      } catch (e) {
+        console.warn("⚠️ No se pudo cargar:", url);
+      }
+    }
+
+    loadBlock("menu-container", "/blocks/menu.html");
+    loadBlock("footer-container", "/blocks/footer.html");
+  </script>
+
+</body>
+</html>
