@@ -1,81 +1,347 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ALARSI — Soluciones Inteligentes con IA</title>
+  <title>ALARSI — Soluciones Inteligentes con Creatividad, Tecnología e IA</title>
 
-  <!-- 🔗 FAVICON (puedes cambiarlo después) -->
-  <link rel="icon" href="/assets/img/favicon.png" />
+  <!-- 🔗 CANONICAL & FAVICON -->
+  <link rel="canonical" href="https://www.alarsi.com/" />
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="/favicon.ico" />
 
-  <!-- 🧠 META -->
-  <meta name="description" content="ALARSI transforma ideas en estrategias inteligentes basadas en IA. Marketing, integración digital y consultoría para marcas y profesionales." />
-  <meta name="theme-color" content="#000" />
+  <!-- 🧠 META PRINCIPAL -->
+  <meta name="description"
+    content="Soluciones inteligentes con creatividad, tecnología e IA. ALARSI integra estrategia, diseño, automatización e inteligencia artificial para potenciar marcas y proyectos." />
+  <meta name="keywords"
+    content="ALARSI, inteligencia artificial, marketing, automatización, integración digital, IA creativa, branding, asesoría, producción audiovisual, diseño gráfico" />
+  <meta name="author" content="ALARSI / Green Tools Media" />
 
-  <!-- 🌐 OPEN GRAPH / SOCIAL -->
-  <meta property="og:title" content="ALARSI — Soluciones Inteligentes con IA" />
-  <meta property="og:description" content="Estrategia + IA + Integración Digital. Transformamos ideas en resultados." />
+  <!-- 🌐 OPEN GRAPH -->
+  <meta property="og:title" content="ALARSI — Soluciones Inteligentes con Creatividad, Tecnología e IA" />
+  <meta property="og:description" content="Transformamos ideas en soluciones eficaces mediante IA avanzada." />
+  <meta property="og:image" content="https://www.alarsi.com/images/preview/alarsi-preview.jpg" />
+  <meta property="og:image:alt" content="ALARSI — Soluciones Inteligentes con Creatividad, Tecnología e IA" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:url" content="https://www.alarsi.com/" />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://alarsi.com" />
-  <meta property="og:image" content="https://alarsi.com/assets/img/preview.jpg" />
 
-  <!-- 🛠️ ESTILOS BÁSICOS -->
+  <!-- 🐦 TWITTER -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="ALARSI — Branding + IA" />
+  <meta name="twitter:description" content="Creatividad, estrategia e inteligencia artificial integradas." />
+  <meta name="twitter:image" content="https://www.alarsi.com/images/preview/alarsi-preview.jpg" />
+
+  <!-- 🧩 SCHEMA.ORG -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "ALARSI",
+    "url": "https://www.alarsi.com",
+    "logo": "https://www.alarsi.com/images/alarsi-logo.svg",
+    "description": "Soluciones inteligentes con creatividad, tecnología e IA.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Santiago",
+      "addressCountry": "CL"
+    }
+  }
+  </script>
+
+  <!-- 🎨 ESTILOS INTERNOS -->
   <style>
-    body { margin: 0; font-family: sans-serif; background: #0d0d0d; color: #fff; }
-    a { color: #4ea3ff; text-decoration: none; }
-    .container { max-width: 1200px; margin: auto; padding: 2rem; }
-    .hero { text-align: center; padding: 8rem 2rem; }
-    .hero h1 { font-size: 3rem; font-weight: 700; }
-    .hero p { font-size: 1.2rem; max-width: 700px; margin: 1rem auto; opacity: 0.85; }
-    footer { text-align: center; padding: 2rem 0; opacity: 0.5; font-size: 0.85rem; }
-    .debug-box { border: 1px dashed #444; padding: 1rem; margin: 1rem; text-align: center; }
+    body {
+      margin: 0;
+      background: #111;
+      color: #fff;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: #ffbba0;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      color: #ffd5c3;
+    }
+
+    /* ======================= */
+    /* 🟣 HERO AREA 16:9 */
+    /* ======================= */
+    .hero {
+      width: 100%;
+      aspect-ratio: 16/9;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .visual-group {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      max-width: 1600px;
+      overflow: hidden;
+    }
+
+    #siriCanvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      filter: blur(65px);
+      opacity: 0.95;
+      z-index: 0;
+    }
+
+    #siriWave {
+      position: absolute;
+      bottom: 8%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      height: 90px;
+      z-index: 3;
+      opacity: 0.55;
+    }
+
+    .alarsi-logo-hero {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 400px;
+      height: auto;
+      z-index: 2;
+      animation: float 7s ease-in-out infinite;
+      filter: drop-shadow(0 0 25px rgba(255,130,90,0.5));
+      opacity: 0.95;
+    }
+
+    @keyframes float {
+      0%,
+      100% {
+        transform: translate(-50%, 0);
+      }
+
+      50% {
+        transform: translate(-50%, -18px);
+      }
+    }
+
+    /* ======================= */
+    section {
+      padding: 3rem 1rem;
+      text-align: center;
+      max-width: 760px;
+      margin: auto;
+    }
+
+    section h2 {
+      color: #ff9966;
+      font-size: 1.8rem;
+    }
   </style>
 </head>
 
 <body>
 
-  <!-- 🔄 MENÚ (cargado desde /blocks/menu.html) -->
-  <header id="menu-container" class="debug-box">Cargando menú…</header>
+  <!-- 🟡 MENU (modular, se carga por fetch) -->
+  <div id="globalMenu" class="debug-box">⚠️ menu.html no cargado (modo local)</div>
 
-  <main>
+  <!-- ======================= -->
+  <!-- HERO -->
+  <!-- ======================= -->
+  <div class="hero">
+    <div class="visual-group">
+      <canvas id="siriCanvas"></canvas>
+      <div id="siriWave"></div>
 
-    <!-- 🟣 HERO PRINCIPAL -->
-    <section class="hero">
-      <h1>Transformamos ideas en soluciones inteligentes.</h1>
-      <p>Estrategia, IA e integración digital para marcas y profesionales.</p>
-    </section>
+      <!-- logo de ALARSI flotando -->
+      <img src="/images/alarsi-logo.svg"
+        alt="Logo ALARSI Inteligencia Artificial, Creatividad y Tecnología."
+        class="alarsi-logo-hero"
+      />
+    </div>
+  </div>
 
-    <!-- 📌 CONTENIDO PRINCIPAL (placeholder) -->
-    <section class="container">
-      <h2>Bienvenido a ALARSI</h2>
-      <p>Este sitio está en construcción, pero ya puedes organizar la estructura de imágenes y contenido.</p>
-      <ul>
-        <li>/assets/img → imágenes y logos</li>
-        <li>/blocks/menu.html → menú superior</li>
-        <li>/blocks/footer.html → footer reutilizable</li>
-      </ul>
-    </section>
+  <!-- SECCIÓN DE TEXTO CORPORATIVO -->
+  <section>
+    <h2>Soluciones inteligentes con creatividad, tecnología e IA.</h2>
 
-  </main>
+    <p>En ALARSI, entregamos soluciones integrales que combinan eficiencia operativa, inteligencia artificial avanzada y atención personalizada.</p>
 
-  <!-- 🔄 FOOTER (cargado desde /blocks/footer.html) -->
-  <footer id="footer-container" class="debug-box">Cargando footer…</footer>
+    <p>Sabemos que detrás de cada necesidad hay personas. Por eso diseñamos soluciones adaptables, humanas y flexibles, alineadas con los objetivos reales de quienes confían en nosotros.</p>
 
-  <!-- 🔧 SCRIPTS (carga modular de menú y footer) -->
+    <p>Utilizamos herramientas tecnológicas de última generación para anticiparnos, optimizar y maximizar cada acción.</p>
+
+    <br />
+    <p><strong>Nuestros servicios principales:</strong></p>
+
+    <p>✅ Publicidad y Diseño Gráfico  
+    ✅ Marketing y Estrategias  
+    ✅ Integración Digital (automatización + IA)  
+    ✅ Producción Audiovisual 4K  
+    ✅ Asesoría en Redes Sociales y posicionamiento digital  
+    ✅ Servicios de Impresión Digital</p>
+  </section>
+
+
+  <!-- 🟣 BANNERS -->
+  <div id="banner-container" class="debug-box">⚠️ banners.html no cargado (modo local)</div>
+
+  <!-- 🟤 FOOTER -->
+  <div id="footer-container" class="debug-box">⚠️ footer.html no cargado (modo local)</div>
+
+
+  <!-- ======================= -->
+  <!--  JS GENERAL (modular)  -->
+  <!-- ======================= -->
   <script>
-    async function loadBlock(id, url) {
+    // === Fetch modular ===
+    async function loadBlock(id, url, label) {
       try {
         const res = await fetch(url);
-        if (!res.ok) throw new Error(url + " no encontrado");
+        if (!res.ok) throw new Error("No se encontró " + url);
         document.getElementById(id).innerHTML = await res.text();
-      } catch (e) {
-        console.warn("⚠️ No se pudo cargar:", url);
+        document.getElementById(id).classList.remove("debug-box");
+      } catch (err) {
+        console.warn(`⚠️ ${label} no se pudo cargar:`, err.message);
       }
     }
 
-    loadBlock("menu-container", "/blocks/menu.html");
-    loadBlock("footer-container", "/blocks/footer.html");
+    loadBlock("globalMenu", "/menu.html", "menu.html");
+    loadBlock("banner-container", "/banners.html", "banners.html");
+    loadBlock("footer-container", "/footer.html", "footer.html");
+  </script>
+
+
+  <!-- ======================= -->
+  <!-- BACKGROUND RADIAL ANIMATION -->
+  <!-- ======================= -->
+  <script>
+    const bgCanvas = document.getElementById("siriCanvas");
+    const bgCtx = bgCanvas.getContext("2d");
+
+    function resizeCanvas() {
+      bgCanvas.width = bgCanvas.clientWidth;
+      bgCanvas.height = bgCanvas.clientHeight;
+    }
+
+    resizeCanvas();
+    window.addEventListener("resize", resizeCanvas);
+
+    let t = 0;
+    function animateBackground() {
+      requestAnimationFrame(animateBackground);
+      bgCtx.clearRect(0, 0, bgCanvas.width, bgCanvas.height);
+
+      const cx = bgCanvas.width / 2;
+      const cy = bgCanvas.height / 2;
+      const radius = Math.min(bgCanvas.width, bgCanvas.height) / 2.2;
+      const gradient = bgCtx.createRadialGradient(cx, cy, 0, cx, cy, radius);
+      const hue = 20 + 30 * Math.sin(t);
+
+      gradient.addColorStop(0, `hsla(${hue},100%,65%,0.45)`);
+      gradient.addColorStop(0.5, `hsla(${hue + 25},100%,55%,0.25)`);
+      gradient.addColorStop(1, "transparent");
+
+      bgCtx.fillStyle = gradient;
+      bgCtx.fillRect(0, 0, bgCanvas.width, bgCanvas.height);
+      t += 0.01;
+    }
+
+    animateBackground();
+  </script>
+
+
+  <!-- ======================= -->
+  <!-- SIRI WAVE RESTAURADO -->
+  <!-- ======================= -->
+  <script>
+    /* === SiriWave === */
+    function SiriWave9Curve(opt){opt=opt||{};this.controller=opt.controller;this.color=opt.color;this.tick=0;this.respawn();}
+    SiriWave9Curve.prototype.respawn=function(){this.amplitude=0.3+Math.random()*0.7;this.seed=Math.random();this.open_class=2+(Math.random()*3)|0;};
+    SiriWave9Curve.prototype.equation=function(i){var p=this.tick;var y=-1*Math.abs(Math.sin(p))*this.controller.amplitude*this.amplitude*this.controller.MAX*Math.pow(1/(1+Math.pow(this.open_class*i,2)),2);if(Math.abs(y)<0.001){this.respawn();}return y;};
+    SiriWave9Curve.prototype._draw=function(m){this.tick+=this.controller.speed*(1-0.5*Math.sin(this.seed*Math.PI));var ctx=this.controller.ctx;ctx.beginPath();var x_base=this.controller.width/2+(-this.controller.width/4+this.seed*(this.controller.width/2));var y_base=this.controller.height/2;var x,y,x_init;var i=-3;while(i<=3){x=x_base+i*this.controller.width/4;y=y_base+(m*this.equation(i));x_init=x_init||x;ctx.lineTo(x,y);i+=0.01;}var h=Math.abs(this.equation(0));var gradient=ctx.createRadialGradient(x_base,y_base,h*1.15,x_base,y_base,h*0.3);gradient.addColorStop(0,'rgba('+this.color.join(',')+',0.25)');gradient.addColorStop(1,'rgba('+this.color.join(',')+',0.08)');ctx.fillStyle=gradient;ctx.lineTo(x_init,y_base);ctx.closePath();ctx.fill();};
+    SiriWave9Curve.prototype.draw=function(){this._draw(-1);this._draw(1);};
+
+    function SiriWave9(opt){
+      opt=opt||{};
+      this.tick=0;this.run=false;
+      this.ratio=opt.ratio||window.devicePixelRatio||1;
+      this.width=this.ratio*(opt.width||600);
+      this.height=this.ratio*(opt.height||150);
+      this.MAX=this.height/2;
+      this.speed=opt.speed||0.04;
+      this.amplitude=opt.amplitude||0.6;
+      this.canvas=document.createElement('canvas');
+      this.canvas.width=this.width;this.canvas.height=this.height;
+      this.canvas.style.width=(this.width/this.ratio)+'px';
+      this.canvas.style.height=(this.height/this.ratio)+'px';
+      this.canvas.style.display='block';
+      this.canvas.style.margin='0 auto';
+      this.canvas.style.filter='drop-shadow(0 0 15px rgba(255,120,80,0.4))';
+      this.container=opt.container||document.body;
+      this.container.appendChild(this.canvas);
+      this.ctx=this.canvas.getContext('2d');
+      this.curves=[];
+      for(var i=0;i<SiriWave9.prototype.COLORS.length;i++){
+        var color=SiriWave9.prototype.COLORS[i];
+        for(var j=0;j<(3*Math.random())|0;j++){
+          this.curves.push(new SiriWave9Curve({controller:this,color:color}));
+        }
+      }
+      if(opt.autostart){this.start();}
+    }
+
+    SiriWave9.prototype._clear=function(){
+      this.ctx.globalCompositeOperation='destination-out';
+      this.ctx.fillRect(0,0,this.width,this.height);
+      this.ctx.globalCompositeOperation='lighter';
+    };
+
+    SiriWave9.prototype._draw=function(){
+      if(!this.run)return;
+      this._clear();
+      for(var i=0,len=this.curves.length;i<len;i++){this.curves[i].draw();}
+      requestAnimationFrame(this._draw.bind(this));
+    };
+
+    SiriWave9.prototype.start=function(){this.run=true;this._draw();};
+    SiriWave9.prototype.stop=function(){this.run=false;};
+    SiriWave9.prototype.COLORS=[[255,140,80],[255,180,120],[255,255,255]];
+
+    (function init(){
+      function createWave(){
+        const container = document.getElementById("siriWave");
+        if(!container) return;
+        container.innerHTML="";
+        new SiriWave9({
+          width: container.clientWidth,
+          height: 100,
+          speed: 0.022,
+          amplitude: 0.7,
+          container: container,
+          autostart: true
+        });
+      }
+      createWave();
+      window.addEventListener("resize", () => {
+        setTimeout(createWave, 250);
+      });
+    })();
   </script>
 
 </body>
+
 </html>
