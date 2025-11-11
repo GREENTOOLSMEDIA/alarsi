@@ -1,0 +1,89 @@
+/* ========================================================= */
+/*  ALARSI — EDITORIAL TEXT EXPERIENCE (como AI Performance) */
+/* ========================================================= */
+
+/* Sección editorial */
+section,
+article {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 70px 40px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.85;
+  color: #eaeaea;
+  text-align: left;
+}
+
+/* Títulos */
+section h1, article h1 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  border-bottom: 2px solid #ff9966;
+  padding-bottom: .5rem;
+  margin-bottom: 1.8rem;
+}
+
+section h2,
+article h2 {
+  color: #ff9966;
+  font-size: 1.8rem;
+  margin-top: 3.2rem;
+  margin-bottom: 1rem;
+}
+
+section h3,
+article h3 {
+  color: #ffd0b8;
+  font-size: 1.35rem;
+  margin-top: 2.6rem;
+  margin-bottom: .75rem;
+}
+
+/* Párrafos */
+p {
+  margin-bottom: 1.5rem;
+  opacity: .95;
+}
+
+/* Listas */
+ul, ol {
+  margin: 1.4rem 0;
+  padding-left: 24px;
+}
+ul li, ol li {
+  margin-bottom: .45rem;
+}
+
+/* Tabla tipo score */
+.alarsi-score-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 40px 0;
+  font-size: .95rem;
+}
+.alarsi-score-table th {
+  color: #ff9966;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(255,255,255,0.25);
+  padding: 14px 12px;
+}
+.alarsi-score-table td {
+  border-bottom: 1px solid rgba(255,255,255,0.14);
+  padding: 14px 12px;
+}
+.alarsi-score-table td.score {
+  text-align: center;
+}
+
+/* Justification blocks */
+.alarsi-just,
+.justification-list li {
+  background-color: rgba(255,255,255,0.04);
+  padding: 18px;
+  border-radius: 8px;
+  border-left: 4px solid #ff9966;
+  margin-bottom: 1.4rem;
+  line-height: 1.7;
+}
