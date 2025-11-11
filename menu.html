@@ -45,20 +45,21 @@
     z-index: 1000;
   }
 
-  .main-menu ul {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    flex-wrap: nowrap;
-    align-items: center;
-  }
+.main-menu ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 22px; /* ← AUMENTA O REDUCE DISTANCIA */
+}
 
-  .main-menu li {
-  margin-left: -4px; /* 🔥 superpone cápsulas muy levemente */
-    display: flex;
-    align-items: center;
-  }
+.main-menu li {
+  display: flex;
+  align-items: center;
+}
+
 
   .main-menu a {
     color: white;
