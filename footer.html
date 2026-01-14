@@ -3,38 +3,34 @@
   <div class="footer-line">
     <!-- Fila de íconos sociales -->
     <div class="footer-row social-icons">
-           <img src="/images/alarsi_youtube.svg" alt="Alarsi YouTube" />
+      <a href="https://www.youtube.com/@alarsi"
+         target="_blank"
+         rel="noopener noreferrer"
+         aria-label="Alarsi en YouTube">
+        <img src="/images/alarsi_youtube.svg" alt="Alarsi YouTube" width="24" height="24" />
       </a>
     </div>
 
     <!-- Fila de texto -->
     <div class="footer-row">
-      <a href="/">ALARSI® Pasión por Crear | Santiago - Chile </a>
-      <a href="mailto:paulinadots.crossmedia@gmail.com">| Contacto | </a>
+      <a href="/">ALARSI® Pasión por Crear | Santiago - Chile</a>
+      <a href="mailto:info@alarsi.com">Contacto</a>
     </div>
-  
 
-<div class="footer-row nota-seo">
-  <span>
-    ALARSI usa actualmnte en su flujo de trabajo integrado hrramientas de  inteligencia artificial como ChatGPT, Gemini, Copilot, Flux Context, Nano Banana, Kling, Veo, Adobe Firefly.
-  </span>
-</div>
-
+    <!-- Nota SEO -->
+    <div class="footer-row nota-seo">
+      <span>
+        ALARSI usa actualmente en su flujo de trabajo integrado herramientas de inteligencia artificial como
+        ChatGPT, Gemini, Copilot, Grok, Flux Context, Nano Banana, Kling, Veo y Adobe Firefly.
+      </span>
+    </div>
   </div>
 </footer>
 
 <style>
-  .nota-seo span {
-  font-size: 9pt;
-  color: rgba(255, 255, 255, 0.7);
-  line-height: 1.4;
-  max-width: 800px;
-  text-align: center;
-}
-
-  .footer-global {
-    color: rgba(255, 255, 255, 0.6);
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  .footer-global{
+    color: rgba(255,255,255,.6);
+    font-family: system-ui, -apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 10.5pt;
     line-height: 1.6;
     padding: 30px 20px;
@@ -42,60 +38,54 @@
     background: transparent;
   }
 
-  .footer-global a {
-    color: rgba(255, 255, 255, 0.7);
+  .footer-global a{
+    color: rgba(255,255,255,.7);
     text-decoration: none;
-    transition: color 0.2s ease;
+    transition: color .2s ease;
+  }
+  .footer-global a:hover{ color:#fff; }
+
+  .footer-line{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:10px;
   }
 
-  .footer-global a:hover {
-    color: white;
+  .footer-row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    justify-content:center;
+    max-width:100%;
+    align-items:center;
   }
 
-  .footer-line {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
+  .social-icons img{
+    width:24px;
+    height:24px;
+    margin:0 6px;
+    filter: grayscale(100%) brightness(.7);
+    transition: filter .3s ease;
+  }
+  .social-icons a:hover img{ filter:none; }
+
+  .nota-seo span{
+    display:block;
+    font-size: 9pt;
+    color: rgba(255,255,255,.7);
+    line-height: 1.4;
+    max-width: 800px;
+    text-align:center;
   }
 
-  .footer-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: center;
-    max-width: 100%;
+  @media (max-width: 750px){
+    .footer-global{
+      font-size: 11pt;
+      padding: 40px 16px;
+    }
+    .nota-seo span{
+      font-size: 11pt;
+    }
   }
-
-  .social-icons img {
-    width: 24px;
-    height: 24px;
-    margin: 0 6px;
-    filter: grayscale(100%) brightness(0.7);
-    transition: filter 0.3s ease;
-  }
-
-  .social-icons a:hover img {
-    filter: none;
-  }
-
- @media (max-width: 750px) {
-  .footer-global {
-    font-size: 11pt;
-    padding: 40px 16px;
-  }
-   
-.footer-row {
-    display: flex;
-    flex-wrap: wrap; /* ¡Esta es la línea que faltaba! */
-    gap: 10px;
-    justify-content: center;
-    max-width: 100%;
-  }
-
- .footer-row span {
-    font-size: 11pt; /* O el tamaño que prefieras para el móvil */
-    display: block; /* Se asegura de que el elemento se muestre */
-  }
-}
 </style>
