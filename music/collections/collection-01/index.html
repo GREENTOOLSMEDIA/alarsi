@@ -1,384 +1,496 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Wall Movie (Vertical Only)</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <title>ALARSI — Music Collection 01</title>
+
+  <!-- 🔗 CANONICAL -->
+  <link rel="canonical" href="https://www.alarsi.com/music/collections/collection-01/" />
+
+  <!-- ✅ FAVICONS & APP ICONS (usa los del sitio) -->
+  <link rel="icon" type="image/svg+xml" href="/alarsi-favicon.svg">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <!-- 🧠 META PRINCIPAL -->
+  <meta name="description"
+    content="Music Collection 01 — Registro canónico de obra musical original. Titular: ALARSI. Uso autorizado en canales y proyectos asociados a ALARSI." />
+  <meta name="author" content="ALARSI / Green Tools Media" />
+
+  <!-- 🌐 OPEN GRAPH -->
+  <meta property="og:title" content="ALARSI — Music Collection 01" />
+  <meta property="og:description" content="Registro canónico de obra musical original. Titular: ALARSI." />
+  <meta property="og:image" content="https://www.alarsi.com/music/collections/collection-01/images/alarsi-portada-album-vol01.jpg" />
+  <meta property="og:image:alt" content="Portada ALARSI Music Collection 01" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:url" content="https://www.alarsi.com/music/collections/collection-01/" />
+  <meta property="og:type" content="website" />
+
+  <!-- 🐦 TWITTER -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="ALARSI — Music Collection 01" />
+  <meta name="twitter:description" content="Registro canónico de obra musical original. Titular: ALARSI." />
+  <meta name="twitter:image" content="https://www.alarsi.com/music/collections/collection-01/images/alarsi-portada-album-vol01.jpg" />
+
+  <!-- 🧩 SCHEMA.ORG (simple, conservador) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MusicAlbum",
+    "name": "Music Collection 01",
+    "byArtist": {
+      "@type": "Organization",
+      "name": "ALARSI",
+      "url": "https://www.alarsi.com"
+    },
+    "url": "https://www.alarsi.com/music/collections/collection-01/"
+  }
+  </script>
+
+  <!-- 🎨 ESTILOS (basado en tu home, pero reducido) -->
   <style>
-    :root{
-      --bg:#06070a;
-      --gap:14px;
-      --radius:16px;
-      --cols: 5;
-      --speed: 28;  /* px/seg */
-      --stagger: 302px; /* DESFASE vertical “ladrillo” */
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      background:var(--bg);
-      color:#fff;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      overflow:hidden;
+    body {
+      margin: 0;
+      background: #000;
+      color: #fff;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      overflow-x: hidden;
     }
 
-    .hud{
-      position:fixed;
-      inset:12px 12px auto 12px;
-      z-index:20;
-      display:flex;
-      gap:10px;
-      justify-content:space-between;
-      align-items:center;
-      pointer-events:none;
-    }
-    .chip{
-      pointer-events:auto;
-      backdrop-filter: blur(10px);
-      background: rgba(255,255,255,.08);
-      border:1px solid rgba(255,255,255,.12);
-      border-radius:999px;
-      padding:10px 12px;
-      display:flex;
-      gap:10px;
-      align-items:center;
-      box-shadow: 0 10px 30px rgba(0,0,0,.35);
-    }
-    .chip button{
-      border:0;
-      color:#fff;
-      background: rgba(255,255,255,.12);
-      padding:8px 10px;
-      border-radius:10px;
-      cursor:pointer;
-    }
-    .chip input[type="range"]{ width:160px; }
-
-    .drop{
-      position:fixed;
-      inset:0;
-      display:grid;
-      place-items:center;
-      padding:24px;
-      text-align:center;
-      z-index:15;
-      background:
-        radial-gradient(1200px 700px at 50% 20%, rgba(255,255,255,.08), transparent 55%),
-        linear-gradient(to bottom, rgba(255,255,255,.04), transparent 50%);
-    }
-    .dropCard{
-      max-width:780px;
-      width:100%;
-      border-radius:24px;
-      border:1px dashed rgba(255,255,255,.22);
-      background: rgba(255,255,255,.05);
-      padding:22px;
-      box-shadow: 0 30px 120px rgba(0,0,0,.55);
-    }
-    .dropCard h1{ margin:0 0 8px; font-weight:650; letter-spacing:.2px; }
-    .dropCard p{ margin:6px 0; opacity:.85; line-height:1.35; }
-    .muted{ opacity:.75; font-size:14px; }
-
-    .viewport{
-      position:fixed;
-      inset:0;
-      overflow:auto;
-      padding:70px 18px 60px;
-      display:none;
-    }
-    .viewport::-webkit-scrollbar{ width:0; height:0; }
-
-    /* ===== VERTICAL ONLY: LAYOUT “GROK” SIMPLE Y ESTABLE =====
-       Usamos GRID con celdas 9:16 constantes y “stagger” por columna
-       (NO masonry). Esto evita alineación perfecta horizontal y crea ladrillo.
-    */
-    .wall{
-      display:grid;
-      grid-template-columns: repeat(var(--cols), minmax(0, 1fr));
-      gap: var(--gap);
-      align-items:start;
+    a {
+      color: #ffbba0;
+      text-decoration: none;
+      transition: color 0.3s ease;
     }
 
-    .tile{
-      border-radius: var(--radius);
-      overflow:hidden;
-      background: rgba(255,255,255,.04);
-      border:1px solid rgba(255,255,255,.08);
-      box-shadow: 0 18px 60px rgba(0,0,0,.45);
-      aspect-ratio: 9 / 16;          /* SOLO vertical */
+    a:hover {
+      color: #ffd5c3;
     }
 
-    /* El video llena el tile 9:16 (corte tipo wall) */
-    video{
-      width:100%;
-      height:100%;
-      display:block;
-      object-fit:cover;
-      background:#000;
+    section {
+      padding: 3rem 1rem;
+      text-align: center;
+      max-width: 860px;
+      margin: auto;
     }
 
-    /* ===== El “ladrillo”: offset VERTICAL alternado por columna =====
-       Lo hacemos con :nth-child para que quede visualmente corrido.
-       Como el grid es por filas, esto crea el desplazamiento tipo ladrillo.
-    */
-    .tile:nth-child(5n + 2),
-    .tile:nth-child(5n + 4){
-      transform: translateY(var(--stagger));
+    section h1 {
+      color: #ff9966;
+      font-size: 1.8rem;
+      margin-bottom: 0.75rem;
     }
 
-    /* Si cambias --cols, ajusta estas reglas (para 4 cols, usa 4n+2/4n+4 etc.) */
-    @media (max-width: 1400px){
-      :root{ --cols: 4; }
-      .tile:nth-child(5n + 2),
-      .tile:nth-child(5n + 4){ transform:none; }
-      .tile:nth-child(4n + 2),
-      .tile:nth-child(4n + 4){ transform: translateY(var(--stagger)); }
-    }
-    @media (max-width: 1100px){
-      :root{ --cols: 3; }
-      .tile:nth-child(4n + 2),
-      .tile:nth-child(4n + 4){ transform:none; }
-      .tile:nth-child(3n + 2){ transform: translateY(var(--stagger)); }
-    }
-    @media (max-width: 800px){
-      :root{ --cols: 2; }
-      .tile:nth-child(3n + 2){ transform:none; }
-      .tile:nth-child(2n + 2){ transform: translateY(var(--stagger)); }
+    section p {
+      line-height: 1.65;
+      margin: 0.75rem 0;
     }
 
-    .fadeTop, .fadeBottom{
-      position:fixed; left:0; right:0; height:90px; z-index:10;
-      pointer-events:none;
+    /* ======================= */
+    /* 🟣 HERO AREA 16:9 */
+    /* ======================= */
+    .hero {
+      width: 100%;
+      aspect-ratio: 16/9;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
     }
-    .fadeTop{ top:0; background: linear-gradient(to bottom, rgba(6,7,10,1), rgba(6,7,10,0)); }
-    .fadeBottom{ bottom:0; background: linear-gradient(to top, rgba(6,7,10,1), rgba(6,7,10,0)); }
 
-    .hidden{ display:none !important; }
+    .visual-group {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      max-width: 1600px;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+
+    #siriCanvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      filter: blur(65px);
+      opacity: 0.95;
+      z-index: 0;
+    }
+
+    #siriWave {
+      position: absolute;
+      bottom: 8%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      height: 90px;
+      z-index: 3;
+      opacity: 0.55;
+    }
+
+    /* Cover centrada */
+    .cover {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .cover img {
+      width: min(520px, 78vw);
+      height: auto;
+      border-radius: 18px;
+      box-shadow: 0 0 60px rgba(255, 140, 90, 0.25);
+      opacity: 0.95;
+      transform: translateY(-4px);
+    }
+
+    /* ======================= */
+    /* Tracklist */
+    /* ======================= */
+    .meta-box {
+      margin: 1.75rem auto 0;
+      max-width: 760px;
+      text-align: left;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+      padding: 1rem 1rem;
+    }
+
+    .meta-box strong { color: #ffbba0; }
+
+    .tracks {
+      margin: 2rem auto 0;
+      max-width: 760px;
+      text-align: left;
+      display: grid;
+      gap: 14px;
+    }
+
+    .track {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+      padding: 14px;
+    }
+
+    .track-title {
+      display: flex;
+      gap: 10px;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+
+    .track-title .name {
+      font-weight: 700;
+      letter-spacing: 0.2px;
+    }
+
+    .track-title .hint {
+      font-size: 0.9rem;
+      opacity: 0.7;
+    }
+
+    audio {
+      width: 100%;
+    }
+
+    .tiny {
+      font-size: 0.92rem;
+      opacity: 0.78;
+    }
+
+    .debug-box {
+      text-align: center;
+      padding: 10px;
+      opacity: 0.75;
+      font-size: 0.9rem;
+    }
   </style>
 </head>
 
 <body>
-  <div class="fadeTop"></div>
-  <div class="fadeBottom"></div>
 
-  <div class="hud">
-    <div class="chip">
-      <strong>Wall Movie</strong>
-      <span id="info" style="opacity:.8">Sin clips</span>
+  <!-- 🟡 MENU (modular) -->
+  <div id="globalMenu" class="debug-box">⚠️ menu.html no cargado (modo local)</div>
+
+  <main>
+    <!-- HERO -->
+    <div class="hero">
+      <div class="visual-group">
+        <canvas id="siriCanvas"></canvas>
+        <div id="siriWave"></div>
+
+        <div class="cover">
+          <img src="./images/alarsi-portada-album-vol01.jpg"
+               alt="Portada ALARSI Music Collection 01"
+               width="1200" height="1200"
+               loading="eager" decoding="async">
+        </div>
+      </div>
     </div>
 
-    <div class="chip">
-      <button id="pickFolder" title="Mejor en Chrome/Edge">Elegir carpeta</button>
-      <span style="opacity:.85">Velocidad</span>
-      <input id="speed" type="range" min="5" max="120" value="28" />
-      <span id="speedVal" style="width:70px;text-align:right;opacity:.9"></span>
-      <button id="toggle">Pausar</button>
-      <button id="fs">Full</button>
-    </div>
-  </div>
+    <!-- CONTENIDO -->
+    <section>
+      <h1>Music Collection 01</h1>
+      <p class="tiny">
+        Registro canónico de obra musical original. Publicado en Alarsi.com como respaldo de autoría y precedencia.
+      </p>
 
-  <div id="drop" class="drop">
-    <div class="dropCard">
-      <h1>Vertical only (9:16)</h1>
-      <p>Arrastra tu carpeta (o usa <b>Elegir carpeta</b> en Chrome).</p>
-      <p class="muted">Este layout está pensado SOLO para videos verticales, con efecto “ladrillo” (stagger).</p>
-    </div>
-  </div>
+      <div class="meta-box">
+        <p><strong>Rights holder:</strong> ALARSI</p>
+        <p><strong>Official record:</strong> Alarsi.com</p>
+        <p><strong>Authorized use:</strong> canales y proyectos asociados a ALARSI (incluye @paulinadots, @viktoriadots, @swimwearcolors, etc.)</p>
+      </div>
 
-  <div id="viewport" class="viewport">
-    <div id="wall" class="wall"></div>
-  </div>
+      <div class="tracks" aria-label="Tracklist">
+        <div class="track">
+          <div class="track-title">
+            <div class="name">01 — Engines screaming</div>
+            <div class="hint">MP3</div>
+          </div>
+<audio controls preload="none" src="./audio/01-engines-screaming.mp3"></audio>
+        </div>
 
+        <div class="track">
+          <div class="track-title">
+            <div class="name">02 — I don&#39;t need to prove it</div>
+            <div class="hint">MP3</div>
+          </div>
+<audio controls preload="none" src="./audio/02-i-dont-need-to-prove-it.mp3"></audio>
+        </div>
+
+        <div class="track">
+          <div class="track-title">
+            <div class="name">03 — I don&#39;t raise my voice to be heard</div>
+            <div class="hint">MP3</div>
+          </div>
+<audio controls preload="none" src="./audio/03-i-dont-raise-my-voice-to-be-heard.mp3"></audio>
+        </div>
+
+        <div class="track">
+          <div class="track-title">
+            <div class="name">04 — Latin Dancer</div>
+            <div class="hint">MP3</div>
+          </div>
+<audio controls preload="none" src="./audio/04-latin-dancer.mp3"></audio>
+        </div>
+
+        <div class="track">
+          <div class="track-title">
+            <div class="name">05 — Lights are low</div>
+            <div class="hint">MP3</div>
+          </div>
+<audio controls preload="none" src="./audio/05-lights-are-low.mp3"></audio>
+        </div>
+
+        <div class="track">
+          <div class="track-title">
+            <div class="name">06 — Lights hit the mirror</div>
+            <div class="hint">MP3</div>
+          </div>
+<audio controls preload="none" src="./audio/06-lights-hit-the-mirror.mp3"></audio>
+        </div>
+
+        <div class="track">
+          <div class="track-title">
+            <div class="name">07 — Night falls quiet</div>
+            <div class="hint">MP3</div>
+          </div>
+<audio controls preload="none" src="./audio/07-night-falls-quiet.mp3"></audio>
+        </div>
+
+        <div class="track">
+          <div class="track-title">
+            <div class="name">08 — Passions Lights</div>
+            <div class="hint">MP3</div>
+          </div>
+<audio controls preload="none" src="./audio/08-passions-lights.mp3"></audio>
+        </div>
+
+        <div class="track">
+          <div class="track-title">
+            <div class="name">09 — Welcome to the future</div>
+            <div class="hint">MP3</div>
+          </div>
+<audio controls preload="none" src="./audio/09-welcome-to-the-future.mp3"></audio>
+        </div>
+
+        <div class="track">
+          <div class="track-title">
+            <div class="name">11 — Yeah....</div>
+            <div class="hint">MP3</div>
+          </div>
+<audio controls preload="none" src="./audio/11-yeah.mp3"></audio>
+        </div>
+
+        <div class="track">
+          <div class="track-title">
+            <div class="name">10 — You say stop, then you say go</div>
+            <div class="hint">MP3</div>
+          </div>
+<audio controls preload="none" src="./audio/10-you-say-stop-then-you-say-go.mp3"></audio>
+        </div>
+      </div>
+
+      <p class="tiny" style="margin-top:1.5rem;">
+        Nota: esta página existe como registro y respaldo. La distribución y publicación en canales asociados se considera uso autorizado por el titular.
+      </p>
+    </section>
+  </main>
+
+  <!-- 🟤 FOOTER -->
+  <div id="footer-container" class="debug-box">⚠️ footer.html no cargado (modo local)</div>
+
+  <!-- ======================= -->
+  <!--  JS GENERAL (modular)  -->
+  <!-- ======================= -->
   <script>
-    const exts = new Set([".mp4",".mov",".webm",".m4v"]);
-
-    const drop = document.getElementById("drop");
-    const viewport = document.getElementById("viewport");
-    const wall = document.getElementById("wall");
-    const info = document.getElementById("info");
-
-    const speedSlider = document.getElementById("speed");
-    const speedVal = document.getElementById("speedVal");
-    const toggleBtn = document.getElementById("toggle");
-    const fsBtn = document.getElementById("fs");
-    const pickFolderBtn = document.getElementById("pickFolder");
-
-    let running = true;
-    let speed = Number(speedSlider.value);
-    let lastT = performance.now();
-
-    function setSpeed(v){ speed = v; speedVal.textContent = `${v}px/s`; }
-    setSpeed(speed);
-    speedSlider.addEventListener("input", e => setSpeed(Number(e.target.value)));
-
-    toggleBtn.addEventListener("click", ()=>{
-      running = !running;
-      toggleBtn.textContent = running ? "Pausar" : "Reanudar";
-      lastT = performance.now();
-      if (running) requestAnimationFrame(tick);
-    });
-
-    fsBtn.addEventListener("click", async ()=>{
-      if (!document.fullscreenElement) await document.documentElement.requestFullscreen();
-      else await document.exitFullscreen();
-    });
-
-    // Reproduce solo lo visible (menos carga)
-    const io = new IntersectionObserver(entries=>{
-      for (const e of entries){
-        const v = e.target;
-        if (e.isIntersecting) v.play().catch(()=>{});
-        else v.pause();
+    async function loadBlock(id, url, label) {
+      try {
+        const res = await fetch(url);
+        if (!res.ok) throw new Error("No se encontró " + url);
+        document.getElementById(id).innerHTML = await res.text();
+        document.getElementById(id).classList.remove("debug-box");
+      } catch (err) {
+        console.warn(`⚠️ ${label} no se pudo cargar:`, err.message);
       }
-    }, { root: viewport, threshold: 0.15 });
-
-    function clearWall(){
-      wall.innerHTML = "";
-      viewport.scrollTop = 0;
-    }
-    function showWall(){
-      drop.classList.add("hidden");
-      viewport.style.display = "block";
-    }
-    function getExt(name){
-      const i = name.lastIndexOf(".");
-      return i >= 0 ? name.slice(i).toLowerCase() : "";
     }
 
-    function shuffle(arr){
-      for (let i = arr.length - 1; i > 0; i--){
-        const j = Math.floor(Math.random() * (i + 1));
-        [arr[i], arr[j]] = [arr[j], arr[i]];
-      }
-      return arr;
-    }
-
-    // (Opcional) filtra “verticales” por metadata real
-    async function isVerticalVideo(file){
-      return new Promise((resolve)=>{
-        const v = document.createElement("video");
-        v.preload = "metadata";
-        v.muted = true;
-        v.playsInline = true;
-        v.src = URL.createObjectURL(file);
-        v.onloadedmetadata = ()=>{
-          const w = v.videoWidth || 0;
-          const h = v.videoHeight || 0;
-          URL.revokeObjectURL(v.src);
-          // considera vertical si h >= w
-          resolve(h >= w && w > 0 && h > 0);
-        };
-        v.onerror = ()=>{
-          URL.revokeObjectURL(v.src);
-          resolve(false);
-        };
-      });
-    }
-
-    async function buildFromFileList(files){
-      // 1) filtra por extensión
-      const raw = files.filter(f => exts.has(getExt(f.name)));
-      if (!raw.length){
-        alert("No encontré videos compatibles.");
-        return;
-      }
-
-      // 2) quedarnos SOLO con verticales reales (por metadata)
-      const verticals = [];
-      for (const f of raw){
-        if (await isVerticalVideo(f)) verticals.push(f);
-      }
-
-      if (!verticals.length){
-        alert("No encontré videos verticales (9:16 / vertical).");
-        return;
-      }
-
-      clearWall();
-      showWall();
-
-      // 3) random
-      shuffle(verticals);
-
-      // 4) duplicar para scroll infinito
-      const loops = 3;
-      const all = [];
-      for (let k=0; k<loops; k++){
-        all.push(...shuffle([...verticals]));
-      }
-
-      all.forEach((file)=>{
-        const tile = document.createElement("div");
-        tile.className = "tile";
-
-        const v = document.createElement("video");
-        v.muted = true;
-        v.loop = true;
-        v.playsInline = true;
-        v.preload = "metadata";
-        v.src = URL.createObjectURL(file);
-
-        tile.appendChild(v);
-        wall.appendChild(tile);
-        io.observe(v);
-      });
-
-      info.textContent = `${verticals.length} verticales (random)`;
-      lastT = performance.now();
-      requestAnimationFrame(tick);
-    }
-
-    // Auto-scroll infinito
-    function tick(t){
-      if (!running) return;
-
-      const dt = (t - lastT) / 1000;
-      lastT = t;
-
-      viewport.scrollTop += speed * dt;
-
-      const max = viewport.scrollHeight - viewport.clientHeight;
-
-      if (viewport.scrollTop > max * 0.66){
-        viewport.scrollTop = max * 0.33;
-      }
-
-      requestAnimationFrame(tick);
-    }
-
-    // Drag & drop
-    ["dragenter","dragover"].forEach(ev=>{
-      drop.addEventListener(ev, e=>{
-        e.preventDefault();
-        e.dataTransfer.dropEffect = "copy";
-      });
-    });
-
-    drop.addEventListener("drop", async (e)=>{
-      e.preventDefault();
-      const files = [...e.dataTransfer.files];
-      await buildFromFileList(files);
-    });
-
-    // Seleccionar carpeta (Chrome/Edge)
-    pickFolderBtn.addEventListener("click", async ()=>{
-      try{
-        if (!window.showDirectoryPicker){
-          alert("Tu navegador no soporta selección de carpeta. Usa Drag & Drop o abre en Chrome.");
-          return;
-        }
-        const dir = await window.showDirectoryPicker();
-        const files = [];
-        for await (const [, handle] of dir.entries()){
-          if (handle.kind === "file"){
-            const f = await handle.getFile();
-            if (exts.has(getExt(f.name))) files.push(f);
-          }
-        }
-        await buildFromFileList(files);
-      } catch (err){}
-    });
+    // OJO: usamos rutas absolutas porque estamos en /music/collections/collection-01/
+    loadBlock("globalMenu", "/menu.html", "menu.html");
+    loadBlock("footer-container", "/footer.html", "footer.html");
   </script>
+
+  <!-- ======================= -->
+  <!-- ALARSI BACKGROUND RADIAL ANIMATION (igual a tu home) -->
+  <!-- ======================= -->
+  <script>
+    const bgCanvas = document.getElementById("siriCanvas");
+    const bgCtx = bgCanvas.getContext("2d");
+
+    function resizeCanvas() {
+      bgCanvas.width = bgCanvas.clientWidth;
+      bgCanvas.height = bgCanvas.clientHeight;
+    }
+
+    resizeCanvas();
+    window.addEventListener("resize", resizeCanvas);
+
+    let t = 0;
+
+    function animateBackground() {
+      requestAnimationFrame(animateBackground);
+      bgCtx.clearRect(0, 0, bgCanvas.width, bgCanvas.height);
+
+      const cx = bgCanvas.width / 2;
+      const cy = bgCanvas.height / 2;
+      const radius = Math.min(bgCanvas.width, bgCanvas.height) / 2.2;
+      const gradient = bgCtx.createRadialGradient(cx, cy, 0, cx, cy, radius);
+
+      const colors = [0, 120, 210]; // red, green, blue hues
+      const index = Math.floor(t) % colors.length;
+      const nextIndex = (index + 1) % colors.length;
+      const progress = t % 1;
+
+      const hue = colors[index] * (1 - progress) + colors[nextIndex] * progress;
+
+      gradient.addColorStop(0, `hsla(${hue}, 100%, 60%, 0.45)`);
+      gradient.addColorStop(0.5, `hsla(${hue}, 100%, 50%, 0.25)`);
+      gradient.addColorStop(1, "transparent");
+
+      bgCtx.fillStyle = gradient;
+      bgCtx.fillRect(0, 0, bgCanvas.width, bgCanvas.height);
+
+      t += 0.01;
+    }
+
+    animateBackground();
+  </script>
+
+  <!-- ======================= -->
+  <!-- ALARSI SIRI WAVE (igual a tu home) -->
+  <!-- ======================= -->
+  <script>
+    function SiriWave9Curve(opt){opt=opt||{};this.controller=opt.controller;this.color=opt.color;this.tick=0;this.respawn();}
+    SiriWave9Curve.prototype.respawn=function(){this.amplitude=0.3+Math.random()*0.7;this.seed=Math.random();this.open_class=2+(Math.random()*3)|0;};
+    SiriWave9Curve.prototype.equation=function(i){var p=this.tick;var y=-1*Math.abs(Math.sin(p))*this.controller.amplitude*this.amplitude*this.controller.MAX*Math.pow(1/(1+Math.pow(this.open_class*i,2)),2);if(Math.abs(y)<0.001){this.respawn();}return y;};
+    SiriWave9Curve.prototype._draw=function(m){this.tick+=this.controller.speed*(1-0.5*Math.sin(this.seed*Math.PI));var ctx=this.controller.ctx;ctx.beginPath();var x_base=this.controller.width/2+(-this.controller.width/4+this.seed*(this.controller.width/2));var y_base=this.controller.height/2;var x,y,x_init;var i=-3;while(i<=3){x=x_base+i*this.controller.width/4;y=y_base+(m*this.equation(i));x_init=x_init||x;ctx.lineTo(x,y);i+=0.01;}var h=Math.abs(this.equation(0));var gradient=ctx.createRadialGradient(x_base,y_base,h*1.15,x_base,y_base,h*0.3);gradient.addColorStop(0,'rgba('+this.color.join(',')+',0.25)');gradient.addColorStop(1,'rgba('+this.color.join(',')+',0.08)');ctx.fillStyle=gradient;ctx.lineTo(x_init,y_base);ctx.closePath();ctx.fill();};
+    SiriWave9Curve.prototype.draw=function(){this._draw(-1);this._draw(1);};
+
+    function SiriWave9(opt){
+      opt=opt||{};
+      this.tick=0;this.run=false;
+      this.ratio=opt.ratio||window.devicePixelRatio||1;
+      this.width=this.ratio*(opt.width||600);
+      this.height=this.ratio*(opt.height||150);
+      this.MAX=this.height/2;
+      this.speed=opt.speed||0.04;
+      this.amplitude=opt.amplitude||0.6;
+      this.canvas=document.createElement('canvas');
+      this.canvas.width=this.width;this.canvas.height=this.height;
+      this.canvas.style.width=(this.width/this.ratio)+'px';
+      this.canvas.style.height=(this.height/this.ratio)+'px';
+      this.canvas.style.display='block';
+      this.canvas.style.margin='0 auto';
+      this.canvas.style.filter='drop-shadow(0 0 15px rgba(255,120,80,0.4))';
+      this.container=opt.container||document.body;
+      this.container.appendChild(this.canvas);
+      this.ctx=this.canvas.getContext('2d');
+      this.curves=[];
+      for(var i=0;i<SiriWave9.prototype.COLORS.length;i++){
+        var color=SiriWave9.prototype.COLORS[i];
+        for(var j=0;j<(3*Math.random())|0;j++){
+          this.curves.push(new SiriWave9Curve({controller:this,color:color}));
+        }
+      }
+      if(opt.autostart){this.start();}
+    }
+
+    SiriWave9.prototype._clear=function(){
+      this.ctx.globalCompositeOperation='destination-out';
+      this.ctx.fillRect(0,0,this.width,this.height);
+      this.ctx.globalCompositeOperation='lighter';
+    };
+
+    SiriWave9.prototype._draw=function(){
+      if(!this.run)return;
+      this._clear();
+      for(var i=0,len=this.curves.length;i<len;i++){this.curves[i].draw();}
+      requestAnimationFrame(this._draw.bind(this));
+    };
+
+    SiriWave9.prototype.start=function(){this.run=true;this._draw();};
+    SiriWave9.prototype.stop=function(){this.run=false;};
+    SiriWave9.prototype.COLORS=[[255,0,0],[0,255,0],[0,0,255]];
+
+    (function init(){
+      function createWave(){
+        const container = document.getElementById("siriWave");
+        if(!container) return;
+        container.innerHTML="";
+        new SiriWave9({
+          width: container.clientWidth,
+          height: 100,
+          speed: 0.022,
+          amplitude: 0.7,
+          container: container,
+          autostart: true
+        });
+      }
+      createWave();
+      window.addEventListener("resize", () => setTimeout(createWave, 250));
+    })();
+  </script>
+
 </body>
 </html>
