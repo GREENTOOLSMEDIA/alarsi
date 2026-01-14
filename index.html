@@ -23,7 +23,7 @@
   <!-- 🌐 OPEN GRAPH -->
   <meta property="og:title" content="ALARSI — Soluciones Inteligentes con Creatividad, Tecnología e IA" />
   <meta property="og:description" content="Transformamos ideas en soluciones eficaces mediante IA avanzada." />
-  <meta property="og:image" content="https://alarsi.com/images/alarsi-preview.jpg" />
+  <meta property="og:image" content="https://www.alarsi.com/images/preview/alarsi-preview.jpg" />
   <meta property="og:image:alt" content="ALARSI — Soluciones Inteligentes con Creatividad, Tecnología e IA" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -34,7 +34,7 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="ALARSI — Branding + IA" />
   <meta name="twitter:description" content="Creatividad, estrategia e inteligencia artificial integradas." />
-  <meta name="twitter:image" content="https://alarsi.com/images/alarsi-preview.jpg" />
+  <meta name="twitter:image" content="https://www.alarsi.com/images/preview/alarsi-preview.jpg" />
 
   <!-- 🧩 SCHEMA.ORG -->
   <script type="application/ld+json">
@@ -99,40 +99,44 @@
   overflow: hidden;
 }
 
-    #siriCanvas {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      filter: blur(65px);
-      opacity: 0.95;
-      z-index: 0;
-    }
+    /* Capa Siri: SOLO mitad inferior */
+#siriCanvas{
+  position: absolute;
+  left: 0;
+  bottom: 0;            /* <-- era botom */
+  width: 100%;
+  height: 50%;          /* <-- mitad inferior */
+  filter: blur(65px);
+  opacity: 0.95;
+  z-index: 0;
+  pointer-events: none;
+}
 
-    #siriWave {
-      position: absolute;
-      bottom: 8%;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 100%;
-      height: 90px;
-      z-index: 3;
-      opacity: 0.55;
-    }
+#siriWave{
+  position: absolute;
+  left: 50%;
+  top: 15%;             /* <-- arranca desde la mitad */
+  transform: translateX(-50%);
+  width: 100%;
+  height: 600px;
+  z-index: 1;           /* <-- sigue atrás del PNG, pero sobre el blur si quieres */
+  opacity: 1;
+  pointer-events: none;
+}
+	  
+	  
 
-  /* ALARSI logo mask */
-.alarsi-logo-hero {
+/* PNG siempre adelante */
+.alarsi-logo-hero{
   position: absolute;
   top: 0;
   left: 50%;
   transform: translate(-50%, 0);
-  width: 100%;          /* Escala relativa al 16:9 */
+  width: 100%;
   height: auto;
-  z-index: 2;          /* Encima del canvas */
-  object-fit: contain; /* Respeta las proporciones del SVG */
+  z-index: 2;
+  object-fit: contain;
   pointer-events: none;
-  animation: float 7s ease-in-out infinite;
 }
 
 /* Animación suave */
@@ -158,6 +162,29 @@
       color: #ff9966;
       font-size: 1.8rem;
     }
+	  .cta-contacto{
+  margin-top: 2.5rem;
+  text-align: center;
+}
+
+.btn-contacto{
+  display: inline-block;
+  padding: 0.75rem 2.2rem;
+  border: 1px solid rgba(255,255,255,0.35);
+  border-radius: 999px;
+  color: #fff;
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  background: transparent;
+  transition: all 0.3s ease;
+}
+
+.btn-contacto:hover{
+  background: rgba(255,255,255,0.06);
+  border-color: rgba(255,255,255,0.65);
+}
+
   </style>
 </head>
 
@@ -176,7 +203,7 @@
       <div id="siriWave"></div>
 
       <!-- ALARSI flotando -->
-   <img src="./images/alarsi-logo-mask.svg"
+   <img src="./images/alarsi.png"
   alt="Logo ALARSI Inteligencia Artificial, Creatividad y Tecnología."
   class="alarsi-logo-hero"
 />
@@ -196,6 +223,11 @@
 <p>
 Dirección creativa y diseño visual - Estrategia de marketing y posicionamiento de marca - Integración digital: automatización + inteligencia artificial - Producción audiovisual (concepto, dirección y supervisión 4K/AI Video) - Asesoría en redes sociales y crecimiento digital - Coordinación y Upervisión de proveedores externos.
 </p>
+	  <div class="cta-contacto">
+  <a href="mailto:info@alarsi.com" class="btn-contacto">
+    CONTACTO
+  </a>
+</div>
   </section>
       <main>
 
