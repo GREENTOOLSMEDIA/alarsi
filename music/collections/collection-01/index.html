@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Wall Movie (Vertical Only)</title>
+
+  <style>
+    :root{
+      --bg:#06070a;
+      --gap:14px;
+      --radius:16px;
+      --cols: 5;
+      --speed: 28;  /* px/seg */
+      --stagger: 302px; /* DESFASE vertical “ladrillo” */
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      background:var(--bg);
+      color:#fff;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      overflow:hidden;
+    }
+
+    .hud{
+      position:fixed;
+      inset:12px 12px auto 12px;
+      z-index:20;
+      display:flex;
+      gap:10px;
+      justify-content:space-between;
+      align-items:center;
+      pointer-events:none;
+    }
+    .chip{
+      pointer-events:auto;
+      backdrop-filter: blur(10px);
+      background: rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:999px;
+      padding:10px 12px;
+      display:flex;
+      gap:10px;
+      align-items:center;
+      box-shadow: 0 10px 30px rgba(0,0,0,.35);
+    }
+    .chip button{
+      border:0;
+      color:#fff;
+      background: rgba(255,255,255,.12);
+      padding:8px 10px;
+      border-radius:10px;
+      cursor:pointer;
+    }
+    .chip input[type="range"]{ width:160px; }
+
+    .drop{
+      position:fixed;
+      inset:0;
+      display:grid;
+      place-items:center;
+      padding:24px;
+      text-align:center;
+      z-index:15;
+      background:
+        radial-gradient(1200px 700px at 50% 20%, rgba(255,255,255,.08), transparent 55%),
+        linear-gradient(to bottom, rgba(255,255,255,.04), transparent 50%);
+    }
+    .dropCard{
+      max-width:780px;
+      width:100%;
+      border-radius:24px;
+      border:1px dashed rgba(255,255,255,.22);
+      background: rgba(255,255,255,.05);
+      padding:22px;
+      box-shadow: 0 30px 120px rgba(0,0,0,.55);
+    }
+    .dropCard h1{ margin:0 0 8px; font-weight:650; letter-spacing:.2px; }
+    .dropCard p{ margin:6px 0; opacity:.85; line-height:1.35; }
+    .muted{ opacity:.75; font-size:14px; }
+
+    .viewport{
+      position:fixed;
+      inset:0;
+      overflow:auto;
+      padding:70px 18px 60px;
+      display:none;
+    }
+    .viewport::-webkit-scrollbar{ width:0; height:0; }
+
+    /* ===== VERTICAL ONLY: LAYOUT “GROK” SIMPLE Y ESTABLE =====
+       Usamos GRID con celdas 9:16 constantes y “stagger” por columna
+       (NO masonry). Esto evita alineación perfecta horizontal y crea ladrillo.
+    */
+    .wall{
+      display:grid;
+      grid-template-columns: repeat(var(--cols), minmax(0, 1fr));
+      gap: var(--gap);
+      align-items:start;
+    }
+
+    .tile{
+      border-radius: var(--radius);
+      overflow:hidden;
+      background: rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.08);
+      box-shadow: 0 18px 60px rgba(0,0,0,.45);
+      aspect-ratio: 9 / 16;          /* SOLO vertical */
+    }
+
+    /* El video llena el tile 9:16 (corte tipo wall) */
+    video{
+      width:100%;
+      height:100%;
+      display:block;
+      object-fit:cover;
+      background:#000;
+    }
+
+    /* ===== El “ladrillo”: offset VERTICAL alternado por columna =====
+       Lo hacemos con :nth-child para que quede visualmente corrido.
+       Como el grid es por filas, esto crea el desplazamiento tipo ladrillo.
+    */
+    .tile:nth-child(5n + 2),
+    .tile:nth-child(5n + 4){
+      transform: translateY(var(--stagger));
+    }
+
+    /* Si cambias --cols, ajusta estas reglas (para 4 cols, usa 4n+2/4n+4 etc.) */
+    @media (max-width: 1400px){
+      :root{ --cols: 4; }
+      .tile:nth-child(5n + 2),
+      .tile:nth-child(5n + 4){ transform:none; }
+      .tile:nth-child(4n + 2),
+      .tile:nth-child(4n + 4){ transform: translateY(var(--stagger)); }
+    }
+    @media (max-width: 1100px){
+      :root{ --cols: 3; }
+      .tile:nth-child(4n + 2),
+      .tile:nth-child(4n + 4){ transform:none; }
+      .tile:nth-child(3n + 2){ transform: translateY(var(--stagger)); }
+    }
+    @media (max-width: 800px){
+      :root{ --cols: 2; }
+      .tile:nth-child(3n + 2){ transform:none; }
+      .tile:nth-child(2n + 2){ transform: translateY(var(--stagger)); }
+    }
+
+    .fadeTop, .fadeBottom{
+      position:fixed; left:0; right:0; height:90px; z-index:10;
+      pointer-events:none;
+    }
+    .fadeTop{ top:0; background: linear-gradient(to bottom, rgba(6,7,10,1), rgba(6,7,10,0)); }
+    .fadeBottom{ bottom:0; background: linear-gradient(to top, rgba(6,7,10,1), rgba(6,7,10,0)); }
+
+    .hidden{ display:none !important; }
+  </style>
+</head>
+
+<body>
+  <div class="fadeTop"></div>
+  <div class="fadeBottom"></div>
+
+  <div class="hud">
+    <div class="chip">
+      <strong>Wall Movie</strong>
+      <span id="info" style="opacity:.8">Sin clips</span>
+    </div>
+
+    <div class="chip">
+      <button id="pickFolder" title="Mejor en Chrome/Edge">Elegir carpeta</button>
+      <span style="opacity:.85">Velocidad</span>
+      <input id="speed" type="range" min="5" max="120" value="28" />
+      <span id="speedVal" style="width:70px;text-align:right;opacity:.9"></span>
+      <button id="toggle">Pausar</button>
+      <button id="fs">Full</button>
+    </div>
+  </div>
+
+  <div id="drop" class="drop">
+    <div class="dropCard">
+      <h1>Vertical only (9:16)</h1>
+      <p>Arrastra tu carpeta (o usa <b>Elegir carpeta</b> en Chrome).</p>
+      <p class="muted">Este layout está pensado SOLO para videos verticales, con efecto “ladrillo” (stagger).</p>
+    </div>
+  </div>
+
+  <div id="viewport" class="viewport">
+    <div id="wall" class="wall"></div>
+  </div>
+
+  <script>
+    const exts = new Set([".mp4",".mov",".webm",".m4v"]);
+
+    const drop = document.getElementById("drop");
+    const viewport = document.getElementById("viewport");
+    const wall = document.getElementById("wall");
+    const info = document.getElementById("info");
+
+    const speedSlider = document.getElementById("speed");
+    const speedVal = document.getElementById("speedVal");
+    const toggleBtn = document.getElementById("toggle");
+    const fsBtn = document.getElementById("fs");
+    const pickFolderBtn = document.getElementById("pickFolder");
+
+    let running = true;
+    let speed = Number(speedSlider.value);
+    let lastT = performance.now();
+
+    function setSpeed(v){ speed = v; speedVal.textContent = `${v}px/s`; }
+    setSpeed(speed);
+    speedSlider.addEventListener("input", e => setSpeed(Number(e.target.value)));
+
+    toggleBtn.addEventListener("click", ()=>{
+      running = !running;
+      toggleBtn.textContent = running ? "Pausar" : "Reanudar";
+      lastT = performance.now();
+      if (running) requestAnimationFrame(tick);
+    });
+
+    fsBtn.addEventListener("click", async ()=>{
+      if (!document.fullscreenElement) await document.documentElement.requestFullscreen();
+      else await document.exitFullscreen();
+    });
+
+    // Reproduce solo lo visible (menos carga)
+    const io = new IntersectionObserver(entries=>{
+      for (const e of entries){
+        const v = e.target;
+        if (e.isIntersecting) v.play().catch(()=>{});
+        else v.pause();
+      }
+    }, { root: viewport, threshold: 0.15 });
+
+    function clearWall(){
+      wall.innerHTML = "";
+      viewport.scrollTop = 0;
+    }
+    function showWall(){
+      drop.classList.add("hidden");
+      viewport.style.display = "block";
+    }
+    function getExt(name){
+      const i = name.lastIndexOf(".");
+      return i >= 0 ? name.slice(i).toLowerCase() : "";
+    }
+
+    function shuffle(arr){
+      for (let i = arr.length - 1; i > 0; i--){
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+      }
+      return arr;
+    }
+
+    // (Opcional) filtra “verticales” por metadata real
+    async function isVerticalVideo(file){
+      return new Promise((resolve)=>{
+        const v = document.createElement("video");
+        v.preload = "metadata";
+        v.muted = true;
+        v.playsInline = true;
+        v.src = URL.createObjectURL(file);
+        v.onloadedmetadata = ()=>{
+          const w = v.videoWidth || 0;
+          const h = v.videoHeight || 0;
+          URL.revokeObjectURL(v.src);
+          // considera vertical si h >= w
+          resolve(h >= w && w > 0 && h > 0);
+        };
+        v.onerror = ()=>{
+          URL.revokeObjectURL(v.src);
+          resolve(false);
+        };
+      });
+    }
+
+    async function buildFromFileList(files){
+      // 1) filtra por extensión
+      const raw = files.filter(f => exts.has(getExt(f.name)));
+      if (!raw.length){
+        alert("No encontré videos compatibles.");
+        return;
+      }
+
+      // 2) quedarnos SOLO con verticales reales (por metadata)
+      const verticals = [];
+      for (const f of raw){
+        if (await isVerticalVideo(f)) verticals.push(f);
+      }
+
+      if (!verticals.length){
+        alert("No encontré videos verticales (9:16 / vertical).");
+        return;
+      }
+
+      clearWall();
+      showWall();
+
+      // 3) random
+      shuffle(verticals);
+
+      // 4) duplicar para scroll infinito
+      const loops = 3;
+      const all = [];
+      for (let k=0; k<loops; k++){
+        all.push(...shuffle([...verticals]));
+      }
+
+      all.forEach((file)=>{
+        const tile = document.createElement("div");
+        tile.className = "tile";
+
+        const v = document.createElement("video");
+        v.muted = true;
+        v.loop = true;
+        v.playsInline = true;
+        v.preload = "metadata";
+        v.src = URL.createObjectURL(file);
+
+        tile.appendChild(v);
+        wall.appendChild(tile);
+        io.observe(v);
+      });
+
+      info.textContent = `${verticals.length} verticales (random)`;
+      lastT = performance.now();
+      requestAnimationFrame(tick);
+    }
+
+    // Auto-scroll infinito
+    function tick(t){
+      if (!running) return;
+
+      const dt = (t - lastT) / 1000;
+      lastT = t;
+
+      viewport.scrollTop += speed * dt;
+
+      const max = viewport.scrollHeight - viewport.clientHeight;
+
+      if (viewport.scrollTop > max * 0.66){
+        viewport.scrollTop = max * 0.33;
+      }
+
+      requestAnimationFrame(tick);
+    }
+
+    // Drag & drop
+    ["dragenter","dragover"].forEach(ev=>{
+      drop.addEventListener(ev, e=>{
+        e.preventDefault();
+        e.dataTransfer.dropEffect = "copy";
+      });
+    });
+
+    drop.addEventListener("drop", async (e)=>{
+      e.preventDefault();
+      const files = [...e.dataTransfer.files];
+      await buildFromFileList(files);
+    });
+
+    // Seleccionar carpeta (Chrome/Edge)
+    pickFolderBtn.addEventListener("click", async ()=>{
+      try{
+        if (!window.showDirectoryPicker){
+          alert("Tu navegador no soporta selección de carpeta. Usa Drag & Drop o abre en Chrome.");
+          return;
+        }
+        const dir = await window.showDirectoryPicker();
+        const files = [];
+        for await (const [, handle] of dir.entries()){
+          if (handle.kind === "file"){
+            const f = await handle.getFile();
+            if (exts.has(getExt(f.name))) files.push(f);
+          }
+        }
+        await buildFromFileList(files);
+      } catch (err){}
+    });
+  </script>
+</body>
+</html>
