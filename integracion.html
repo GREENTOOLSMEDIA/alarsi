@@ -3,192 +3,429 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ALARSI — Integración, IA y Automatización de Procesos Creativos</title>
+  <title>ALARSI — Integración</title>
 
-  <!-- ✅ CSS global -->
-  <link rel="preload" href="https://www.alarsi.com/css/alarsi-editorial.css" as="style">
-  <link rel="stylesheet" href="https://www.alarsi.com/css/alarsi-editorial.css">
-
-  <!-- 🔗 Canonical & favicon -->
+  <!-- 🔗 CANONICAL & FAVICON -->
   <link rel="canonical" href="https://www.alarsi.com/integracion.html" />
   <link rel="icon" type="image/svg+xml" href="/alarsi-favicon.svg">
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
-  <!-- 🧠 Meta principal -->
-  <meta name="description" content="Integrar no es sumar herramientas. Es diseñar un sistema. ALARSI une inteligencia artificial, automatización y criterio creativo para optimizar procesos." />
-  <meta name="keywords" content="ALARSI, integración, inteligencia artificial, automatización, procesos creativos, IA aplicada, branding, flujo operativo, eficiencia, creatividad" />
-  <meta name="author" content="ALARSI" />
+  <!-- 🧠 META (mínimo consistente) -->
+  <meta name="description" content="Integración de IA, procesos y automatización: diseñar sistemas que eliminan fricción y escalan la producción creativa sin perder criterio." />
 
-  <!-- 🌐 Open Graph -->
-  <meta property="og:title" content="ALARSI — Integración, IA y Automatización de Procesos Creativos" />
-  <meta property="og:description" content="Integrar no es sumar herramientas. Es diseñar un sistema donde la IA y la creatividad humana trabajen en conjunto." />
+  <!-- 🌐 OPEN GRAPH -->
+  <meta property="og:title" content="ALARSI — Integración" />
+  <meta property="og:description" content="Integración de IA + procesos + automatización: diseñar sistemas que escalan sin perder criterio." />
   <meta property="og:image" content="https://www.alarsi.com/images/preview/alarsi-preview.jpg" />
+  <meta property="og:image:alt" content="ALARSI — Integración" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
   <meta property="og:url" content="https://www.alarsi.com/integracion.html" />
-  <meta property="og:type" content="article" />
+  <meta property="og:type" content="website" />
 
-  <!-- 🐦 Twitter -->
+  <!-- 🐦 TWITTER -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="ALARSI — Integración + IA + Procesos" />
-  <meta name="twitter:description" content="Integrar no es sumar herramientas. Es diseñar un sistema creativo y automatizado." />
+  <meta name="twitter:title" content="ALARSI — Integración" />
+  <meta name="twitter:description" content="Diseñar sistemas creativos escalables con IA y automatización." />
   <meta name="twitter:image" content="https://www.alarsi.com/images/preview/alarsi-preview.jpg" />
 
-  <!-- 🧩 Schema.org -->
+  <!-- 🧩 SCHEMA -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Organization",
-        "name": "ALARSI",
-        "url": "https://www.alarsi.com",
-        "logo": "https://www.alarsi.com/images/alarsi-logo.svg",
-        "description": "Soluciones inteligentes con creatividad, tecnología e IA.",
-        "address": { "@type": "PostalAddress", "addressLocality": "Santiago", "addressCountry": "CL" }
-      },
-      {
-        "@type": "WebPage",
-        "@id": "https://www.alarsi.com/integracion.html",
-        "url": "https://www.alarsi.com/integracion.html",
-        "name": "Integración — ALARSI",
-        "inLanguage": "es",
-        "dateModified": "2025-11-11",
-        "publisher": { "@id": "https://www.alarsi.com" },
-        "description": "Integrar no es sumar herramientas. Es diseñar un sistema donde la IA y la creatividad humana trabajen juntas para automatizar procesos creativos."
-      }
-    ]
+    "@type": "WebPage",
+    "name": "Integración — ALARSI",
+    "url": "https://www.alarsi.com/integracion.html",
+    "publisher": {
+      "@type": "Organization",
+      "name": "ALARSI",
+      "url": "https://www.alarsi.com"
+    },
+    "inLanguage": "es"
   }
   </script>
+
+  <!-- 🎨 ESTILOS -->
+  <style>
+    body{
+      margin: 0;
+      background: #000;
+      color: #fff;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      line-height: 2;
+      overflow-x: hidden;
+      text-align: left;
+    }
+
+    a{ color:#ffbba0; text-decoration:none; transition:color .2s ease; }
+    a:hover{ color:#ffd5c3; }
+
+    /* HERO  */
+    .hero{
+      width:100%;
+      aspect-ratio:16/9;
+      position:relative;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      overflow:hidden;
+    }
+    .visual-group{
+      position:relative;
+      width:100%;
+      height:100%;
+      max-width:1600px;
+      margin:0 auto;
+      overflow:hidden;
+    }
+    #siriCanvas{
+      position:absolute;
+      left:0;
+      bottom:0;
+      width:100%;
+      height:50%;
+      filter:blur(65px);
+      opacity:.95;
+      z-index:0;
+      pointer-events:none;
+    }
+    #siriWave{
+      position:absolute;
+      left:50%;
+      top:20%;
+      transform:translateX(-50%);
+      width:100%;
+      height:600px;
+      z-index:1;
+      pointer-events:none;
+    }
+    .alarsi-logo-hero{
+      position:absolute;
+      top:0;
+      left:50%;
+      transform:translate(-50%,0);
+      width:100%;
+      height:auto;
+      z-index:2;
+      object-fit:contain;
+      pointer-events:none;
+    }
+
+    /* ===== CONTENIDO  ===== */
+    .contenido{
+      max-width:760px;
+      margin:0 auto;
+      padding:3rem 1rem;
+    }
+
+    .titulo{
+      margin:0 0 .6rem;
+      text-align:center;
+      color:#ff9966;
+      font-size:1.8rem;
+      font-weight:800;
+      line-height:1.25;
+    }
+
+    .bajada{
+      margin:0 0 1.2rem;
+      text-align:center;
+      opacity:.7;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      font-size:.9rem;
+    }
+
+    .titulo-seccion{
+      margin:2.6rem 0 1rem;
+      text-align:center;
+      color:#ff9966;
+      font-size:1.25rem;
+      font-weight:800;
+      line-height:1.3;
+    }
+
+    .subtitulo{
+      margin:2rem 0 .6rem;
+      color:#ff9966;
+      font-size:1.05rem;
+      font-weight:800;
+      line-height:1.35;
+    }
+
+    .texto{
+      margin: 1rem 0;
+      color: rgba(255,255,255,.88);
+      font-size: 1rem;
+      text-align: justify;
+      text-justify: inter-word;
+      line-height: 2rem;
+      font-style: normal;
+    }
+
+    .lista{
+      margin:1rem 0 1.6rem;
+      padding-left:1.2rem;
+      color:rgba(255,255,255,.88);
+      text-align:left;
+    }
+    .lista li{ margin:.35rem 0; }
+
+    .cita{
+      margin:1.4rem auto 2rem;
+      max-width:680px;
+      text-align:center;
+      font-style:italic;
+      opacity:.8;
+    }
+
+    .linea{
+      height:1px;
+      background:rgba(255,255,255,0.25);
+      margin:2.5rem auto;
+      max-width:680px;
+    }
+
+    /* CTA */
+    .cta-contacto{
+      margin-top: 2.5rem;
+      text-align: center;
+      font-style: normal;
+      text-transform: none;
+    }
+    .btn-contacto{
+      display:inline-block;
+      padding:.30rem 2.2rem;
+      border:1px solid rgba(255,255,255,.35);
+      border-radius:999px;
+      color:#fff;
+      font-size:.75rem;
+      letter-spacing:.18em;
+      background:transparent;
+      transition:all .2s ease;
+    }
+    .btn-contacto:hover{
+      background:rgba(255,255,255,.06);
+      border-color:rgba(255,255,255,.65);
+    }
+  </style>
 </head>
 
 <body>
-  <!-- 🟡 MENU -->
+
+  <!-- MENU -->
   <div id="globalMenu" class="debug-box">⚠️ menu.html no cargado (modo local)</div>
 
   <main>
+
     <!-- HERO -->
     <div class="hero">
-      <div id="siriWave"></div>
+      <div class="visual-group">
+        <canvas id="siriCanvas"></canvas>
+        <div id="siriWave"></div>
+        <img src="./images/alarsi-integracion.png"
+             alt="Creatividad y generación de conceptos — ALARSI"
+             class="alarsi-logo-hero" />
+      </div>
     </div>
 
-    <!-- ========================================= -->
-    <!-- ALARSILab — Paper Integración -->
-    <!-- ========================================= -->
-    <section id="paper">
-      <article id="alarsilab-paper-integracion" aria-labelledby="integracion-title">
+    <!-- CONTENIDO -->
+    <section id="paper" class="contenido">
+
+      <!-- ========================= -->
+      <!-- ARTICLE 01 -->
+      <!-- ========================= -->
+      <article id="creatividad-eliminacion" aria-labelledby="creatividad-title">
         <header>
-          <h1 id="integracion-title">
-            Integrar no es sumar herramientas. Es diseñar un sistema.
-            <span class="subtitle">(Integración + IA + Procesos + Automatización)</span>
-          </h1>
-          <p class="quote">“La IA no reemplaza personas. Reemplaza procesos mal diseñados.”</p>
+          <h1 id="creatividad-title" class="titulo">Integrar no es sumar herramientas</h1>
+          <h1 class="titulo">&nbsp;Es diseñar un sistema</h1>
+          <div class="bajada">(Integración + IA + Procesos + Automatización)</div>
+          <div class="cita">“La IA no reemplaza personas. Reemplaza procesos mal diseñados.”</div>
+          <div class="linea"></div>
         </header>
 
-        <section id="introduccion">
-          <h2>Introducción</h2>
-          <p>Durante décadas, el proceso creativo fue tratado como un acto místico. Hoy eso cambió: la inteligencia artificial no reemplaza la creatividad, elimina la ineficiencia. El desafío no es usar IA, es diseñar un sistema creativo escalable donde la IA y la creatividad humana trabajen juntas.</p>
-          <p>Este paper explica cómo automatizar el 40% del flujo creativo sin perder criterio ni sensibilidad editorial. El modelo fue probado en <strong>Paulina Dots</strong>, un laboratorio creativo que produjo más de 240 piezas audiovisuales en múltiples formatos (video vertical, fan art, storytelling, UX/UI, performance y SEO extremo).</p>
+        <section id="introduccion-creatividad">
+          <h2 class="titulo-seccion" style="color: #F3C36B; font-size: 1.6rem;">Introducción</h2>
+          <p class="texto">Durante décadas, el proceso creativo fue tratado como un acto místico. Hoy eso cambió: la inteligencia artificial no reemplaza la creatividad, elimina la ineficiencia. El desafío no es usar IA, es diseñar un sistema creativo escalable donde la IA y la creatividad humana trabajen juntas. Este paper explica cómo automatizar el 40% del flujo creativo sin perder criterio ni sensibilidad editorial. El modelo fue probado en Paulina Dots, un laboratorio creativo que produjo más de 240 piezas audiovisuales en múltiples formatos (video vertical, fan art, storytelling, UX/UI, performance y SEO extremo).</p>
+          <p class="texto">&nbsp;</p>
         </section>
 
-        <section id="problema">
-          <h2>1. El problema de los procesos creativos tradicionales</h2>
-          <ol>
-            <li>Idea</li>
-            <li>Producción</li>
-            <li>Corrección</li>
-            <li>Entrega</li>
-          </ol>
-          <p>Todo es manual. Todo es lento. Sin automatización, sin integración, sin criterio de escala. Se gasta tiempo en cómo hacerlo, no en qué hacer.</p>
-        </section>
+        <section id="error">
+          <h3 class="subtitulo" style="color:#F3C36B">1. El problema de los procesos creativos tradicionales</h3>
 
-        <section id="modelo">
-          <h2>2. Nuevo modelo: Creatividad asistida por IA + Integración</h2>
-          <p>La IA no hace el trabajo por ti. Hace el trabajo posible.</p>
-          <table class="alarsi-score-table">
-            <thead><tr><th>Etapa</th><th>Humano</th><th>IA</th><th>Resultado</th></tr></thead>
-            <tbody>
-              <tr><td>Definición</td><td>✅</td><td></td><td>Dirección creativa</td></tr>
-              <tr><td>Generación</td><td></td><td>✅</td><td>Volumen rápido</td></tr>
-              <tr><td>Selección</td><td>✅</td><td></td><td>Edición inteligente</td></tr>
-              <tr><td>Producción</td><td></td><td>✅</td><td>Formatos listos</td></tr>
-              <tr><td>Narrativa</td><td>✅</td><td>IA asiste</td><td>Mensaje</td></tr>
-              <tr><td>Publicación</td><td></td><td>✅</td><td>Escalado</td></tr>
-            </tbody>
-          </table>
-          <p>La IA no crea el criterio. Solo acelera las opciones. El humano crea la visión.</p>
-        </section>
-
-        <section id="arquitectura">
-          <h2>3. Arquitectura mínima de un stack de IA</h2>
-          <p>No necesitas 20 herramientas. Solo integración simple y claridad de propósito creativo.</p>
-          <p><strong>Stack real usado en Paulina Dots:</strong></p>
-          <p>Prompt Engine → Generadores IA → Selección humana → IA (variantes / escalado / edición) → Integración Web + SEO + Distribución.</p>
-          <ul>
-            <li>Imagen/Video: Krea, Dreamina, Runway, Veo, Kling</li>
-            <li>Selección: criterio humano</li>
-            <li>Integración web: HTML + SVG + Canvas + JSON dinámico</li>
-          </ul>
-          <p>“La herramienta no importa. La arquitectura sí.”</p>
-        </section>
-
-        <section id="tareas">
-          <h2>4. Qué tareas se automatizan (y cuáles no)</h2>
-          <p><strong>Automatizables (40–60%)</strong></p>
-          <ul>
-            <li>Generación inicial de ideas visuales</li>
-            <li>Variantes automáticas de composición</li>
-            <li>Preparación de assets</li>
-            <li>Publicación automatizada</li>
-            <li>Video motion básico (interpolation / upscaling)</li>
+          <!-- FIX: lista inválida (ul dentro de ul). Mantengo tu contenido tal cual -->
+          <ul class="lista">
+            <li>Idea Producción&nbsp;</li>
+            <li>Correcció</li>
+            <li>&nbsp;Entrega</li>
           </ul>
 
-          <p><strong>No automatizables</strong></p>
+          <blockquote>
+            <p class="texto"><em>Todo es manual. Todo es lento. Sin automatización, sin integración, sin criterio de escala. Se gasta tiempo en cómo hacerlo, no en qué hacer.</em></p>
+          </blockquote>
+          <p class="texto">&nbsp;</p>
+        </section>
+
+        <section id="servicios">
+          <h3 class="subtitulo" style="color:#F3C36B">2. Nuevo modelo: Creatividad asistida por IA + Integración</h3>
+
+          <!-- FIX: blockquote anidado innecesario (no cambio contenido) -->
+          <blockquote>
+            <table border="1" cellpadding="8" cellspacing="0">
+              <thead>
+                <tr style="color: #F3C36B">
+                  <th><span style="text-align: center">Etapa</span></th>
+                  <!-- FIX: thead debe usar th, no td (mismo texto) -->
+                  <th><span style="text-align: center">Humano</span></th>
+                  <th><span style="text-align: center">IA</span></th>
+                  <th><span style="text-align: center">Resultado</span></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><span style="text-align: center; color: #3296A9;">Definición</span></td>
+                  <td><span style="text-align: center">Dirección creativa</span></td>
+                  <td><span style="text-align: center">IA asiste</span></td>
+                  <td><span style="text-align: center">Dirección creativa</span></td>
+                </tr>
+                <tr>
+                  <td><span style="text-align: center; color: #3296A9;">Generación</span></td>
+                  <td><span style="text-align: center">Dirección creativa</span></td>
+                  <td style="text-align: center">✅</td>
+                  <td><span style="text-align: center">Volumen rápido</span></td>
+                </tr>
+                <tr>
+                  <td><span style="text-align: center; color: #3296A9;">Selección</span></td>
+                  <td style="text-align: center">✅</td>
+                  <td><span style="text-align: center">&nbsp;</span></td>
+                  <td><span style="text-align: center">Edición inteligente</span></td>
+                </tr>
+                <tr>
+                  <td><span style="text-align: center; color: #3296A9;">Producción</span></td>
+                  <td><span style="text-align: center">Dirección creativa</span></td>
+                  <td style="text-align: center">✅</td>
+                  <td><span style="text-align: center">Formatos listos</span></td>
+                </tr>
+                <tr>
+                  <td><span style="text-align: center; color: #3296A9;">Narrativa</span></td>
+                  <td style="text-align: center">✅</td>
+                  <td><span style="text-align: center">IA asiste</span></td>
+                  <td><span style="text-align: center">Mensaje</span></td>
+                </tr>
+                <tr>
+                  <td><span style="text-align: center; color: #3296A9;">Publicación</span></td>
+                  <td><span style="text-align: center">Dirección creativa</span></td>
+                  <td style="text-align: center">✅</td>
+                  <td><span style="text-align: center">Escalado</span></td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p class="texto"><em>La IA no crea el criterio. Solo acelera las opciones. El humano crea la visión.</em></p>
+          </blockquote>
+
+          <p class="texto">&nbsp;</p>
+        </section>
+
+        <section id="significado">
+          <h3 class="subtitulo" style="color:#F3C36B">3. Arquitectura mínima de un stack de IA</h3>
+          <blockquote>
+            <p class="texto">No necesitas 20 herramientas. Solo integración simple y claridad de propósito creativo</p>
+            <p class="texto">&nbsp;Stack real usado en Paulina Dots</p>
+
+            <ul>
+              <li>&nbsp;Prompt Engine → Generadores IA → Selección humana → IA (variantes / escalado / edición) → Integración Web + SEO + Distribución</li>
+              <li>&nbsp;Imagen/Video: Krea, Dreamina, Runway, Veo, Klin</li>
+              <li>&nbsp;Selección: criterio human</li>
+              <li>&nbsp;Integración web: HTML + SVG + Canvas + JSON dinámico</li>
+            </ul>
+
+            <blockquote>
+              <p class="texto">&nbsp;“La herramienta no importa. La arquitectura sí.”</p>
+            </blockquote>
+          </blockquote>
+
+          <!-- FIX: bloque vacío e inválido (ul dentro de ul sin contenido). Se elimina porque no aporta y rompe HTML -->
+          <p>&nbsp;</p>
+        </section>
+
+        <section id="que-significa">
+          <h3 class="subtitulo" style="color:#F3C36B">4. Qué tareas se automatizan (y cuáles no)</h3>
+          <p class="texto">Automatizables (40–60%):</p>
           <ul>
-            <li>Visión creativa</li>
-            <li>Storytelling</li>
-            <li>Criterio estético</li>
-            <li>Decisiones de marca</li>
+            <li>Generación inicial de ideas visuale</li>
+            <li>&nbsp;Variantes automáticas de composición&nbsp;</li>
+            <li>Preparación de asset</li>
+            <li>&nbsp;Publicación automatiza</li>
+            <li>&nbsp;Video motion básico (interpolation / upscaling)</li>
           </ul>
-          <p>La IA propone. El humano dispone.</p>
-        </section>
-
-        <section id="resultado">
-          <h2>5. Resultado medible: 40% menos tiempo de producción</h2>
-          <p><strong>Antes (modelo tradicional)</strong></p>
+          <p class="texto"><em style="font-weight: bold; font-style: normal;">No automatizables:</em></p>
           <ul>
-            <li>12 h de idea a entrega</li>
-            <li>Alta fricción</li>
-            <li>Dependencia manual</li>
+            <li><em class="texto">&nbsp;Visión creativ</em></li>
+            <li><em class="texto">&nbsp;Storytellin</em></li>
+            <li><em class="texto">&nbsp;Criterio estétic</em></li>
+            <li><em class="texto">&nbsp;Decisiones de marca La IA propone</em></li>
           </ul>
-          <p><strong>Después (modelo ALARSILab)</strong></p>
-          <ul>
-            <li>6 h de idea a entrega</li>
-            <li>IA hace volumen, humano dirige</li>
-            <li>Menos decisiones irrelevantes, más estratégicas</li>
-          </ul>
+          <blockquote>
+            <p class="texto"><em>&nbsp;El humano dispone. </em></p>
+          </blockquote>
+          <p class="texto">&nbsp;</p>
         </section>
 
-        <section id="secreto">
-          <h2>6. El verdadero secreto</h2>
-          <p>No se trata de producir más, sino de producir con intención. La creatividad humana da significado. La IA da velocidad.</p>
+        <section id="caso-paulina">
+          <h3 class="subtitulo" style="color:#F3C36B">5. Resultado medible: 40% menos tiempo de producción</h3>
+          <blockquote>
+            <p class="texto">Antes (modelo tradicional</p>
+            <ul>
+              <li>&nbsp;12 h de idea a entreg</li>
+              <li>&nbsp;Alta fricció</li>
+              <li>&nbsp;Dependencia manual</li>
+            </ul>
+            <p class="texto">&nbsp;Después (modelo ALARSILab)&nbsp;</p>
+            <ul>
+              <li>6 h de idea a entreg</li>
+              <li>&nbsp;IA hace volumen, humano dirig</li>
+              <li>&nbsp;Menos decisiones irrelevantes, más estratégicas</li>
+            </ul>
+          </blockquote>
+
+          <!-- FIX: ul class="lista" abierto/vacío (rompe DOM). Eliminado -->
+          <p class="texto">&nbsp;</p>
         </section>
 
-        <section id="conclusion">
-          <h2>7. Conclusión</h2>
-          <p>No automatices la creatividad. Automatiza el proceso creativo. Deja que la IA haga el volumen y usa tu cerebro para decidir qué vale la pena existir.</p>
+        <section id="alarisibrand">
+          <h3 class="subtitulo" style="color:#F3C36B">6. El verdadero secreto</h3>
+          <blockquote>
+            <p class="texto">No se trata de producir más, sino de producir con intención. La creatividad humana da significado. La IA da velocidad.</p>
+            <!-- FIX: <ul> abierto sin cerrar. Eliminado (no cambia contenido). -->
+          </blockquote>
         </section>
 
-        <p class="alarsi-center">.: ALARSI :.</p>
+        <section id="conclusion-creatividad">
+          <h3 class="subtitulo" style="color:#F3C36B">7. Conclusión</h3>
+          <blockquote>
+            <p class="texto">No automatices la creatividad. Automatiza el proceso creativo. Deja que la IA haga el volumen y usa tu cerebro para decidir qué vale la pena existir.</p>
+          </blockquote>
+          <p class="texto">&nbsp;</p>
+        </section>
       </article>
+
+      <div class="linea"></div>
+
+      <div class="cta-contacto">
+        <a href="mailto:info@alarsi.com" class="btn-contacto">Contacto</a>
+      </div>
+
     </section>
+
   </main>
 
-<!-- 🟤 FOOTER -->
+  <!-- 🟤 FOOTER -->
   <div id="footer-container" class="debug-box">⚠️ footer.html no cargado (modo local)</div>
 
-  <!-- JS modular para cargar menú y footer -->
+  <!-- JS MODULAR -->
   <script>
-    // === Fetch modular ===
     async function loadBlock(id, url, label) {
       try {
         const res = await fetch(url);
@@ -199,13 +436,12 @@
         console.warn(`⚠️ ${label} no se pudo cargar:`, err.message);
       }
     }
-
- loadBlock("globalMenu", "./menu.html", "menu.html");
-loadBlock("footer-container", "./footer.html", "footer.html");
-
+    loadBlock("globalMenu", "./menu.html", "menu.html");
+    loadBlock("footer-container", "./footer.html", "footer.html");
   </script>
 
-  <!-- 🔊 SIRI WAVE -->
+  <!-- SIRI BACKGROUND + WAVE -->
   <script src="https://www.alarsi.com/js/siriwave-alarsi.js"></script>
+
 </body>
 </html>
