@@ -3,11 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ALARSI — Desarrollo, Estrategia y Narrativa Digital con IA</title>
-
-  <!-- ✅ CSS editorial global -->
-  <link rel="preload" href="https://www.alarsi.com/css/alarsi-editorial.css" as="style">
-  <link rel="stylesheet" href="https://www.alarsi.com/css/alarsi-editorial.css">
+  <title>ALARSI — Desarrollo</title>
 
   <!-- 🔗 CANONICAL & FAVICON -->
   <link rel="canonical" href="https://www.alarsi.com/desarrollo.html" />
@@ -15,216 +11,434 @@
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
-  <!-- 🧠 META PRINCIPAL -->
-  <meta name="description" content="Desarrollar no es producir. Es crear significado. ALARSI demuestra cómo la eliminación de lo innecesario y la IA estratégica pueden optimizar desarrollo, SEO y performance." />
-  <meta name="keywords" content="ALARSI, desarrollo, IA, SEO, performance, optimización, minimalismo, automatización, diseño estratégico, Core Web Vitals, branding" />
-  <meta name="author" content="ALARSI" />
+  <!-- 🧠 META (mínimo consistente) -->
+  <meta name="description" content="Desarrollo estratégico: crear significado con minimalismo técnico, narrativa y performance para ganar SEO sin exceso de herramientas." />
 
   <!-- 🌐 OPEN GRAPH -->
-  <meta property="og:title" content="ALARSI — Desarrollo, Estrategia y Narrativa con IA" />
-  <meta property="og:description" content="Desarrollar no es producir. Es crear significado. Minimalismo técnico con impacto real en SEO, performance y branding." />
+  <meta property="og:title" content="ALARSI — Desarrollo" />
+  <meta property="og:description" content="Desarrollar no es producir: es crear significado. Minimalismo técnico, narrativa y performance para ganar SEO." />
   <meta property="og:image" content="https://www.alarsi.com/images/preview/alarsi-preview.jpg" />
-  <meta property="og:image:alt" content="ALARSI — Desarrollo con IA y criterio" />
+  <meta property="og:image:alt" content="ALARSI — Desarrollo" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:url" content="https://www.alarsi.com/desarrollo.html" />
-  <meta property="og:type" content="article" />
+  <meta property="og:type" content="website" />
 
   <!-- 🐦 TWITTER -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="ALARSI — Desarrollo + Estrategia + IA" />
-  <meta name="twitter:description" content="Criterio aplicado al desarrollo. Performance, minimalismo y branding en equilibrio." />
+  <meta name="twitter:title" content="ALARSI — Desarrollo" />
+  <meta name="twitter:description" content="Minimalismo técnico + narrativa: por qué ganar con menos puede mejorar performance y SEO." />
   <meta name="twitter:image" content="https://www.alarsi.com/images/preview/alarsi-preview.jpg" />
 
-  <!-- 🧩 SCHEMA.ORG -->
+  <!-- 🧩 SCHEMA -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Organization",
-        "name": "ALARSI",
-        "url": "https://www.alarsi.com",
-        "logo": "https://www.alarsi.com/images/alarsi-logo.svg",
-        "description": "Soluciones inteligentes con creatividad, tecnología e IA.",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Santiago",
-          "addressCountry": "CL"
-        }
-      },
-      {
-        "@type": "WebPage",
-        "@id": "https://www.alarsi.com/desarrollo.html",
-        "url": "https://www.alarsi.com/desarrollo.html",
-        "name": "Desarrollo — ALARSI",
-        "isPartOf": { "@id": "https://www.alarsi.com" },
-        "about": {
-          "@type": "Thing",
-          "name": "Desarrollo, estrategia digital, IA, performance, Core Web Vitals"
-        },
-        "inLanguage": "es",
-        "dateModified": "2025-11-11",
-        "publisher": { "@id": "https://www.alarsi.com" },
-        "description": "Desarrollar no es producir. Es crear significado. Minimalismo técnico con impacto real en SEO, performance y branding."
-      }
-    ]
+    "@type": "WebPage",
+    "name": "Desarrollo — ALARSI",
+    "url": "https://www.alarsi.com/desarrollo.html",
+    "publisher": {
+      "@type": "Organization",
+      "name": "ALARSI",
+      "url": "https://www.alarsi.com"
+    },
+    "inLanguage": "es"
   }
   </script>
+
+  <!-- 🎨 ESTILOS (misma lógica) -->
+  <style>
+    body{
+      margin: 0;
+      background: #000;
+      color: #fff;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      line-height: 2;
+      overflow-x: hidden;
+      text-align: left;
+    }
+
+    a{ color:#ffbba0; text-decoration:none; transition:color .2s ease; }
+    a:hover{ color:#ffd5c3; }
+
+    /* HERO  */
+    .hero{
+      width:100%;
+      aspect-ratio:16/9;
+      position:relative;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      overflow:hidden;
+    }
+    .visual-group{
+      position:relative;
+      width:100%;
+      height:100%;
+      max-width:1600px;
+      margin:0 auto;
+      overflow:hidden;
+    }
+    #siriCanvas{
+      position:absolute;
+      left:0;
+      bottom:0;
+      width:100%;
+      height:50%;
+      filter:blur(65px);
+      opacity:.95;
+      z-index:0;
+      pointer-events:none;
+    }
+    #siriWave{
+      position:absolute;
+      left:50%;
+      top:20%;
+      transform:translateX(-50%);
+      width:100%;
+      height:600px;
+      z-index:1;
+      pointer-events:none;
+    }
+    .alarsi-logo-hero{
+      position:absolute;
+      top:0;
+      left:50%;
+      transform:translate(-50%,0);
+      width:100%;
+      height:auto;
+      z-index:2;
+      object-fit:contain;
+      pointer-events:none;
+    }
+
+    /* ===== CONTENIDO  ===== */
+    .contenido{
+      max-width:760px;
+      margin:0 auto;
+      padding:3rem 1rem;
+    }
+
+    .titulo{
+      margin:0 0 .6rem;
+      text-align:center;
+      color:#ff9966;
+      font-size:1.8rem;
+      font-weight:800;
+      line-height:1.25;
+    }
+
+    .bajada{
+      margin:0 0 1.2rem;
+      text-align:center;
+      opacity:.7;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      font-size:.9rem;
+    }
+
+    .titulo-seccion{
+      margin:2.6rem 0 1rem;
+      text-align:center;
+      color:#ff9966;
+      font-size:1.25rem;
+      font-weight:800;
+      line-height:1.3;
+    }
+
+    .subtitulo{
+      margin:2rem 0 .6rem;
+      color:#ff9966;
+      font-size:1.05rem;
+      font-weight:800;
+      line-height:1.35;
+    }
+
+    .texto{
+      margin: 1rem 0;
+      color: rgba(255,255,255,.88);
+      font-size: 1rem;
+      text-align: justify;
+      text-justify: inter-word;
+      line-height: 2rem;
+      font-style: normal;
+    }
+
+    .lista{
+      margin:1rem 0 1.6rem;
+      padding-left:1.2rem;
+      color:rgba(255,255,255,.88);
+      text-align:left;
+    }
+    .lista li{ margin:.35rem 0; }
+
+    .cita{
+      margin:1.4rem auto 2rem;
+      max-width:680px;
+      text-align:center;
+      font-style:italic;
+      opacity:.8;
+    }
+
+    .linea{
+      height:1px;
+      background:rgba(255,255,255,0.25);
+      margin:2.5rem auto;
+      max-width:680px;
+    }
+
+    /* CTA */
+    .cta-contacto{
+      margin-top: 2.5rem;
+      text-align: center;
+      font-style: normal;
+      text-transform: none;
+    }
+    .btn-contacto{
+      display:inline-block;
+      padding:.30rem 2.2rem;
+      border:1px solid rgba(255,255,255,.35);
+      border-radius:999px;
+      color:#fff;
+      font-size:.75rem;
+      letter-spacing:.18em;
+      background:transparent;
+      transition:all .2s ease;
+    }
+    .btn-contacto:hover{
+      background:rgba(255,255,255,.06);
+      border-color:rgba(255,255,255,.65);
+    }
+  </style>
 </head>
 
 <body>
 
-  <!-- 🟡 MENU (modular) -->
+  <!-- MENU -->
   <div id="globalMenu" class="debug-box">⚠️ menu.html no cargado (modo local)</div>
 
   <main>
+
     <!-- HERO -->
     <div class="hero">
       <div class="visual-group">
+        <canvas id="siriCanvas"></canvas>
         <div id="siriWave"></div>
+        <img src="./images/alarsi-desarrollo.png"
+             alt="Desarrollo y criterio técnico — ALARSI"
+             class="alarsi-logo-hero" />
       </div>
     </div>
 
-    <!-- ========================================= -->
-    <!-- ALARSILab — Paper Desarrollo -->
-    <!-- ========================================= -->
-    <section id="paper">
-      <article id="alarsilab-paper-desarrollo" aria-labelledby="desarrollo-title">
+    <!-- CONTENIDO -->
+    <section id="paper" class="contenido">
+
+      <article id="desarrollo-significado" aria-labelledby="desarrollo-title">
         <header>
-          <h1 id="desarrollo-title">
-            Desarrollar no es producir. Es crear significado.
-            <span class="subtitle">(Desarrollo + Estrategia + Narrativa)</span>
-          </h1>
-          <p class="quote">
-            “Una marca no se construye cuando vendes algo. Se construye cuando alguien te entiende.”
-          </p>
+          <h1 id="desarrollo-title" class="titulo">Desarrollar no es producir. Es crear significado.</h1>
+          <div class="bajada">(Desarrollo + Estrategia + Narrativa)</div>
+          <div class="cita">“Una marca no se construye cuando vendes algo. Se construye cuando alguien te entiende.”</div>
+          <div class="linea"></div>
         </header>
 
         <section id="introduccion">
-          <h2>Introducción</h2>
-          <p>“La verdadera innovación no consiste en agregar más. Consiste en demostrar que puedes ganar con menos.”</p>
-          <p>La industria web está convencida de que necesita más: imágenes, frameworks, componentes, motion, sliders, banners, librerías. Pero ¿y si no fuera necesario?</p>
-          <p>¿Qué ocurre cuando eliminas todo lo superfluo y te quedas solo con:</p>
-          <ul>
+          <h2 class="titulo-seccion" style="color:#F3C36B;">Introducción</h2>
+          <div class="cita" style="margin-top:1rem;">“La verdadera innovación no consiste en agregar más. Consiste en demostrar que puedes ganar con menos.”</div>
+
+          <p class="texto">
+            La industria web está convencida de que necesita más: imágenes, frameworks, componentes, motion, sliders, banners, librerías. Pero ¿y si no fuera necesario?
+          </p>
+
+          <p class="texto">¿Qué ocurre cuando eliminas todo lo superfluo y te quedas solo con:</p>
+
+          <ul class="lista">
             <li>&lt;main&gt;</li>
             <li>&lt;h1&gt;</li>
             <li>un SVG</li>
             <li>un canvas animado</li>
             <li>texto</li>
+            <li>Nada más.</li>
           </ul>
-          <p>Nada más. Sin WebP, sin JPG. Resultado en Google Search Console: <strong>100 / 100 / 100 / 100</strong> (SEO, Performance, Best Practices, Accesibilidad). No por tener más contenido, sino por tener criterio.</p>
+
+          <p class="texto">
+            Sin WebP, sin JPG. Resultado en Google Search Console: 100 / 100 / 100 / 100 (SEO, Performance, Best Practices, Accesibilidad).
+            No por tener más contenido, sino por tener criterio.
+          </p>
         </section>
 
         <section id="descubrimos">
-          <h2>1. Lo que descubrimos</h2>
-          <p>Al eliminar JPG y WebP también eliminas:</p>
-          <ul>
+          <h3 class="subtitulo" style="color:#F3C36B">1. Lo que descubrimos</h3>
+          <p class="texto">Al eliminar JPG y WebP también eliminas:</p>
+          <ul class="lista">
             <li>LCP alto</li>
             <li>CLS por carga tardía</li>
             <li>Bloqueos de renderizado</li>
             <li>Requests innecesarios al servidor</li>
           </ul>
-          <p>El navegador renderiza antes, el usuario ve antes, Google entiende antes. Es la ecuación perfecta.</p>
+          <p class="texto">El navegador renderiza antes, el usuario ve antes, Google entiende antes. Es la ecuación perfecta.</p>
         </section>
 
-        <section id="minimalismo-estrategico">
-          <h2>2. Minimalismo estratégico</h2>
-          <p>El diseño no es lo que agregas. Es lo que decides eliminar.</p>
+        <section id="minimalismo">
+          <h3 class="subtitulo" style="color:#F3C36B">2. Minimalismo estratégico</h3>
+          <blockquote>
+            <p class="texto"><em>El diseño no es lo que agregas. Es lo que decides eliminar.</em></p>
+          </blockquote>
 
-          <table class="alarsi-score-table">
+          <table border="1" cellpadding="8" cellspacing="0" style="width:100%; border-collapse:collapse; margin:1.2rem 0;">
             <thead>
-              <tr><th>Resultado</th><th>Impacto</th></tr>
+              <tr style="color:#F3C36B;">
+                <th>RESULTADO</th>
+                <th>IMPACTO</th>
+              </tr>
             </thead>
             <tbody>
-              <tr><td>Render instantáneo</td><td>↓ TTFB, ↓ LCP</td></tr>
-              <tr><td>Nada se desordena</td><td>↓ CLS</td></tr>
-              <tr><td>Peso mínimo de assets</td><td>↑ FCP</td></tr>
-              <tr><td>Canvas + SVG usan GPU</td><td>↑ FPS / animación fluida</td></tr>
-              <tr><td>&lt;h1&gt; + &lt;main&gt; claros</td><td>↑ SEO / ↑ accesibilidad</td></tr>
+              <tr>
+                <td>Render instantáneo</td>
+                <td>↓ TTFB, ↓ LCP</td>
+              </tr>
+              <tr>
+                <td>Nada se desordena</td>
+                <td>↓ CLS</td>
+              </tr>
+              <tr>
+                <td>Peso mínimo de assets</td>
+                <td>↑ FCP</td>
+              </tr>
+              <tr>
+                <td>Canvas + SVG usan GPU</td>
+                <td>↑ FPS / animación fluida</td>
+              </tr>
+              <tr>
+                <td>&lt;h1&gt; + &lt;main&gt; claros</td>
+                <td>↑ SEO / ↑ accesibilidad</td>
+              </tr>
             </tbody>
           </table>
         </section>
 
         <section id="truco-tecnico">
-          <h2>3. El truco técnico</h2>
-          <ul>
+          <h3 class="subtitulo" style="color:#F3C36B">3. El truco técnico</h3>
+          <ul class="lista">
             <li>SVG del logo como identidad visual</li>
             <li>Canvas animado para impacto sensorial</li>
             <li>Semántica &lt;main&gt; como landmark accesible</li>
             <li>&lt;h1&gt; + &lt;p&gt; para indexación</li>
             <li>JSON-LD para entidad</li>
           </ul>
-          <p>Todo sin frameworks: solo <strong>HTML, CSS y JavaScript puro</strong>. Velocidad de carga = autoridad.</p>
+          <p class="texto">Todo sin frameworks: solo HTML, CSS y JavaScript puro. Velocidad de carga = autoridad.</p>
         </section>
 
         <section id="frase">
-          <h2>4. La frase que cambia el juego</h2>
-          <p>No necesitamos optimizar imágenes si no usamos imágenes.</p>
+          <h3 class="subtitulo" style="color:#F3C36B">4. La frase que cambia el juego</h3>
+          <blockquote>
+            <p class="texto"><em>No necesitamos optimizar imágenes si no usamos imágenes.</em></p>
+          </blockquote>
         </section>
 
-        <section id="psicologia">
-          <h2>5. Disrupción cognitiva</h2>
-          <p>Cuando alguien entra a una página ALARSI ocurre algo:</p>
-          <ol>
+        <section id="disrupcion">
+          <h3 class="subtitulo" style="color:#F3C36B">5. Disrupción cognitiva</h3>
+          <p class="texto">Cuando alguien entra a una página ALARSI ocurre algo:</p>
+          <ul class="lista">
             <li>No entiende de inmediato.</li>
             <li>Busca patrones conocidos (hero con foto, menú, botones).</li>
             <li>No los encuentra.</li>
             <li>En lugar de cerrar, se detiene. Eso genera atención y memoria.</li>
-          </ol>
-          <p>“Si no usa imágenes, debe estar MUY seguro de lo que hace.” Eso es branding.</p>
+          </ul>
+          <blockquote>
+            <p class="texto"><em>“Si no usa imágenes, debe estar MUY seguro de lo que hace.”</em> Eso es branding.</p>
+          </blockquote>
         </section>
 
-        <section id="conclusion">
-          <h2>6. Conclusión</h2>
-          <p>La verdadera innovación no consiste en agregar más, sino en demostrar que puedes ganar con menos. No es falta de diseño. Es exceso de criterio.</p>
+        <section id="conclusion-1">
+          <h3 class="subtitulo" style="color:#F3C36B">6. Conclusión</h3>
+          <p class="texto">
+            La verdadera innovación no consiste en agregar más, sino en demostrar que puedes ganar con menos.
+            No es falta de diseño. Es exceso de criterio.
+          </p>
         </section>
 
-        <hr />
+        <div class="linea"></div>
 
-        <section id="paper2">
-          <h2>Diseñar sin imágenes: por qué el minimalismo puede ganar SEO</h2>
-          <p>“La simplicidad no es falta de diseño. Es eliminación de lo que no aporta.”</p>
-          <p>La industria digital repite la misma fórmula: hero con foto gigante, claims, testimonios. En ALARSI hicimos lo contrario: cero JPG, cero WebP, cero lazy loading. Solo un SVG, un canvas y 16 KB en el primer render.</p>
+        <section id="paper-2">
+          <h2 class="titulo-seccion" style="color:#3296A9;">Diseñar sin imágenes: por qué el minimalismo puede ganar SEO</h2>
+          <div class="cita">“La simplicidad no es falta de diseño. Es eliminación de lo que no aporta.”</div>
 
-          <table class="alarsi-score-table">
-            <thead><tr><th>Formato</th><th>Peso</th><th>LCP</th><th>CLS</th><th>SEO</th></tr></thead>
+          <p class="texto">
+            La industria digital repite la misma fórmula: hero con foto gigante, claims, testimonios. En ALARSI hicimos lo contrario:
+            cero JPG, cero WebP, cero lazy loading. Solo un SVG, un canvas y 16 KB en el primer render.
+          </p>
+
+          <table border="1" cellpadding="8" cellspacing="0" style="width:100%; border-collapse:collapse; margin:1.2rem 0;">
+            <thead>
+              <tr style="color:#F3C36B;">
+                <th>FORMATO</th>
+                <th>PESO</th>
+                <th>LCP</th>
+                <th>CLS</th>
+                <th>SEO</th>
+              </tr>
+            </thead>
             <tbody>
-              <tr><td>JPG / WebP</td><td>Alto</td><td>Malo</td><td>Alto</td><td>Neutro</td></tr>
-              <tr><td>SVG</td><td>Bajo</td><td>Instantáneo</td><td>Cero</td><td>Alto</td></tr>
-              <tr><td>Canvas</td><td>Dinámico</td><td>Instantáneo</td><td>Cero</td><td>Experiencia mejorada</td></tr>
+              <tr>
+                <td>JPG / WebP</td>
+                <td>Alto</td>
+                <td>Malo</td>
+                <td>Alto</td>
+                <td>Neutro</td>
+              </tr>
+              <tr>
+                <td>SVG</td>
+                <td>Bajo</td>
+                <td>Instantáneo</td>
+                <td>Cero</td>
+                <td>Alto</td>
+              </tr>
+              <tr>
+                <td>Canvas</td>
+                <td>Dinámico</td>
+                <td>Instantáneo</td>
+                <td>Cero</td>
+                <td>Experiencia mejorada</td>
+              </tr>
             </tbody>
           </table>
 
-          <p>Cuando eliminas una imagen rasterizada del hero: no hace fetch, no bloquea render, no compite por prioridad. LCP vuela. Google ama la velocidad.</p>
-        </section>
+          <p class="texto">
+            Cuando eliminas una imagen rasterizada del hero: no hace fetch, no bloquea render, no compite por prioridad.
+            LCP vuela. Google ama la velocidad.
+          </p>
 
-        <section id="impacto-psicologico">
-          <h2>El impacto psicológico</h2>
-          <ol>
+          <h3 class="subtitulo" style="color:#3296A9;">El impacto psicológico</h3>
+          <ul class="lista">
             <li>El usuario se detiene.</li>
             <li>Se pregunta “¿qué es esto?”.</li>
             <li>Atribuye inteligencia al creador.</li>
-          </ol>
-          <p>Eso es branding. Eso es ALARSI.</p>
+          </ul>
+          <p class="texto">Eso es branding. Eso es ALARSI.</p>
+
+          <h3 class="subtitulo" style="color:#3296A9;">Conclusión final</h3>
+          <p class="texto">
+            Diseñar sin imágenes no es pobreza visual. Es inteligencia estratégica.
+            “El minimalismo es performance disfrazado de estilo.”
+            Si performance gana, SEO gana, y la marca gana.
+          </p>
         </section>
 
-        <section id="conclusion2">
-          <h2>Conclusión final</h2>
-          <p>Diseñar sin imágenes no es pobreza visual. Es inteligencia estratégica. “El minimalismo es performance disfrazado de estilo.” Si performance gana, SEO gana, y la marca gana.</p>
-        </section>
-
-        <p class="alarsi-center">.: ALARSI :.</p>
       </article>
+
+      <div class="cta-contacto">
+        <a href="mailto:info@alarsi.com" class="btn-contacto">Contacto</a>
+      </div>
+
     </section>
+
   </main>
 
-<!-- 🟤 FOOTER -->
+  <!-- 🟤 FOOTER -->
   <div id="footer-container" class="debug-box">⚠️ footer.html no cargado (modo local)</div>
 
-  <!-- JS modular para cargar menú y footer -->
+  <!-- JS MODULAR -->
   <script>
-    // === Fetch modular ===
     async function loadBlock(id, url, label) {
       try {
         const res = await fetch(url);
@@ -236,12 +450,12 @@
       }
     }
 
- loadBlock("globalMenu", "./menu.html", "menu.html");
-loadBlock("footer-container", "./footer.html", "footer.html");
-
+    loadBlock("globalMenu", "./menu.html", "menu.html");
+    loadBlock("footer-container", "./footer.html", "footer.html");
   </script>
 
-  <!-- 🔊 SIRI WAVE -->
+  <!-- SIRI BACKGROUND + WAVE -->
   <script src="https://www.alarsi.com/js/siriwave-alarsi.js"></script>
+
 </body>
 </html>
