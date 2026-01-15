@@ -217,225 +217,113 @@
   <!-- MENU -->
   <div id="globalMenu" class="debug-box">⚠️ menu.html no cargado (modo local)</div>
 
-  <main>
+ <main>
 
-    <!-- HERO -->
-    <div class="hero">
-      <div class="visual-group">
-        <canvas id="siriCanvas"></canvas>
-        <div id="siriWave"></div>
-        <img src="./images/alarsi-desarrollo.png"
-             alt="Desarrollo y criterio técnico — ALARSI"
-             class="alarsi-logo-hero" />
-      </div>
+  <!-- HERO -->
+  <section class="hero" aria-label="Portada Desarrollo">
+    <div class="visual-group">
+      <canvas id="siriCanvas" aria-hidden="true"></canvas>
+      <div id="siriWave" aria-hidden="true"></div>
+
+      <img
+        src="./images/alarsi-desarrollo.png"
+        alt="Desarrollo y criterio técnico — ALARSI"
+        class="alarsi-logo-hero"
+        loading="eager"
+        decoding="async"
+      />
     </div>
+  </section>
 
-    <!-- CONTENIDO -->
-    <section id="paper" class="contenido">
+  <!-- CONTENIDO -->
+  <section id="paper" class="contenido">
 
-      <article id="desarrollo-significado" aria-labelledby="desarrollo-title">
-        <header>
-          <h1 id="desarrollo-title" class="titulo">Desarrollar no es producir. Es crear significado.</h1>
-          <div class="bajada">(Desarrollo + Estrategia + Narrativa)</div>
-          <div class="cita">“Una marca no se construye cuando vendes algo. Se construye cuando alguien te entiende.”</div>
-          <div class="linea"></div>
-        </header>
+    <article id="desarrollo-significado" aria-labelledby="desarrollo-title">
 
-        <section id="introduccion">
-          <h2 class="titulo-seccion" style="color:#F3C36B;">Introducción</h2>
-          <div class="cita" style="margin-top:1rem;">“La verdadera innovación no consiste en agregar más. Consiste en demostrar que puedes ganar con menos.”</div>
+      <header class="paper-header">
+        <h1 id="desarrollo-title" class="titulo">
+          Desarrollar no es producir. Es crear significado.
+        </h1>
 
-          <p class="texto">
-            La industria web está convencida de que necesita más: imágenes, frameworks, componentes, motion, sliders, banners, librerías. Pero ¿y si no fuera necesario?
-          </p>
+        <p class="bajada">Desarrollo + Estrategia + Narrativa</p>
 
-          <p class="texto">¿Qué ocurre cuando eliminas todo lo superfluo y te quedas solo con:</p>
-
-          <ul class="lista">
-            <li>&lt;main&gt;</li>
-            <li>&lt;h1&gt;</li>
-            <li>un SVG</li>
-            <li>un canvas animado</li>
-            <li>texto</li>
-            <li>Nada más.</li>
-          </ul>
-
-          <p class="texto">
-            Sin WebP, sin JPG. Resultado en Google Search Console: 100 / 100 / 100 / 100 (SEO, Performance, Best Practices, Accesibilidad).
-            No por tener más contenido, sino por tener criterio.
-          </p>
-        </section>
-
-        <section id="descubrimos">
-          <h3 class="subtitulo" style="color:#F3C36B">1. Lo que descubrimos</h3>
-          <p class="texto">Al eliminar JPG y WebP también eliminas:</p>
-          <ul class="lista">
-            <li>LCP alto</li>
-            <li>CLS por carga tardía</li>
-            <li>Bloqueos de renderizado</li>
-            <li>Requests innecesarios al servidor</li>
-          </ul>
-          <p class="texto">El navegador renderiza antes, el usuario ve antes, Google entiende antes. Es la ecuación perfecta.</p>
-        </section>
-
-        <section id="minimalismo">
-          <h3 class="subtitulo" style="color:#F3C36B">2. Minimalismo estratégico</h3>
-          <blockquote>
-            <p class="texto"><em>El diseño no es lo que agregas. Es lo que decides eliminar.</em></p>
-          </blockquote>
-
-          <table border="1" cellpadding="8" cellspacing="0" style="width:100%; border-collapse:collapse; margin:1.2rem 0;">
-            <thead>
-              <tr style="color:#F3C36B;">
-                <th>RESULTADO</th>
-                <th>IMPACTO</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Render instantáneo</td>
-                <td>↓ TTFB, ↓ LCP</td>
-              </tr>
-              <tr>
-                <td>Nada se desordena</td>
-                <td>↓ CLS</td>
-              </tr>
-              <tr>
-                <td>Peso mínimo de assets</td>
-                <td>↑ FCP</td>
-              </tr>
-              <tr>
-                <td>Canvas + SVG usan GPU</td>
-                <td>↑ FPS / animación fluida</td>
-              </tr>
-              <tr>
-                <td>&lt;h1&gt; + &lt;main&gt; claros</td>
-                <td>↑ SEO / ↑ accesibilidad</td>
-              </tr>
-            </tbody>
-          </table>
-        </section>
-
-        <section id="truco-tecnico">
-          <h3 class="subtitulo" style="color:#F3C36B">3. El truco técnico</h3>
-          <ul class="lista">
-            <li>SVG del logo como identidad visual</li>
-            <li>Canvas animado para impacto sensorial</li>
-            <li>Semántica &lt;main&gt; como landmark accesible</li>
-            <li>&lt;h1&gt; + &lt;p&gt; para indexación</li>
-            <li>JSON-LD para entidad</li>
-          </ul>
-          <p class="texto">Todo sin frameworks: solo HTML, CSS y JavaScript puro. Velocidad de carga = autoridad.</p>
-        </section>
-
-        <section id="frase">
-          <h3 class="subtitulo" style="color:#F3C36B">4. La frase que cambia el juego</h3>
-          <blockquote>
-            <p class="texto"><em>No necesitamos optimizar imágenes si no usamos imágenes.</em></p>
-          </blockquote>
-        </section>
-
-        <section id="disrupcion">
-          <h3 class="subtitulo" style="color:#F3C36B">5. Disrupción cognitiva</h3>
-          <p class="texto">Cuando alguien entra a una página ALARSI ocurre algo:</p>
-          <ul class="lista">
-            <li>No entiende de inmediato.</li>
-            <li>Busca patrones conocidos (hero con foto, menú, botones).</li>
-            <li>No los encuentra.</li>
-            <li>En lugar de cerrar, se detiene. Eso genera atención y memoria.</li>
-          </ul>
-          <blockquote>
-            <p class="texto"><em>“Si no usa imágenes, debe estar MUY seguro de lo que hace.”</em> Eso es branding.</p>
-          </blockquote>
-        </section>
-
-        <section id="conclusion-1">
-          <h3 class="subtitulo" style="color:#F3C36B">6. Conclusión</h3>
-          <p class="texto">
-            La verdadera innovación no consiste en agregar más, sino en demostrar que puedes ganar con menos.
-            No es falta de diseño. Es exceso de criterio.
-          </p>
-        </section>
+        <blockquote class="cita">
+          <p>Una marca no se construye cuando vendes algo. Se construye cuando alguien te entiende.</p>
+          <p>La verdadera innovación no consiste en agregar más. Consiste en demostrar que puedes ganar con menos.</p>
+        </blockquote>
 
         <div class="linea"></div>
+      </header>
 
-        <section id="paper-2">
-          <h2 class="titulo-seccion" style="color:#3296A9;">Diseñar sin imágenes: por qué el minimalismo puede ganar SEO</h2>
-          <div class="cita">“La simplicidad no es falta de diseño. Es eliminación de lo que no aporta.”</div>
+      <!-- CUERPO CONCEPTUAL -->
+      <section class="paper-body" aria-labelledby="desarrollo-concepto">
 
+        <h2 id="desarrollo-concepto" class="titulo-seccion destacado">
+          Desarrollo: de la idea al sentido
+        </h2>
+
+        <p class="texto">
+          Desarrollar es el momento en que una idea deja de ser intuición y se convierte en criterio.
+          No se trata de ejecutar, sino de dar forma a un pensamiento para que pueda ser entendido,
+          compartido y sostenido.
+          Una idea sin desarrollo es solo una intención.
+          El desarrollo le da dirección, coherencia y límites.
+        </p>
+
+        <h3 class="subtitulo"><span style="">Desarrollo no crea objetos. Crea contexto.</span></h3>
+
+        <blockquote>
           <p class="texto">
-            La industria digital repite la misma fórmula: hero con foto gigante, claims, testimonios. En ALARSI hicimos lo contrario:
-            cero JPG, cero WebP, cero lazy loading. Solo un SVG, un canvas y 16 KB en el primer render.
+            El desarrollo no existe para producir cosas, existe para ordenar significado.
+            Define qué es relevante, qué es accesorio y qué no pertenece.
+            Establece relaciones, jerarquías y tensiones.
+            Permite que una marca sea leída como un sistema, no como una suma de acciones.
+            Cuando el desarrollo es correcto, el mensaje se entiende incluso antes de explicarse.
           </p>
+        </blockquote>
 
-          <table border="1" cellpadding="8" cellspacing="0" style="width:100%; border-collapse:collapse; margin:1.2rem 0;">
-            <thead>
-              <tr style="color:#F3C36B;">
-                <th>FORMATO</th>
-                <th>PESO</th>
-                <th>LCP</th>
-                <th>CLS</th>
-                <th>SEO</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>JPG / WebP</td>
-                <td>Alto</td>
-                <td>Malo</td>
-                <td>Alto</td>
-                <td>Neutro</td>
-              </tr>
-              <tr>
-                <td>SVG</td>
-                <td>Bajo</td>
-                <td>Instantáneo</td>
-                <td>Cero</td>
-                <td>Alto</td>
-              </tr>
-              <tr>
-                <td>Canvas</td>
-                <td>Dinámico</td>
-                <td>Instantáneo</td>
-                <td>Cero</td>
-                <td>Experiencia mejorada</td>
-              </tr>
-            </tbody>
-          </table>
+        <h3 class="subtitulo">Desarrollo es tomar posición</h3>
 
+        <blockquote>
           <p class="texto">
-            Cuando eliminas una imagen rasterizada del hero: no hace fetch, no bloquea render, no compite por prioridad.
-            LCP vuela. Google ama la velocidad.
+            Desarrollar implica decidir.
+            Decidir qué decir, cómo decirlo y, sobre todo, qué no decir.
+            No busca agradar a todos ni cubrir todos los frentes.
+            Busca ser claro, consistente y reconocible.
+            El desarrollo es el punto donde la estrategia se vuelve visible
+            y la narrativa deja de ser discurso para transformarse en estructura.
           </p>
+        </blockquote>
 
-          <h3 class="subtitulo" style="color:#3296A9;">El impacto psicológico</h3>
-          <ul class="lista">
-            <li>El usuario se detiene.</li>
-            <li>Se pregunta “¿qué es esto?”.</li>
-            <li>Atribuye inteligencia al creador.</li>
-          </ul>
-          <p class="texto">Eso es branding. Eso es ALARSI.</p>
+        <h3 class="subtitulo">Desarrollo como estructura de sentido</h3>
 
-          <h3 class="subtitulo" style="color:#3296A9;">Conclusión final</h3>
+        <blockquote>
           <p class="texto">
-            Diseñar sin imágenes no es pobreza visual. Es inteligencia estratégica.
-            “El minimalismo es performance disfrazado de estilo.”
-            Si performance gana, SEO gana, y la marca gana.
+            Una marca bien desarrollada no depende de modas, canales o herramientas.
+            Depende de una lógica interna sólida.
+            El desarrollo crea esa lógica:
+            una forma de pensar que se mantiene coherente en el tiempo,
+            aunque cambien los medios, los formatos o los contextos.
+            Por eso el desarrollo no se mide por cantidad de piezas,
+            sino por claridad de lectura.
           </p>
-        </section>
+        </blockquote>
 
-      </article>
+      </section>
 
-      <div class="cta-contacto">
-        <a href="mailto:info@alarsi.com" class="btn-contacto">Contacto</a>
-      </div>
+    </article>
 
-    </section>
+    <div class="cta-contacto">
+      <a href="mailto:info@alarsi.com" class="btn-contacto">Contacto</a>
+    </div>
 
-  </main>
+  </section>
+
+</main>
+
 
   <!-- 🟤 FOOTER -->
-  <div id="footer-container" class="debug-box">⚠️ footer.html no cargado (modo local)</div>
+<div id="footer-container" class="debug-box">⚠️ footer.html no cargado (modo local)</div>
 
   <!-- JS MODULAR -->
   <script>
