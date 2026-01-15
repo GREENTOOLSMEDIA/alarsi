@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ALARSI — Creatividad, Tecnología e Inteligencia Artificial</title>
-
-  <!-- ✅ CSS editorial global -->
-  <link rel="preload" href="https://www.alarsi.com/css/alarsi-editorial.css" as="style">
-  <link rel="stylesheet" href="https://www.alarsi.com/css/alarsi-editorial.css">
+  <title>ALARSI — Creatividad</title>
 
   <!-- 🔗 CANONICAL & FAVICON -->
   <link rel="canonical" href="https://www.alarsi.com/creatividad.html" />
@@ -15,77 +12,293 @@
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
-  <!-- 🧠 META PRINCIPAL -->
-  <meta name="description" content="Diseñar sin imágenes: creatividad como eliminación. ALARSI explora cómo la simplicidad y la inteligencia artificial pueden elevar el diseño y el performance." />
-  <meta name="keywords" content="ALARSI, creatividad, diseño estratégico, UX, performance, IA, automatización, branding, innovación, integración digital" />
-  <meta name="author" content="ALARSI" />
+  <!-- 🧠 META -->
+  <meta name="description"
+    content="Creatividad, dirección y criterio estratégico aplicados a tecnología e inteligencia artificial." />
+  <meta name="keywords"
+    content="ALARSI, creatividad, dirección creativa, conceptos creativos, inteligencia artificial, branding" />
+  <meta name="author" content="ALARSI / Green Tools Media" />
 
   <!-- 🌐 OPEN GRAPH -->
-  <meta property="og:title" content="ALARSI — Creatividad, Tecnología e IA" />
-  <meta property="og:description" content="Diseñar sin imágenes: creatividad como eliminación. ALARSI redefine el diseño como inteligencia aplicada." />
+  <meta property="og:title" content="ALARSI — Creatividad" />
+  <meta property="og:description" content="Creatividad aplicada como criterio estratégico." />
   <meta property="og:image" content="https://www.alarsi.com/images/preview/alarsi-preview.jpg" />
-  <meta property="og:image:alt" content="ALARSI — Creatividad, Tecnología e IA" />
+  <meta property="og:image:alt" content="ALARSI — Creatividad" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:url" content="https://www.alarsi.com/creatividad.html" />
-  <meta property="og:type" content="article" />
+  <meta property="og:type" content="website" />
 
   <!-- 🐦 TWITTER -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="ALARSI — Creatividad, Tecnología e IA" />
-  <meta name="twitter:description" content="La simplicidad como inteligencia aplicada al diseño." />
+  <meta name="twitter:title" content="ALARSI — Creatividad" />
+  <meta name="twitter:description" content="Creatividad y criterio antes de la ejecución visual." />
   <meta name="twitter:image" content="https://www.alarsi.com/images/preview/alarsi-preview.jpg" />
 
-  <!-- 🧩 SCHEMA.ORG -->
-  <script type="application/ld+json">
+  <!-- 🧩 SCHEMA -->
+<script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Organization",
-        "name": "ALARSI",
-        "url": "https://www.alarsi.com",
-        "logo": "https://www.alarsi.com/images/alarsi-logo.svg",
-        "description": "Soluciones inteligentes con creatividad, tecnología e IA.",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Santiago",
-          "addressCountry": "CL"
-        }
-      },
-      {
-        "@type": "WebPage",
-        "@id": "https://www.alarsi.com/creatividad.html",
-        "url": "https://www.alarsi.com/creatividad.html",
-        "name": "Creatividad — ALARSI",
-        "isPartOf": { "@id": "https://www.alarsi.com" },
-        "about": {
-          "@type": "Thing",
-          "name": "Diseño estratégico, UX, performance, creatividad con IA"
-        },
-        "inLanguage": "es",
-        "dateModified": "2025-11-11",
-        "publisher": { "@id": "https://www.alarsi.com" },
-        "description": "Diseñar sin imágenes: creatividad como eliminación. ALARSI explora cómo la simplicidad y la inteligencia artificial pueden elevar el diseño y el performance."
-      }
-    ]
+    "@type": "WebPage",
+    "name": "Creatividad — ALARSI",
+    "url": "https://www.alarsi.com/creatividad.html",
+    "publisher": {
+      "@type": "Organization",
+      "name": "ALARSI",
+      "url": "https://www.alarsi.com"
+    },
+    "inLanguage": "es"
   }
   </script>
+<!-- 🎨 ESTILOS INTERNOS (ORDENADOS — LISTO PARA TRABAJAR Y ESCALAR) -->
+<style>
+
+  /* ===================================================== */
+  /* === 1. BASE / RESET === */
+  /* ===================================================== */
+
+  body{
+    margin:0;
+    background:#000;
+    color:#fff;
+    font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+	      line-height:2;
+
+    overflow-x:hidden;
+  }
+
+  a{
+    color:#ffbba0;
+    text-decoration:none;
+    transition:color .3s ease;
+  }
+  a:hover{ color:#ffd5c3; }
+
+
+  /* ===================================================== */
+  /* === 2. LAYOUT BASE (SECTIONS GENERALES) === */
+  /* ===================================================== */
+
+  section{
+    padding: 3rem 1rem;
+    max-width: 760px;
+    margin: auto;
+  }
+
+  section h1{
+    color: #ff9966;
+    font-size: 1.8rem;
+    line-height: 1.6;
+    margin: 0 auto 1rem;
+    text-align: center;
+  }
+
+
+  /* ===================================================== */
+  /* === 3. HERO === */
+  /* ===================================================== */
+
+  .hero{
+    width:100%;
+    aspect-ratio:16/9;
+    position:relative;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+  }
+
+  .visual-group{
+    position:relative;
+    width:100%;
+    height:100%;
+    max-width:1600px;
+    margin:0 auto;
+    overflow:hidden;
+  }
+
+
+  /* ===================================================== */
+  /* === 4. VISUALES / EFECTOS === */
+  /* ===================================================== */
+
+  #siriCanvas{
+    position:absolute;
+    left:0;
+    bottom:0;
+    width:100%;
+    height:50%;
+    filter:blur(65px);
+    opacity:.95;
+    z-index:0;
+    pointer-events:none;
+  }
+
+  #siriWave{
+    position:absolute;
+    left:50%;
+    top:20%;
+    transform:translateX(-50%);
+    width:100%;
+    height:600px;
+    z-index:1;
+    pointer-events:none;
+  }
+
+  .alarsi-logo-hero{
+    position:absolute;
+    top:0;
+    left:50%;
+    transform:translate(-50%,0);
+    width:100%;
+    height:auto;
+    z-index:2;
+    object-fit:contain;
+    pointer-events:none;
+  }
+
+
+  /* ===================================================== */
+  /* === 5. CREATIVIDAD — EDITORIAL === */
+  /* ===================================================== */
+
+  section.creatividad{
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 3rem 1rem;
+    text-align: center; /* títulos centrados */
+  }
+
+  /* Títulos */
+
+  section.creatividad h1{
+    color:#ff9966;
+    font-size:1.8rem;
+    line-height:1.25;
+    margin:0 auto 1rem;
+    text-align:center;
+  }
+
+  section.creatividad h2{
+    margin:2.6rem auto 1rem;
+    font-size:1.25rem;
+    font-weight:700;
+    color:#ff9966;
+    text-align:center;
+  }
+
+  /* Citas */
+
+  section.creatividad blockquote{
+    max-width:680px;
+    margin:1.6rem auto 2.2rem;
+    font-style:italic;
+    opacity:.8;
+    text-align:center;
+  }
+
+  /* Texto editorial */
+
+  section.creatividad p{
+    max-width:700px;
+    margin:1rem auto;
+    text-align:justify;
+    text-justify:inter-word;
+    line-height:1.6;
+    opacity:.92;
+  }
+
+  /* Listas */
+
+  section.creatividad ul,
+  section.creatividad ol{
+    max-width:700px;
+    margin:1rem auto 1.6rem;
+    padding-left:1.2rem;
+    text-align:left;
+  }
+
+  section.creatividad li{
+    margin:.35rem 0;
+  }
+
+  /* Separadores */
+
+  section.creatividad hr{
+    border:0;
+    height:1px;
+    background:rgba(255,255,255,.12);
+    margin:3rem auto;
+    max-width:760px;
+  }
+
+  /* Firma */
+
+  section.creatividad .signature,
+  section.creatividad .firma{
+    margin-top:3rem;
+    opacity:.6;
+    letter-spacing:.15em;
+    text-align:center;
+  }
+
+
+  /* ===================================================== */
+  /* === 6. CTA === */
+  /* ===================================================== */
+
+  .cta-contacto{
+    margin-top:2.5rem;
+    text-align:center;
+  }
+
+  .btn-contacto{
+    display:inline-block;
+    padding:.75rem 2.2rem;
+    border:1px solid rgba(255,255,255,.35);
+    border-radius:999px;
+    color:#fff;
+    font-size:.75rem;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    background:transparent;
+    transition:all .3s ease;
+  }
+
+  .btn-contacto:hover{
+    background:rgba(255,255,255,.06);
+    border-color:rgba(255,255,255,.65);
+  }
+
+</style>
+
+
+
+  
+	
 </head>
 
 <body>
-  <!-- 🟡 MENU (modular) -->
+
+  <!-- MENU -->
   <div id="globalMenu" class="debug-box">⚠️ menu.html no cargado (modo local)</div>
 
   <main>
+
     <!-- HERO -->
     <div class="hero">
       <div class="visual-group">
+        <canvas id="siriCanvas"></canvas>
         <div id="siriWave"></div>
+
+        <!-- 🔁 IMAGEN REEMPLAZADA -->
+        <img src="./images/alarsi-creatividad.png"
+             alt="Creatividad y generación de conceptos — ALARSI"
+             class="alarsi-logo-hero" />
       </div>
     </div>
 
-    <!-- ============================================ -->
+  <!-- ============================================ -->
     <!-- CONTENIDO EDITORIAL — SECCIÓN PRINCIPAL      -->
     <!-- ============================================ -->
     <section id="paper">
@@ -97,17 +310,24 @@
       <article id="creatividad-eliminacion" aria-labelledby="creatividad-title">
         <header>
           <h1 id="creatividad-title">
-            Diseñar sin imágenes: creatividad como eliminación
-            <span class="subtitle">(Creatividad + UX + Performance)</span>
+            <span style="text-align: center ">ALARSI: creatividad estrategica <br>
+            <span class="subtitle">(Creatividad + UX + Performance)</span></span>
           </h1>
-          <p class="quote">
-            “La simplicidad no es falta de diseño. Es eliminación de lo que no aporta.”
+          <p class="quote" style="text-align: center">
+          “La simplicidad no es falta de diseño. Es eliminación de lo que no aporta.”
           </p>
-        </header>
+<p style="
+  height:1px;
+  background:rgba(255,255,255,0.25);
+  margin:2.5rem auto;
+  max-width:680px;
+  text-align:center;
+"></p>
+		  
 
         <section id="introduccion-creatividad">
-          <h2>Introducción</h2>
-          <p>“Una marca no se construye cuando vendes algo. Se construye cuando alguien te entiende.”</p>
+          <h2 style="color: #F3C36B">Introducción</h2>
+          <p style="">“Una marca no se construye cuando vendes algo. Se construye cuando alguien te entiende.”</p>
           <p>El 95% de las empresas compiten en un nivel superficial:</p>
           <ul>
             <li>“Diseño páginas web”</li>
@@ -118,8 +338,8 @@
         </section>
 
         <section id="error">
-          <h2>1. El error de la mayoría</h2>
-          <p>Intentan convencer desde el qué hacen. Pero el cliente no compra qué haces: compra por qué lo haces y cómo lo haces.</p>
+          <h2 style="color: #F3C36B">1. El error de la mayoría</h3>
+          <p style="text-align: justify">Intentan convencer desde el qué hacen. Pero el cliente no compra qué haces: compra por qué lo haces y cómo lo haces.</p>
           <p>Ejemplo:</p>
           <ul>
             <li>Qué: diseño logos</li>
@@ -130,7 +350,7 @@
         </section>
 
         <section id="servicios">
-          <h2>2. Marcas que venden servicios (intercambiables)</h2>
+          <h2 style="color: #F3C36B">2. Marcas que venden servicios (intercambiables)</h3>
           <p>Síntomas:</p>
           <ul>
             <li>Sitios web llenos de features</li>
@@ -142,7 +362,7 @@
         </section>
 
         <section id="significado">
-          <h2>3. Marcas que venden significado (irreemplazables)</h2>
+          <h2 style="color: #F3C36B">3. Marcas que venden significado (irreemplazables)</h3>
           <p>Estas marcas no compiten por atención, compiten por memoria.</p>
           <p>Ejemplo:</p>
           <ul>
@@ -153,7 +373,7 @@
         </section>
 
         <section id="que-significa">
-          <h2>4. ¿Qué significa vender significado?</h2>
+          <h2 style="color: #F3C36B">4. ¿Qué significa vender significado?</h3>
           <p>Significa que tu marca responde claramente tres preguntas:</p>
           <ol>
             <li>¿En qué creo? (filosofía)</li>
@@ -164,7 +384,7 @@
         </section>
 
         <section id="caso-paulina">
-          <h2>5. Caso real: Paulina Dots (laboratorio estratégico)</h2>
+          <h2 style="color: #F3C36B">5. Caso real: Paulina Dots (laboratorio estratégico)</h3>
 <p><a href="https://www.paulinadots.com/" target="_blank" rel="noopener">Paulina Dots</a> no se construyó para vender nada. Fue creada para probar ideas: para medir la sensibilidad de la inteligencia artificial cuando se le da una dirección artística, un tono emocional y un contexto narrativo. Es un laboratorio en sí misma, un espejo donde la tecnología aprende a sentir.</p>
           <ul>
             <li>Cómo construir identidad sin rostro físico</li>
@@ -183,7 +403,7 @@
         </section>
 
         <section id="alarisibrand">
-          <h2>6. ALARSI como marca de significado</h2>
+          <h2 style="color: #F3C36B">6. ALARSI como marca de significado</h3>
           <p>ALARSI no necesita justificar su existencia ofreciendo servicios. La estructura del sitio ya lo dice todo:</p>
           <ul>
             <li>Un logo flotando</li>
@@ -197,11 +417,11 @@
         </section>
 
         <section id="conclusion-creatividad">
-          <h2>7. Conclusión</h2>
+          <h2 style="color: #F3C36B">7. Conclusión</h3>
           <p>Las marcas que venden servicios necesitan clientes. Las marcas que venden significado generan seguidores. Y lo más importante: el cliente que entiende tu significado no discute tu precio.</p>
         </section>
 
-        <p class="alarsi-center">.: ALARSI :.</p>
+        <p class="alarsi-center">&nbsp;</p>
       </article>
 
       <!-- ========================================================= -->
@@ -211,8 +431,7 @@
       <article id="creatividad-eleccion" aria-labelledby="eleccion-title">
         <header>
           <h2 id="eleccion-title" class="paper-title">
-            El poder de elegir menos: cómo la inteligencia distribuida redefine la creatividad humana
-            <span class="subtitle">(Creatividad + Integración + Decisión)</span>
+            <span style="color: #3296A9">El poder de elegir menos: cómo la inteligencia distribuida redefine la creatividad humana <span class="subtitle">(Creatividad + Integración + Decisión)</span></span>
           </h2>
           <p class="quote">
             “No necesito más GHz. Necesito más claridad. La verdadera potencia está en delegar, no en acumular.”
@@ -220,51 +439,55 @@
         </header>
 
         <section id="introduccion-eleccion">
-          <h3>Introducción</h3>
+          <h3 style="color: #3296A9">Introducción</h3>
           <p>Durante años, la productividad creativa se midió en hardware: más RAM, más núcleos, más GPU. Pero el salto real no llegó con una nueva máquina, sino con una nueva mentalidad. La inteligencia artificial no amplía la potencia de cálculo: amplía la potencia de decisión.</p>
           <p>En algún momento me pregunté: <em>¿quiero más hardware o más potencia de cálculo?</em> Esa duda se transformó en una declaración de principios. La decisión no fue sobre cuánta potencia tener, sino sobre <strong>dónde y cómo pensar</strong>. Y la respuesta estaba ahí, en la nube.</p>
         </section>
 
         <section id="potencia-cognitiva">
-          <h3>1. De la potencia física a la potencia cognitiva</h3>
+          <h3 style="color: #3296A9">1. De la potencia física a la potencia cognitiva</h3>
           <p>Durante décadas, la industria tecnológica entrenó a los creativos a medir su valor por la máquina que usaban. Pero esa ecuación ya no tiene sentido: la inteligencia distribuida convierte cualquier dispositivo en un nodo de pensamiento.</p>
           <p>El hardware importa, pero el criterio decide. Hoy, un procesador de seis núcleos con buena conexión puede ser más poderoso que una GPU de 40 GB aislada de propósito.</p>
         </section>
 
         <section id="arquitectura-simbiotica">
-          <h3>2. Arquitectura simbiótica: humano + IA</h3>
+          <h3 style="color: #3296A9">2. Arquitectura simbiótica: humano + IA</h3>
           <p>Mi laptop se convirtió en una interfaz nómada, no en una estación de trabajo fija. La verdadera “estación” está en la nube: ChatGPT, Runway, Krea, ElevenLabs, Veo. Cada una funciona como extensión de la mente creativa.</p>
           <p>Ya no se trata de <em>tener</em> herramientas, sino de <strong>conectarse y combinarlas</strong> con inteligencias complementarias. La creatividad se convierte en orquestación. El estudio deja de ser un lugar y pasa a ser una red viva.</p>
         </section>
 
         <section id="eficiencia">
-          <h3>3. Eficiencia como forma de arte</h3>
+          <h3 style="color: #3296A9">3. Eficiencia como forma de arte</h3>
           <p>La creatividad no se mide en resultados visuales, sino en decisiones que eliminan fricción. Elegir menos, pero mejor. No comprar más poder, sino liberar el que ya existe.</p>
           <p>En un flujo inteligente, cada recurso tiene propósito: el hardware ejecuta, la IA asiste y el humano dirige. Esa armonía invisible es la nueva estética del diseño.</p>
         </section>
 
         <section id="exito">
-          <h3>4. La verdadera medida del éxito</h3>
+          <h3 style="color: #3296A9">4. La verdadera medida del éxito</h3>
           <p>El éxito no está en cuánto se produce, sino en cuánto equilibrio se conserva. Tener tiempo para amar, para dormir tranquilo, para cuidar la salud, para sentir el orgullo orgánico de los hijos: eso también es rendimiento.</p>
           <p>Cuando la tecnología sirve al bienestar, y no al ego, se convierte en diseño ético. La integración más avanzada no es entre APIs, sino entre <strong>propósito y paz mental</strong>.</p>
         </section>
 
         <section id="conclusion-eleccion">
-          <h3>5. Conclusión</h3>
+          <h3 style="color: #3296A9">5. Conclusión</h3>
           <p>El futuro de la creatividad no se medirá en núcleos, sino en contexto. No en máquinas más rápidas, sino en mentes más claras. No en la obsesión por controlar, sino en la capacidad de delegar con inteligencia.</p>
           <p>El hardware envejece. El criterio evoluciona. Y en esa evolución, la integración entre humano y máquina no es una amenaza: es una forma más elevada de libertad.</p>
         </section>
-
-        <p class="alarsi-center">.: ALARSI :.</p>
       </article>
 
-    </section>
-  </main>
+  <div class="cta-contacto">
+    <a href="mailto:info@alarsi.com" class="btn-contacto">CONTACTO</a>
+  </div>
+
+</section>
+
+      <main>
+
 
   <!-- 🟤 FOOTER -->
   <div id="footer-container" class="debug-box">⚠️ footer.html no cargado (modo local)</div>
 
-  <!-- JS modular para cargar menú y footer -->
+  <!-- JS MODULAR -->
   <script>
     async function loadBlock(id, url, label) {
       try {
@@ -281,7 +504,7 @@
     loadBlock("footer-container", "./footer.html", "footer.html");
   </script>
 
-  <!-- 🔊 SIRI WAVE -->
+  <!-- SIRI BACKGROUND + WAVE -->
   <script src="https://www.alarsi.com/js/siriwave-alarsi.js"></script>
 
 </body>
