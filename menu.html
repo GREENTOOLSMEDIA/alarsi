@@ -1,12 +1,13 @@
+<!-- menu.html - Versión optimizada para GitHub Pages -->
 <nav class="main-menu" role="navigation" aria-label="Menú principal">
   <ul>
     <li><a href="https://www.alarsi.com/creatividad.html">Creatividad</a></li>
 
     <li class="logo-item">
-      <a href="https://www.alarsi.com" aria-label="Inicio Alarsi">
+      <a href="https://www.alarsi.com" aria-label="Inicio ALARSI">
         <img 
           src="https://www.alarsi.com/images/alarsi-logo.svg"
-          alt="ALARSI Creatividad, Desarrollo, Integración"
+          alt="ALARSI — Creatividad, Tecnología e IA"
           class="menu-logo"
           width="180"
           height="60"
@@ -21,12 +22,7 @@
   </ul>
 </nav>
 
-
 <style>
-  body, .main-menu {
-    font-family: 'Helvetica Neue', sans-serif;
-  }
-
   .main-menu {
     display: flex;
     justify-content: center;
@@ -45,33 +41,22 @@
     z-index: 1000;
   }
 
-.main-menu ul {
-  display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  flex-wrap: nowrap;
-  align-items: center;
-  gap: 22px; /* ? AUMENTA O REDUCE DISTANCIA */
-}
-
-.main-menu li {
-  display: flex;
-  align-items: center;
-}
-
+  .main-menu ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 22px;
+    align-items: center;
+  }
 
   .main-menu a {
     color: white;
     text-decoration: none;
-    font-weight: normal;
     font-size: 12px;
     padding: 8px 30px;
     border-radius: 999px;
     transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    gap: 0px;
     white-space: nowrap;
   }
 
@@ -81,95 +66,57 @@
   }
 
   .main-menu a:hover:not(.active) {
-    background: rgba(255, 0, 0, 0.2);
-    transform: scale(1.05);
+    background: rgba(255, 255, 255, 0.1);
   }
 
   .menu-logo {
     height: 20px;
     width: auto;
-    opacity: 1;
     filter: brightness(0) invert(1);
   }
 
-  /* ? ? RESPONSIVE + SAFE AREA iPHONE (FINAL) */
-@media screen and (max-width: 768px) {
+  /* ==================== RESPONSIVE ==================== */
+  @media screen and (max-width: 768px) {
+    .main-menu {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      padding: calc(6px + env(safe-area-inset-top, 0px)) 8px 6px;
+      border-radius: 0;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
 
-  .main-menu {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    width: 100%;
-    justify-content: space-around;
+    .main-menu ul {
+      gap: 4px;
+    }
 
-    /* safe-area + padding reducido */
-    padding-top: calc(6px + env(safe-area-inset-top, 0px));
-    padding-bottom: 6px;
-    padding-left: 8px;
-    padding-right: 8px;
+    .main-menu a {
+      font-size: 9px;
+      padding: 4px 12px;
+      letter-spacing: -0.02em;
+    }
 
-    border-radius: 0;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
+    .menu-logo {
+      height: 18px;
+    }
+
+    body {
+      padding-top: calc(52px + env(safe-area-inset-top, 0px));
+    }
   }
-
-  /* ? SIN ESPACIO ENTRE CÁPSULAS */
-  .main-menu ul {
-    gap: 0 !important;
-  }
-
-  /* ? PEGAR CÁPSULAS ENTRE SÍ EN MÓVIL TAMBIÉN */
-  .main-menu li {
-    margin-left: -4px !important;
-  }
-
-  /* ? CÁPSULAS MÁS COMPACTAS */
-  .main-menu a {
-    font-size: 9px;
-    padding: 3px 8px;
-    gap: 4px;
-    letter-spacing: -0.02em;
-    white-space: nowrap;
-  }
-
-  /* reduce el espacio que empuja el contenido */
-  body {
-    padding-top: calc(44px + env(safe-area-inset-top, 0px));
-  }
-
-  /* logo más pequeño */
-  .menu-logo {
-    height: 18px;
-    width: auto;
-  }
-
-  /* oculta secundarios sin dejar hueco */
-  .mobile-only,
-  li.mobile-only {
-    display: none !important;
-  }
-
-  /* evitar desbordes horizontales */
-  .main-menu ul > li { flex-shrink: 1; min-width: 0; }
-  .main-menu a { min-width: 0; }
-}
-
 </style>
 
 <script>
-/* ? Marca activa */
-const currentPath = window.location.pathname.replace(/\/$/, '');
-document.querySelectorAll('.main-menu a').forEach(link => {
-  const linkPath = new URL(link.href).pathname.replace(/\/$/, '');
-  link.classList.toggle('active', linkPath === currentPath);
-});
-</script>
-
-<script>
-/* ? Fix Safari */
-const styles = document.querySelectorAll("style");
-styles.forEach(style => {
-  const cloned = document.createElement("style");
-  cloned.innerHTML = style.innerHTML;
-  document.head.appendChild(cloned);
-});
+  // Marcar enlace activo
+  document.addEventListener("DOMContentLoaded", () => {
+    const currentPath = window.location.pathname.replace(/\/$/, '') || '/';
+    
+    document.querySelectorAll('.main-menu a').forEach(link => {
+      const linkPath = new URL(link.href, window.location.origin).pathname.replace(/\/$/, '') || '/';
+      link.classList.toggle('active', linkPath === currentPath);
+    });
+  });
 </script>
