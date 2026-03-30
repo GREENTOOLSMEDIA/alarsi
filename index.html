@@ -14,7 +14,7 @@
 
   <!-- Meta -->
   <meta name="description" content="ALARSI es una arquitectura de autoría digital que integra dirección creativa humana, inteligencia artificial y auditoría algorítmica para construir activos digitales originales, consistentes y trazables." />
-  <meta name="keywords" content="ALARSI, arquitectura digital, inteligencia artificial, identidad sintética, autoría digital, sistemas generativos, identity core, transparencia algorítmica" />
+  <meta name="keywords" content="ALARSI, arquitectura de autoría digital, inteligencia artificial, identidad sintética, autoría digital, sistemas generativos, identity core, transparencia algorítmica" />
   <meta name="author" content="ALARSI" />
   <meta name="robots" content="index, follow" />
 
@@ -22,6 +22,7 @@
   <meta property="og:title" content="ALARSI — Arquitectura de Autoría Digital" />
   <meta property="og:description" content="Sistema de creación, control y despliegue de activos digitales mediante dirección creativa humana e inteligencia artificial." />
   <meta property="og:image" content="https://www.alarsi.com/images/preview/alarsi-preview.jpg" />
+  <meta property="og:image:alt" content="ALARSI — Arquitectura de Autoría Digital" />
   <meta property="og:url" content="https://www.alarsi.com/" />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="es_CL" />
@@ -29,18 +30,18 @@
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="ALARSI — Arquitectura de Autoría Digital" />
-  <meta name="twitter:description" content="Dirección creativa, sistemas de IA y control de identidad digital." />
+  <meta name="twitter:description" content="Dirección creativa humana, sistemas de IA y control de identidad digital." />
   <meta name="twitter:image" content="https://www.alarsi.com/images/preview/alarsi-preview.jpg" />
 
-  <!-- Schema -->
+  <!-- Schema.org -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "ALARSI",
-    "url": "https://www.alarsi.com",
+    "url": "https://www.alarsi.com/",
     "logo": "https://www.alarsi.com/images/alarsi-logo.svg",
-    "description": "Arquitectura de autoría digital que integra dirección creativa humana, inteligencia artificial y auditoría algorítmica.",
+    "description": "Arquitectura de autoría digital que integra dirección creativa humana, inteligencia artificial y auditoría algorítmica para construir activos digitales originales, consistentes y trazables.",
     "sameAs": [
       "https://www.paulinadots.com/",
       "https://atripper.com/"
@@ -54,118 +55,483 @@
       background: #000;
       color: #fff;
       font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-      line-height: 1.65;
+      line-height: 1.85;
+      overflow-x: hidden;
     }
 
-    section {
-      padding: 3rem 1rem;
-      text-align: center;
-      max-width: 760px;
-      margin: auto;
+    a {
+      color: #ffbba0;
+      text-decoration: none;
+      transition: color 0.2s ease;
     }
 
-    h1 {
-      font-size: 2.8rem;
-      margin-bottom: 1rem;
+    a:hover {
+      color: #ffd5c3;
     }
 
-    h2 {
-      font-size: 1.3rem;
-      margin-top: 2.5rem;
-    }
-
-    p {
-      margin-bottom: 1rem;
-      color: rgba(255,255,255,0.92);
-    }
-
+    /* Hero */
     .hero {
       width: 100%;
       aspect-ratio: 16/9;
+      position: relative;
       display: flex;
       justify-content: center;
       align-items: center;
+      overflow: hidden;
+    }
+
+    .visual-group {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      max-width: 1600px;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+
+    #siriCanvas {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 50%;
+      filter: blur(65px);
+      opacity: 0.95;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    #siriWave {
+      position: absolute;
+      left: 50%;
+      top: 20%;
+      transform: translateX(-50%);
+      width: 100%;
+      height: 600px;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .alarsi-logo-hero {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, 0);
+      width: 100%;
+      height: auto;
+      z-index: 2;
+      object-fit: contain;
+      pointer-events: none;
+    }
+
+    /* Contenido */
+    .contenido {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 3rem 1rem;
+    }
+
+    .titulo {
+      margin: 0 0 0.8rem;
+      text-align: center;
+      color: #F9F8F8;
+      font-size: 1.95rem;
+      font-weight: 800;
+      line-height: 1.2;
+    }
+
+    .bajada {
+      margin: 0 0 1.4rem;
+      text-align: center;
+      opacity: 0.78;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-size: 0.92rem;
+    }
+
+    .titulo-seccion {
+      margin: 2.8rem 0 1.2rem;
+      text-align: center;
+      color: #F3C36B;
+      font-size: 1.35rem;
+      font-weight: 800;
+    }
+
+    .subtitulo {
+      margin: 2.2rem 0 0.8rem;
+      color: #F3C36B;
+      font-size: 1.1rem;
+      font-weight: 800;
+    }
+
+    .texto {
+      margin: 1.1rem 0;
+      color: rgba(255,255,255,0.88);
+      font-size: 1.02rem;
+      text-align: justify;
+      line-height: 1.85;
+    }
+
+    .lista {
+      margin: 1.2rem 0 1.8rem;
+      padding-left: 1.4rem;
+      color: rgba(255,255,255,0.88);
+    }
+
+    .cita {
+      margin: 1.6rem auto 2.2rem;
+      max-width: 680px;
+      text-align: center;
+      font-style: italic;
+      opacity: 0.82;
+      line-height: 1.7;
+    }
+
+    .linea {
+      height: 1px;
+      background: rgba(255,255,255,0.25);
+      margin: 3rem auto;
+      max-width: 680px;
+    }
+
+    .cta-contacto {
+      margin-top: 3rem;
+      text-align: center;
     }
 
     .btn-contacto {
       display: inline-block;
-      padding: 0.7rem 2rem;
-      border: 1px solid rgba(255,255,255,0.4);
+      padding: 0.8rem 2.4rem;
+      border: 1px solid rgba(255,255,255,0.35);
       border-radius: 999px;
+      color: #fff;
+      font-size: 0.8rem;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
-      font-size: 0.75rem;
-      letter-spacing: 0.2em;
+      background: transparent;
+      transition: all 0.3s ease;
+    }
+
+    .btn-contacto:hover {
+      background: rgba(255,255,255,0.08);
+      border-color: rgba(255,255,255,0.7);
+      color: #fff;
     }
   </style>
 </head>
 
 <body>
 
+  <!-- MENU -->
+  <div id="globalMenu"></div>
+
   <main>
 
+    <!-- HERO -->
     <div class="hero">
-      <img src="./images/alarsi.png" alt="ALARSI Logo" />
+      <div class="visual-group">
+        <canvas id="siriCanvas"></canvas>
+        <div id="siriWave"></div>
+        <img src="./images/alarsi.png"
+             alt="ALARSI — Arquitectura de Autoría Digital"
+             class="alarsi-logo-hero"
+             loading="eager">
+      </div>
     </div>
 
-    <section>
+    <!-- CONTENIDO -->
+    <section class="contenido" style="margin-top:-180px; position:relative; z-index:10;">
 
-      <h1>Arquitectura de autoría digital.</h1>
+      <article aria-labelledby="alarsi-home-title">
+        <header>
+          <h1 id="alarsi-home-title" class="titulo">Arquitectura de autoría digital.</h1>
+          <div class="bajada">(Dirección humana + IA + Transparencia)</div>
+          <div class="cita">“La consistencia no depende de la herramienta. Depende del sistema que define los parámetros.”</div>
+          <div class="linea"></div>
+        </header>
 
-      <p>
-        ALARSI es un sistema de creación, control y despliegue de activos digitales,
-        donde la dirección creativa humana define la estructura y la inteligencia artificial ejecuta la escala.
-      </p>
+        <section id="introduccion">
+          <h2 class="titulo-seccion">Introducción</h2>
 
-      <p>
-        No opera como agencia ni como servicio tradicional.
-        Funciona como una arquitectura donde identidad, contenido y distribución
-        se diseñan como un sistema integrado.
-      </p>
+          <p class="texto">
+            ALARSI es un sistema de creación, control y despliegue de activos digitales,
+            donde la dirección creativa humana define la estructura y la inteligencia artificial ejecuta la escala.
+          </p>
 
-      <p>
-        Cada activo es original, consistente y trazable,
-        desarrollado bajo un modelo de dirección humana con soporte de inteligencia artificial.
-      </p>
+          <p class="texto">
+            No opera como agencia ni como servicio tradicional.
+            Funciona como una arquitectura donde identidad, contenido y distribución
+            se diseñan como un sistema integrado.
+          </p>
 
-      <h2>Definición del sistema</h2>
+          <p class="texto">
+            Cada activo se desarrolla bajo un modelo de autoría humana asistida,
+            con criterios definidos, continuidad visual y trazabilidad conceptual.
+          </p>
+        </section>
 
-      <p>
-        ALARSI integra identidad sintética controlada, ingeniería creativa
-        y observación algorítmica para construir sistemas digitales escalables.
-      </p>
+        <section id="definicion-sistema">
+          <h3 class="subtitulo">1. Definición del sistema</h3>
 
-      <p>
-        La consistencia no depende de la herramienta,
-        sino del sistema que define los parámetros.
-      </p>
+          <p class="texto">
+            ALARSI integra identidad sintética controlada, ingeniería creativa
+            y observación algorítmica para construir sistemas digitales escalables.
+          </p>
 
-      <h2>Transparencia y control</h2>
+          <p class="texto">
+            La lógica no parte desde piezas aisladas.
+            Parte desde una estructura capaz de sostener dirección editorial,
+            producción visual, consistencia de marca y adaptación tecnológica
+            sin perder control sobre el núcleo del proyecto.
+          </p>
 
-      <p>
-        El ecosistema incorpora documentación pública de comportamiento algorítmico,
-        permitiendo analizar cómo plataformas digitales afectan la visibilidad del contenido.
-      </p>
+          <ul class="lista">
+            <li>Dirección creativa humana como capa de decisión</li>
+            <li>Inteligencia artificial como capa de ejecución y expansión</li>
+            <li>Sistemas de identidad diseñados para continuidad</li>
+            <li>Documentación como soporte de control y trazabilidad</li>
+          </ul>
+        </section>
 
-      <p>
-        Este enfoque transforma la creación en un proceso medible,
-        donde cada variación puede ser evaluada bajo condiciones controladas.
-      </p>
+        <section id="identidad-controlada">
+          <h3 class="subtitulo">2. Identidad y consistencia</h3>
 
-      <h2>Capacidades</h2>
+          <p class="texto">
+            En ALARSI, la consistencia no se deja al azar de una herramienta específica.
+            Se diseña desde parámetros, lenguaje visual, proporciones, narrativa
+            y reglas de continuidad que permiten sostener una identidad reconocible
+            incluso cuando cambian los entornos de producción.
+          </p>
 
-      <p>
-        Dirección creativa — Arquitectura de identidad — Sistemas generativos —
-        Integración de inteligencia artificial — Producción audiovisual —
-        Optimización y medición de entornos digitales.
-      </p>
+          <p class="texto">
+            Esto permite que un activo digital no dependa de una sola plataforma,
+            sino de una arquitectura propia capaz de preservar coherencia,
+            memoria estética y dirección editorial a lo largo del tiempo.
+          </p>
+        </section>
 
-      <p style="margin-top:2rem;">
-        <a href="mailto:info@alarsi.com" class="btn-contacto">CONTACTO</a>
-      </p>
+        <section id="transparencia-control">
+          <h3 class="subtitulo">3. Transparencia y control</h3>
+
+          <p class="texto">
+            El ecosistema incorpora documentación pública de comportamiento algorítmico,
+            permitiendo observar cómo distintas plataformas interpretan, clasifican
+            o alteran la visibilidad de los activos digitales.
+          </p>
+
+          <p class="texto">
+            Este enfoque transforma la creación en un proceso medible,
+            donde cada variación puede analizarse bajo condiciones comparables,
+            y donde la transparencia deja de ser discurso para convertirse en método.
+          </p>
+
+          <blockquote>
+            <p class="texto">
+              La producción no termina cuando una pieza se publica.
+              También incluye su seguimiento, su lectura contextual y la capacidad
+              de detectar cómo reaccionan los sistemas que la distribuyen.
+            </p>
+          </blockquote>
+        </section>
+
+        <section id="modelo-operativo">
+          <h3 class="subtitulo">4. Modelo operativo</h3>
+
+          <p class="texto">
+            ALARSI organiza identidad, contenido, despliegue y observación
+            como capas de un mismo sistema.
+            Esa integración permite construir activos digitales que no solo existen,
+            sino que pueden mantenerse, auditarse y evolucionar sin perder estructura.
+          </p>
+
+          <ul class="lista">
+            <li>Identidad digital parametrizada</li>
+            <li>Producción visual y audiovisual asistida por IA</li>
+            <li>Arquitectura editorial y narrativa</li>
+            <li>Optimización de presencia digital</li>
+            <li>Monitoreo de comportamiento algorítmico</li>
+          </ul>
+        </section>
+
+        <section id="capacidades">
+          <h3 class="subtitulo">5. Capacidades</h3>
+
+          <p class="texto">
+            Dirección creativa — Arquitectura de identidad — Sistemas generativos —
+            Integración de inteligencia artificial — Producción audiovisual —
+            Optimización y medición de entornos digitales.
+          </p>
+
+          <p class="texto">
+            No se trata de acumular herramientas.
+            Se trata de construir un sistema donde cada herramienta ocupe un lugar claro
+            dentro de una lógica de autoría, control y proyección.
+          </p>
+        </section>
+
+        <section id="cierre">
+          <h3 class="subtitulo">6. Conclusión</h3>
+
+          <p class="texto">
+            ALARSI propone una forma de creación donde la tecnología amplifica,
+            pero no reemplaza, la dirección humana.
+            La inteligencia artificial acelera procesos;
+            la estructura define sentido;
+            y la transparencia permite sostener criterio en un entorno cambiante.
+          </p>
+
+          <p class="texto">
+            Más que producir contenido, ALARSI construye sistemas digitales
+            originales, consistentes y trazables.
+          </p>
+        </section>
+      </article>
+
+      <div class="cta-contacto">
+        <a href="mailto:info@alarsi.com" class="btn-contacto">Contacto</a>
+      </div>
 
     </section>
 
   </main>
+
+  <!-- FOOTER -->
+  <div id="footer-container"></div>
+
+  <!-- Carga modular de menú y footer -->
+  <script>
+    async function loadBlock(id, url) {
+      try {
+        const res = await fetch(url);
+        if (!res.ok) throw new Error(`No se encontró ${url}`);
+        document.getElementById(id).innerHTML = await res.text();
+      } catch (err) {
+        console.warn(`⚠️ No se pudo cargar ${url}`);
+      }
+    }
+
+    loadBlock("globalMenu", "./menu.html");
+    loadBlock("footer-container", "./footer.html");
+  </script>
+
+  <!-- Animaciones de fondo y SiriWave -->
+  <script>
+    const bgCanvas = document.getElementById("siriCanvas");
+    const bgCtx = bgCanvas.getContext("2d");
+
+    function resizeCanvas() {
+      bgCanvas.width = bgCanvas.clientWidth;
+      bgCanvas.height = bgCanvas.clientHeight;
+    }
+
+    resizeCanvas();
+    window.addEventListener("resize", resizeCanvas);
+
+    let t = 0;
+
+    function animateBackground() {
+      requestAnimationFrame(animateBackground);
+      bgCtx.clearRect(0, 0, bgCanvas.width, bgCanvas.height);
+
+      const cx = bgCanvas.width / 2;
+      const cy = bgCanvas.height / 2;
+      const radius = Math.min(bgCanvas.width, bgCanvas.height) / 2.2;
+      const gradient = bgCtx.createRadialGradient(cx, cy, 0, cx, cy, radius);
+
+      const colors = [0, 120, 210];
+      const index = Math.floor(t) % colors.length;
+      const nextIndex = (index + 1) % colors.length;
+      const progress = t % 1;
+
+      const hue = colors[index] * (1 - progress) + colors[nextIndex] * progress;
+
+      gradient.addColorStop(0, `hsla(${hue}, 100%, 60%, 0.45)`);
+      gradient.addColorStop(0.5, `hsla(${hue}, 100%, 50%, 0.25)`);
+      gradient.addColorStop(1, "transparent");
+
+      bgCtx.fillStyle = gradient;
+      bgCtx.fillRect(0, 0, bgCanvas.width, bgCanvas.height);
+
+      t += 0.01;
+    }
+
+    animateBackground();
+  </script>
+
+  <!-- SiriWave Script -->
+  <script>
+    function SiriWave9Curve(opt){opt=opt||{};this.controller=opt.controller;this.color=opt.color;this.tick=0;this.respawn();}
+    SiriWave9Curve.prototype.respawn=function(){this.amplitude=0.3+Math.random()*0.7;this.seed=Math.random();this.open_class=2+(Math.random()*3)|0;};
+    SiriWave9Curve.prototype.equation=function(i){var p=this.tick;var y=-1*Math.abs(Math.sin(p))*this.controller.amplitude*this.amplitude*this.controller.MAX*Math.pow(1/(1+Math.pow(this.open_class*i,2)),2);if(Math.abs(y)<0.001){this.respawn();}return y;};
+    SiriWave9Curve.prototype._draw=function(m){this.tick+=this.controller.speed*(1-0.5*Math.sin(this.seed*Math.PI));var ctx=this.controller.ctx;ctx.beginPath();var x_base=this.controller.width/2+(-this.controller.width/4+this.seed*(this.controller.width/2));var y_base=this.controller.height/2;var x,y,x_init;var i=-3;while(i<=3){x=x_base+i*this.controller.width/4;y=y_base+(m*this.equation(i));x_init=x_init||x;ctx.lineTo(x,y);i+=0.01;}var h=Math.abs(this.equation(0));var gradient=ctx.createRadialGradient(x_base,y_base,h*1.15,x_base,y_base,h*0.3);gradient.addColorStop(0,'rgba('+this.color.join(',')+',0.25)');gradient.addColorStop(1,'rgba('+this.color.join(',')+',0.08)');ctx.fillStyle=gradient;ctx.lineTo(x_init,y_base);ctx.closePath();ctx.fill();};
+    SiriWave9Curve.prototype.draw=function(){this._draw(-1);this._draw(1);};
+
+    function SiriWave9(opt){
+      opt=opt||{};
+      this.tick=0;this.run=false;
+      this.ratio=opt.ratio||window.devicePixelRatio||1;
+      this.width=this.ratio*(opt.width||600);
+      this.height=this.ratio*(opt.height||150);
+      this.MAX=this.height/2;
+      this.speed=opt.speed||0.04;
+      this.amplitude=opt.amplitude||0.6;
+      this.canvas=document.createElement('canvas');
+      this.canvas.width=this.width;this.canvas.height=this.height;
+      this.canvas.style.width=(this.width/this.ratio)+'px';
+      this.canvas.style.height=(this.height/this.ratio)+'px';
+      this.canvas.style.display='block';
+      this.canvas.style.margin='0 auto';
+      this.canvas.style.filter='drop-shadow(0 0 15px rgba(255,120,80,0.4))';
+      this.container=opt.container||document.body;
+      this.container.appendChild(this.canvas);
+      this.ctx=this.canvas.getContext('2d');
+      this.curves=[];
+      for(var i=0;i<SiriWave9.prototype.COLORS.length;i++){
+        var color=SiriWave9.prototype.COLORS[i];
+        for(var j=0;j<(3*Math.random())|0;j++){
+          this.curves.push(new SiriWave9Curve({controller:this,color:color}));
+        }
+      }
+      if(opt.autostart){this.start();}
+    }
+
+    SiriWave9.prototype._clear=function(){
+      this.ctx.globalCompositeOperation='destination-out';
+      this.ctx.fillRect(0,0,this.width,this.height);
+      this.ctx.globalCompositeOperation='lighter';
+    };
+
+    SiriWave9.prototype._draw=function(){
+      if(!this.run)return;
+      this._clear();
+      for(var i=0,len=this.curves.length;i<len;i++){this.curves[i].draw();}
+      requestAnimationFrame(this._draw.bind(this));
+    };
+
+    SiriWave9.prototype.start=function(){this.run=true;this._draw();};
+    SiriWave9.prototype.stop=function(){this.run=false;};
+    SiriWave9.prototype.COLORS=[[255,0,0],[0,255,0],[0,0,255]];
+
+    (function init(){
+      function createWave(){
+        const container = document.getElementById("siriWave");
+        if(!container) return;
+        container.innerHTML="";
+        new SiriWave9({
+          width: container.clientWidth,
+          height: 100,
+          speed: 0.022,
+          amplitude: 0.7,
+          container: container,
+          autostart: true
+        });
+      }
+      createWave();
+      window.addEventListener("resize", () => {
+        setTimeout(createWave, 250);
+      });
+    })();
+  </script>
 
 </body>
 </html>
