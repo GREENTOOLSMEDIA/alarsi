@@ -33,21 +33,79 @@
   <meta name="twitter:description" content="Dirección creativa humana, sistemas de IA y control de identidad digital." />
   <meta name="twitter:image" content="https://www.alarsi.com/images/preview/alarsi-preview.jpg" />
 
-  <!-- Schema.org -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "ALARSI",
-    "url": "https://www.alarsi.com/",
-    "logo": "https://www.alarsi.com/images/alarsi-logo.svg",
-    "description": "Arquitectura de autoría digital que integra dirección creativa humana, inteligencia artificial y auditoría algorítmica para construir activos digitales originales, consistentes y trazables.",
-    "sameAs": [
-      "https://www.paulinadots.com/",
-      "https://atripper.com/"
-    ]
-  }
-  </script>
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.alarsi.com/#organization",
+      "name": "ALARSI",
+      "url": "https://www.alarsi.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.alarsi.com/images/alarsi-logo.svg"
+      },
+      "description": "Arquitectura de autoría digital que integra dirección creativa humana, inteligencia artificial y auditoría algorítmica para construir activos digitales originales, consistentes y trazables.",
+      "sameAs": [
+        "https://www.paulinadots.com/",
+        "https://atripper.com/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.alarsi.com/#website",
+      "url": "https://www.alarsi.com/",
+      "name": "ALARSI",
+      "description": "Sitio oficial de ALARSI, arquitectura de autoría digital orientada a sistemas creativos, identidad y transparencia algorítmica.",
+      "inLanguage": "es",
+      "publisher": {
+        "@id": "https://www.alarsi.com/#organization"
+      }
+    },
+    {
+      "@type": "CreativeWork",
+      "@id": "https://www.paulinadots.com/informe-transparencia.html",
+      "name": "Informe de Transparencia Algorítmica 2022–2026",
+      "url": "https://www.paulinadots.com/informe-transparencia.html",
+      "description": "Documentación del modelo de autoría, supervisión humana, ingeniería aplicada y fricciones algorítmicas bajo el sistema ALARSI.",
+      "creator": {
+        "@id": "https://www.alarsi.com/#organization"
+      }
+    },
+    {
+      "@type": "CreativeWork",
+      "@id": "https://www.paulinadots.com/identity-core/",
+      "name": "Identity Core",
+      "url": "https://www.paulinadots.com/identity-core/",
+      "description": "Sistema paramétrico central de referencia visual y consistencia de identidad desarrollado bajo la dirección de ALARSI.",
+      "creator": {
+        "@id": "https://www.alarsi.com/#organization"
+      }
+    },
+    {
+      "@type": "Brand",
+      "@id": "https://www.paulinadots.com/#brand",
+      "name": "Paulina Dots",
+      "url": "https://www.paulinadots.com/",
+      "description": "Ecosistema audiovisual modular orientado a música, inteligencia artificial y arquitectura web, desarrollado bajo la dirección de ALARSI.",
+      "brandOwner": {
+        "@id": "https://www.alarsi.com/#organization"
+      }
+    },
+    {
+      "@type": "Brand",
+      "@id": "https://atripper.com/#brand",
+      "name": "ATRIPPER",
+      "url": "https://atripper.com/",
+      "description": "Proyecto editorial visual centrado en belleza, identidad y atmósfera, desarrollado bajo la dirección de ALARSI.",
+      "brandOwner": {
+        "@id": "https://www.alarsi.com/#organization"
+      }
+    }
+  ]
+}
+</script>
 
   <style>
     body {
