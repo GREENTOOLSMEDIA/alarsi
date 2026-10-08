@@ -1,0 +1,55 @@
+{
+  "id": "AXFRA dotsy_conservatory_cowboy",
+  "name": "Conservatory Cowboy Shot",
+  "name_es": "Plano cowboy en invernadero",
+  "meta": {
+    "developer": "ALARSI",
+    "developer_site": "https://alarsi.com",
+    "brand": "AXFRA",
+    "system": "AXFRA JSON prompt system",
+    "model": "Dotsy",
+    "handle": "@axfratools",
+    "site": "https://axfra.com",
+    "portfolio": "https://paulinadots.com",
+    "license": "all rights reserved",
+    "version": "1.0",
+    "created": "2025",
+    "concept_origin": "2023",
+    "updated": "2026-10-06"
+  },
+  "identity_block": {
+    "name": "Dotsy",
+    "age": "20s",
+    "proportion_anchor": "94-58-92",
+    "build": "full bust, narrow defined waist, rounded hips, dramatic but lean bust-waist-hip curve"
+  },
+  "appearance_block": {
+    "face": "young seductive alluring beauty face",
+    "expression": "candid joyful expression, lifted cheeks, eyes gently narrowed by the smile, open genuine smile, visible teeth",
+    "skin": "slightly sun-kissed skin texture, subtle warm flush, healthy outdoor glow",
+    "hair": "natural black hair, side-parted medium soft waves, collarbone-length shape, defined face-framing layers, sleek wet finish, defined damp sections, neat separated strands, controlled close-to-head shape",
+    "jewelry": "small cross earring detail, subtle gothic-inspired accessory accent, layered cross pendant necklace detail, subtle gothic-inspired neck accent"
+  },
+  "pose_and_framing_block": {
+    "pose": "casual, relaxed, natural curve-emphasizing standing pose, pelvis pushed strongly backward, lower back forming a pronounced arch, weight settled onto one leg, upper torso only slightly inclined forward, head slightly tilted",
+    "orientation": "chest and pelvis face the lens, torso, hips and thighs forming a frontal knee-up silhouette",
+    "framing": "knee-up cowboy shot, shoulder-level view, front view, photographed directly from the front",
+    "genre": "photorealistic editorial portrait"
+  },
+  "apparel_block": {
+    "top": "white dropped-shoulder t-shirt, washed cotton jersey, low shoulder seam, relaxed upper-body proportion, tight body-skimming upper-body fit",
+    "bottom": "white seamless lace thong bottoms, ultra-thin side straps, low-rise V-front, minimal back panel, ultra-low-rise waistband sitting very low on the hips"
+  },
+  "environment_block": {
+    "location": "British conservatory interior",
+    "background": "white-painted window frames, glass roof panels"
+  },
+  "lighting_block": {
+    "lighting": "indoor early-morning ambience, cool pale daylight, crisp air, faint cool exterior brightness where visible, window-frame pattern light across the subject, geometric daylight bands on face and clothing",
+    "grade": "high-key Japanese portrait color grade, elevated exposure, creamy porcelain highlights, softened shadow floor, restrained saturation"
+  },
+  "camera_and_style_block": {
+    "camera": "shot on 28mm wide-angle lens, natural wide perspective, mild perspective expansion, f/2.8-style shallow depth of field, clear subject plane, anamorphic lens flare artifacts, horizontal flare streaks, cylindrical lens reflection behavior",
+    "style": "Orie Ichihashi-inspired transparent natural-light image language, photorealistic editorial portrait"
+  }
+}
