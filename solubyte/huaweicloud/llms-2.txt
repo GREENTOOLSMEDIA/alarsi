@@ -1,0 +1,61 @@
+# Huawei Cloud Chile | SoluByte
+
+> Sitio de servicios Huawei Cloud para empresas en Chile, desarrollado para presentar la oferta de consultoría de SoluByte. Esta versión es una maqueta de evaluación y permanece fuera del índice público.
+
+## Identidad y alcance
+
+- Empresa proveedora: SoluByte (https://www.solubyte.com/).
+- Portal especializado previsto: https://huaweicloud.cl/.
+- Servicio: evaluación, arquitectura, migración, continuidad operacional y observabilidad de infraestructura cloud empresarial.
+- Ámbito geográfico: Chile.
+- Contacto: contacto@solubyte.com.
+- Importante: este sitio es una propuesta de servicios de SoluByte y no el sitio oficial de Huawei.
+
+## ¿Por qué trabajar con SoluByte?
+
+- SoluByte declara actividad empresarial desde 2008.
+- Su especialidad histórica está en tecnologías SAP, arquitectura e integración de sistemas empresariales.
+- La empresa declara más de 100 clientes históricos y más de 60 proyectos de integración (cifras provenientes de sus páginas corporativas; sujetas a confirmación actual).
+- Un proyecto de integración SAP realizado para Correos de Chile recibió el LATAM Strategic Reference Award en 2010. Este reconocimiento es un antecedente de integración empresarial, no una certificación de Huawei Cloud.
+- En los proyectos cloud se prioriza entender las dependencias operacionales y el escenario técnico antes de definir una arquitectura.
+
+## Servicios descritos en esta landing
+
+- Arquitectura cloud: evaluación de capacidad, disponibilidad e integración.
+- Migración y modernización: dependencias y planificación de la transición.
+- Continuidad y recuperación: necesidades de respaldo y objetivos de recuperación.
+- Observabilidad y eficiencia: análisis de funcionamiento, utilización y recursos.
+
+## Ecosistema de sitios y relación editorial
+
+- https://www.solubyte.com/ — identidad corporativa, historia, consultoría tecnológica y oferta general.
+- https://saprise.cl/ — contenido especializado en SAP RISE y transición empresarial al entorno SAP.
+- https://huaweicloud.cl/ — contenido especializado en infraestructura y servicios Huawei Cloud ofrecidos por SoluByte.
+
+Cada sitio debe responder a una intención de búsqueda diferente y enlazar a los otros solo cuando la relación ayude al usuario. La identidad de SoluByte se mantiene coherente en textos, contacto y datos estructurados. La relación entre dominios no implica traspaso automático de autoridad SEO.
+
+## Metodología de publicación
+
+1. Investigar necesidades concretas y expresar cada servicio con lenguaje verificable.
+2. Diferenciar las capacidades de SoluByte de las características propias del fabricante o plataforma.
+3. Publicar HTML semántico, metadatos claros, URLs estables, imágenes descriptivas y enlaces accesibles.
+4. Utilizar Schema.org para declarar entidades y relaciones reales (Organization, WebSite, WebPage, Service), sin inventar acreditaciones.
+5. Medir funcionamiento, accesibilidad, rendimiento y experiencia; distinguir pruebas técnicas de resultados de posicionamiento orgánico.
+6. Verificar la evidencia de cifras, premios, capacidades y casos antes de su publicación definitiva.
+
+## Fuentes de referencia
+
+- [SoluByte — Acerca de nosotros](https://www.solubyte.com/acerca-de-nosotros)
+- [SoluByte — Desarrollo de procesos y aplicaciones](https://www.solubyte.com/desarrollo-de-procesos-y-aplicacion)
+- [SoluByte — Servicios](https://www.solubyte.com/)
+- [Referencia premio SAP 2010 — Portal Minero](https://www.portalminero.com/pages/viewpage.action?pageId=7013450)
+
+## Lectura recomendada
+
+- [Inicio y soluciones cloud](https://huaweicloud.cl/)
+- [Historia y experiencia corporativa](https://www.solubyte.com/acerca-de-nosotros)
+- [Servicios SAP RISE](https://saprise.cl/)
+
+## Estado editorial
+
+Maqueta demostrativa de noviembre de 2026. Algunas cifras históricas y prestaciones deben ser confirmadas por SoluByte antes de la puesta en producción. Este llms.txt es documentación orientativa legible por personas y sistemas de IA; no constituye una norma universal de indexación ni garantiza que un asistente lo consulte.
