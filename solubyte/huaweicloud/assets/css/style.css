@@ -3,3 +3,51 @@
 @media(max-width:750px){.container{width:calc(100% - 36px)}.prototype{font-size:.53rem;text-align:center}.nav-wrap{min-height:70px}.brand img{width:130px}.menu-toggle{width:42px;height:42px;border:0;background:transparent;display:flex;flex-direction:column;gap:6px;justify-content:center;align-items:center;cursor:pointer}.menu-toggle span{height:2px;width:23px;background:var(--petrol)}.navigation{display:none;position:absolute;top:100%;left:0;right:0;background:var(--cream);padding:24px;box-shadow:0 14px 25px #1b3a4533;flex-direction:column;align-items:stretch;gap:17px}.navigation.open{display:flex}.hero{padding:36px 0 55px}.hero-grid,.intro-grid,.feature-grid,.feature-grid.reverse,.contact-grid,.inline-feature{grid-template-columns:1fr}.hero-content{padding:10px 0}.hero h1{font-size:clamp(2.5rem,11vw,4rem)}.hero .lead{font-size:1rem}.media-hero{aspect-ratio:16/9}.intro,.section,.feature,.metrics,.contact{padding:70px 0}.section-heading{display:block}.section-heading>p{max-width:500px;margin-top:24px}.service-grid{grid-template-columns:1fr 1fr}.service-card{min-height:300px}.feature-grid .media-portrait{max-height:570px;width:100%;aspect-ratio:2/3}.feature-grid.reverse .media-portrait{grid-row:1}.feature-copy{padding:25px 0}.benefit-grid,.approach-grid{grid-template-columns:1fr 1fr}.contact-grid{gap:40px}.footer-main{grid-template-columns:1fr 1fr;gap:35px}.footer-main>div:first-child{grid-column:span 2}.footline{display:block}.footline span{display:block;margin-top:10px}.footline span:last-child{text-align:left}}
 @media(max-width:510px){.actions{align-items:stretch;flex-direction:column}.actions .button{justify-content:center}.service-grid,.benefit-grid,.approach-grid{grid-template-columns:1fr}.service-card{min-height:230px}.inline-feature{padding:12px}.inline-copy{padding:10px}.contact-panel{padding:25px}.footer-main{grid-template-columns:1fr}.footer-main>div:first-child{grid-column:auto}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
+
+/* V1.2 / presentación editorial y video de 10 segundos */
+.hero-cinematic{border-radius:8px;min-height:570px;aspect-ratio:4/4.5;background:#284956;box-shadow:0 26px 70px rgba(13,47,60,.16)}
+.hero-cinematic .hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:0;opacity:0;transition:opacity 1.25s ease}
+.hero-cinematic.video-ready .hero-video{opacity:1}
+.hero-cinematic .cinema-vignette{position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,36,47,.22),transparent 40%,rgba(11,37,49,.69));z-index:1;pointer-events:none}
+.hero-cinematic .media-mark{z-index:2;bottom:36px;left:35px;right:35px;gap:9px;text-shadow:0 2px 12px rgba(0,0,0,.35)}
+.hero-cinematic .media-mark strong{font-weight:520;font-size:clamp(1.7rem,2.6vw,3.15rem);letter-spacing:-.04em;line-height:1.08}
+.hero-cinematic .media-mark span{color:#dfaaa5;font-weight:700;font-size:.68rem;letter-spacing:.2em}
+.hero-cinematic .media-mark small{font-size:.73rem;letter-spacing:.05em;color:#d9e8ea}
+.hero-film-label{position:absolute;top:25px;right:25px;color:rgba(255,255,255,.86);font-size:.63rem;letter-spacing:.17em;font-weight:600;z-index:2}
+.hero-cinematic.media-slot.has-image:before{background:linear-gradient(180deg,rgba(14,36,47,.08),rgba(14,36,47,.33));z-index:0}
+.hero-cinematic.media-slot:after{display:none}
+.footer-contact address{font-style:normal;color:#b9cbd0;font-size:.84rem;line-height:1.8;margin-bottom:10px}
+.footer-contact address b{color:#fff;letter-spacing:.055em}
+.footer-contact a{border-bottom:1px solid transparent;transition:color .2s,border-color .2s}
+.footer-contact a:hover{border-color:#dfaaa5}
+@media(max-width:750px){.hero-cinematic{aspect-ratio:16/9;min-height:280px}.hero-cinematic .media-mark{bottom:20px;left:20px;right:20px}.hero-cinematic .media-mark strong{font-size:1.7rem}.hero-film-label{top:18px;right:18px}}
+@media(prefers-reduced-motion:reduce){.hero-cinematic .hero-video{display:none!important}}
+
+/* V1.4 — Hero cinematográfico de ancho completo, header integrado */
+.prototype{position:relative;z-index:60}
+.site-header{position:absolute;top:31px;left:0;right:0;background:linear-gradient(180deg,rgba(7,26,38,.62),rgba(7,26,38,0));backdrop-filter:none;border-bottom:1px solid rgba(255,255,255,.16);color:#fff;z-index:50}
+.site-header .navigation a{color:#fff}.site-header .navigation a:hover{color:#f3b9af}
+.site-header .nav-contact{border-color:rgba(255,255,255,.7);color:#fff}.site-header .nav-contact:hover{background:#fff;color:#183F50}
+.hero-full{height:clamp(680px,88vh,950px);min-height:680px;position:relative;padding:0;background:#102d3b;color:#fff;overflow:hidden;display:flex;align-items:flex-end}
+.hero-full .hero-cinematic{position:absolute;inset:0;width:100%;height:100%;border-radius:0;min-height:0;aspect-ratio:auto;box-shadow:none;z-index:0}
+.hero-full .hero-cinematic.media-slot.has-image:before{background:linear-gradient(90deg,rgba(7,24,37,.82),rgba(7,24,37,.40) 47%,rgba(7,24,37,.07) 82%);z-index:1}
+.hero-full .hero-cinematic .cinema-vignette{background:linear-gradient(0deg,rgba(7,23,35,.80),transparent 65%),linear-gradient(90deg,rgba(7,23,35,.40),transparent 85%);z-index:2}
+.hero-full .hero-overlay{z-index:4;position:relative;padding-bottom:clamp(78px,11vh,135px)}
+.hero-full .hero-content{padding:0;max-width:800px}
+.hero-full .eyebrow{color:#e7b4a9;margin-bottom:19px}
+.hero-full h1{color:#fff;font-size:clamp(3.8rem,7.5vw,7.6rem);font-weight:590;line-height:1.01;max-width:790px;letter-spacing:-.064em;text-wrap:balance}
+.hero-full h1 em{color:#f0c3b9}
+.hero-full .lead{color:#f1f4f4;max-width:600px;font-size:clamp(1.03rem,1.45vw,1.24rem);line-height:1.7;text-shadow:0 1px 6px #081b24a0}
+.hero-full .text-link{color:#fff;border-color:#d5e3e7}
+.hero-full .hero-film-label{top:auto;bottom:35px;right:4.5%;z-index:5;color:#e2eaed}
+@media(max-width:750px){.site-header{top:30px}.site-header .menu-toggle span{background:#fff}.site-header .navigation.open{background:#102c3a}.hero-full{height:clamp(690px,93svh,850px);min-height:690px}.hero-full .hero-overlay{padding-bottom:85px}.hero-full h1{font-size:clamp(3.1rem,11vw,5.2rem)}.hero-full .hero-cinematic{min-height:0;aspect-ratio:auto}.hero-full .hero-cinematic .hero-video{object-position:59% center}.hero-full .hero-film-label{right:18px;bottom:20px;font-size:.53rem}.hero-full .actions{align-items:flex-start}.hero-full .hero-cinematic.media-slot.has-image:before{background:linear-gradient(0deg,rgba(7,24,37,.78),rgba(7,24,37,.12) 92%)}}
+
+/* v1.5 — navegación original superpuesta sobre video, logo blanco */
+.site-header{top:0!important;background:linear-gradient(180deg,rgba(4,20,31,.70) 0%,rgba(4,20,31,.23) 74%,transparent 100%)!important;border-bottom:1px solid rgba(255,255,255,.20);color:#fff!important}
+.site-header .nav-wrap{min-height:94px}
+.site-header .brand img{width:160px;max-height:70px;object-fit:contain;filter:none}
+.site-header .navigation a:not(.nav-contact){color:#fff;text-shadow:0 1px 4px rgba(0,0,0,.38)}
+.site-header .navigation .nav-contact{color:#fff;border:1px solid rgba(255,255,255,.8);background:rgba(5,25,37,.10)}
+.site-header .navigation .nav-contact:hover{color:#183F50;background:#fff}
+.hero-full{margin-top:0}
+@media(max-width:750px){.site-header{top:0!important}.site-header .nav-wrap{min-height:76px}.site-header .brand img{width:135px}.site-header .menu-toggle span{background:#fff}.site-header .navigation.open{background:rgba(16,44,58,.97)}}
