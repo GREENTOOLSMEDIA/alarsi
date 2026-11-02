@@ -51,3 +51,17 @@
 .site-header .navigation .nav-contact:hover{color:#183F50;background:#fff}
 .hero-full{margin-top:0}
 @media(max-width:750px){.site-header{top:0!important}.site-header .nav-wrap{min-height:76px}.site-header .brand img{width:135px}.site-header .menu-toggle span{background:#fff}.site-header .navigation.open{background:rgba(16,44,58,.97)}}
+
+.contact-photo{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;border-radius:3px;margin-bottom:24px}
+.hero-cinematic{background-image:url("../images/solubyte_huaweicloud_infraestructura_cloud.jpg");background-size:cover;background-position:center}
+
+/* v1.6.2 — Recursos visibles sin depender de JavaScript */
+.media-slot[data-file="solubyte_huaweicloud_infraestructura_cloud.jpg"] {background-image:url("../images/solubyte_huaweicloud_infraestructura_cloud.jpg");}
+.media-slot[data-file="solubyte_huaweicloud_servidores_cloud.jpg"] {background-image:url("../images/solubyte_huaweicloud_servidores_cloud.jpg");}
+.media-slot[data-file="solubyte_huaweicloud_migracion_cloud.jpg"] {background-image:url("../images/solubyte_huaweicloud_migracion_cloud.jpg");}
+.media-slot[data-file="solubyte_huaweicloud_observabilidad.jpg"] {background-image:url("../images/solubyte_huaweicloud_observabilidad.jpg");}
+.media-slot[data-file]::before {background:linear-gradient(0deg,rgba(9,30,42,.42),transparent 47%);z-index:0;}
+.media-slot[data-file]::after {display:none;}
+.media-slot[data-file] .media-mark small{display:none;}
+.hero-cinematic .hero-video {opacity:1;}
+@media (prefers-reduced-motion:reduce) {.hero-cinematic .hero-video{display:none!important;}}
