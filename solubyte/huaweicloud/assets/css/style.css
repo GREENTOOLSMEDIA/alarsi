@@ -65,3 +65,27 @@
 .media-slot[data-file] .media-mark small{display:none;}
 .hero-cinematic .hero-video {opacity:1;}
 @media (prefers-reduced-motion:reduce) {.hero-cinematic .hero-video{display:none!important;}}
+
+
+/* v1.7 — Trayectoria corporativa: nueva sección autónoma, sin alterar el diseño existente */
+.solubyte-story{background:#f5f3ef;color:#28343b;padding:clamp(78px,9vw,130px) 0;position:relative}
+.solubyte-story .story-topline{display:flex;justify-content:space-between;gap:20px;align-items:center;margin-bottom:42px}
+.solubyte-story .story-overline{font-size:.68rem;letter-spacing:.16em;color:#547789;font-weight:700}
+.solubyte-story .story-layout{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(270px,.85fr);gap:clamp(34px,6vw,100px);align-items:start}
+.solubyte-story .story-lead h2{font-size:clamp(2.4rem,4.5vw,5.2rem);line-height:1.08;letter-spacing:-.048em;margin:0 0 28px;font-weight:600}
+.solubyte-story .story-lead h2 em{color:#a65249;font-weight:500}
+.solubyte-story .story-intro{font-size:clamp(1.06rem,1.4vw,1.27rem);line-height:1.75;color:#4b606b;max-width:680px;margin:0 0 29px}
+.solubyte-story .story-link{display:inline-flex;align-items:center;gap:12px;font-weight:700;color:#183f50;text-decoration:none;border-bottom:1px solid #a65249;padding-bottom:8px}
+.solubyte-story .story-link:hover,.solubyte-story .story-recognition a:hover{color:#a65249}
+.solubyte-story .story-proof{border-top:1px solid #b8c7cb}
+.solubyte-story .story-fact{display:grid;grid-template-columns:110px 1fr;gap:18px;align-items:center;border-bottom:1px solid #cbd5d5;padding:22px 0}
+.solubyte-story .story-fact strong{font-size:clamp(2rem,3vw,3.1rem);font-weight:550;letter-spacing:-.055em;color:#183f50;line-height:1}
+.solubyte-story .story-fact span{font-size:.91rem;line-height:1.5;color:#526671}
+.solubyte-story .story-recognition{margin-top:clamp(48px,6vw,90px);display:grid;grid-template-columns:66px 1fr;gap:25px;padding:clamp(25px,4vw,44px);background:#e3e9ea;border-left:3px solid #a65249;max-width:1060px}
+.solubyte-story .story-recognition-mark{color:#a65249;font-size:2.7rem;line-height:1}
+.solubyte-story .story-recognition-kicker{font-size:.69rem;letter-spacing:.12em;color:#547789;font-weight:700}
+.solubyte-story .story-recognition h3{font-size:clamp(1.4rem,2.1vw,2.25rem);line-height:1.17;margin:12px 0;font-weight:600;letter-spacing:-.025em}
+.solubyte-story .story-recognition p{font-size:1rem;line-height:1.7;color:#475d66;max-width:830px;margin:0 0 16px}
+.solubyte-story .story-recognition a{font-size:.88rem;font-weight:700;text-decoration:underline;text-underline-offset:4px;color:#183f50}
+@media(max-width:850px){.solubyte-story .story-layout{grid-template-columns:1fr;gap:35px}.solubyte-story .story-topline{align-items:flex-start;flex-direction:column}.solubyte-story .story-proof{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.solubyte-story .story-fact{grid-template-columns:1fr;align-content:start}.solubyte-story .story-fact strong{font-size:2rem}}
+@media(max-width:540px){.solubyte-story .story-proof{grid-template-columns:1fr}.solubyte-story .story-fact{grid-template-columns:92px 1fr}.solubyte-story .story-recognition{grid-template-columns:1fr;gap:10px}}
