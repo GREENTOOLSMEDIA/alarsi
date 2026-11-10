@@ -170,3 +170,18 @@
 .news-footer-note{font-size:.8rem;color:#6e8088;margin-top:30px;border-top:1px solid var(--line);padding-top:18px}
 @media(max-width:900px){.editorial-bridge-grid,.news-grid,.article-layout{grid-template-columns:1fr}.article-layout{gap:26px}.news-sidebar,.article-aside{order:2}}
 @media(max-width:750px){.news-hero{padding-top:120px}.featured-news-copy,.article-main,.news-side-panel,.article-aside .panel{padding:24px}.editorial-actions{align-items:flex-start}}
+
+/* v2.5 — módulo de difusión comercial */
+.site-share{background:#e3e9ea;padding:clamp(65px,7vw,100px) 0}
+.site-share-layout{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(300px,.95fr);gap:clamp(30px,6vw,85px);align-items:center}
+.site-share-intro h2{font-size:clamp(2rem,3.5vw,3.7rem);font-weight:620;margin:0 0 20px}
+.site-share-intro p{font-size:1.03rem;line-height:1.8;color:#53666f;max-width:560px}
+.site-share-card{background:#fff;border:1px solid #cedadf;border-top:3px solid #a65249;padding:clamp(22px,3vw,34px);box-shadow:0 15px 35px rgba(16,44,58,.04)}
+.site-share-card h3{font-size:1.3rem;margin:0 0 8px}
+.site-share-card>p{font-size:.91rem;color:#61737b}
+.site-share-card .news-share-status{font-size:.78rem;margin:9px 0 0;min-height:1.2em;color:#3d6663}
+.site-share-card .news-share-links{display:grid;gap:9px}
+.site-share-card .news-share-links a,.site-share-card .news-share-links button{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;padding:10px 13px;border:1px solid #d2dfe2;background:#f5f8f8;color:#183f50;border-radius:3px;font:inherit;font-size:.9rem;font-weight:650;text-align:left;text-decoration:none;cursor:pointer;transition:background .15s,border-color .15s}
+.site-share-card .news-share-links a:hover,.site-share-card .news-share-links button:hover{background:#e7eff0;border-color:#a6bdc4}
+.site-share-card .news-share-links a:focus-visible,.site-share-card .news-share-links button:focus-visible{outline:3px solid #a65249;outline-offset:2px}
+@media(max-width:850px){.site-share-layout{grid-template-columns:1fr}}
