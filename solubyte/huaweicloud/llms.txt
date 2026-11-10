@@ -19,6 +19,15 @@
 - Un proyecto de integración SAP realizado para Correos de Chile recibió el LATAM Strategic Reference Award en 2010. Este reconocimiento es un antecedente de integración empresarial, no una certificación de Huawei Cloud.
 - En los proyectos cloud se prioriza entender las dependencias operacionales y el escenario técnico antes de definir una arquitectura.
 
+
+## Referencia de experiencia: Prodalam (pendiente de autorización pública)
+
+- Documentación interna facilitada por SoluByte describe el uso de Huawei Cloud en la infraestructura empresarial de Prodalam, incluidos componentes SAP.
+- Durante la transición a SAP RISE en 2026, SoluByte participó en coordinación técnica, revisión de conectividad y pruebas de integración.
+- Huawei Cloud continuó alojando otros servicios empresariales conectados con SAP RISE y plataformas adicionales mediante una arquitectura híbrida/multicloud.
+- Este antecedente **no constituye** una promesa de disponibilidad, ahorro, certificación o resultado garantizado.
+- **Antes de publicar o indexar:** obtener autorización expresa para nombrar a Prodalam y divulgar la información del caso; el texto actual es de maqueta para revisión.
+
 ## Servicios descritos en esta landing
 
 - Arquitectura cloud: evaluación de capacidad, disponibilidad e integración.
