@@ -185,3 +185,34 @@
 .site-share-card .news-share-links a:hover,.site-share-card .news-share-links button:hover{background:#e7eff0;border-color:#a6bdc4}
 .site-share-card .news-share-links a:focus-visible,.site-share-card .news-share-links button:focus-visible{outline:3px solid #a65249;outline-offset:2px}
 @media(max-width:850px){.site-share-layout{grid-template-columns:1fr}}
+
+/* SITE V3: business services and shared navigation */
+.navigation{gap:clamp(14px,2.4vw,30px)}
+.services-home-intro{background:#e9eeed;padding:62px 0;border-bottom:1px solid #cad6d8}
+.services-home-intro-inner{display:flex;justify-content:space-between;align-items:center;gap:42px}
+.services-home-intro h2{font-size:clamp(1.8rem,3.1vw,3rem);max-width:740px;margin-bottom:15px}
+.services-home-intro p{max-width:660px;color:#536a73;margin-bottom:0}
+.services-home-intro .button{flex-shrink:0}
+.services-hero{background:linear-gradient(120deg,rgba(12,40,54,.93),rgba(13,54,72,.80)),url('../images/solubyte_huaweicloud_infraestructura_cloud.jpg') center/cover;color:#fff}
+.services-hero .breadcrumbs,.services-hero .breadcrumbs a,.services-hero p{color:#d9e6ea}
+.services-hero h1 em{color:#e7aba3}
+.services-hero .eyebrow{color:#f2b0a6}
+.services-hero .button{margin-top:16px}
+.services-section{background:#f5f3ef}
+.commercial-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.commercial-card{background:#fff;border:1px solid var(--line);overflow:hidden;display:flex;flex-direction:column}
+.commercial-image{aspect-ratio:16/9;position:relative;overflow:hidden;background:#b1c2ca}
+.commercial-image img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.commercial-body{padding:30px 34px 34px;display:flex;flex-direction:column;flex:1}
+.commercial-body h3{font-size:clamp(1.5rem,2vw,2rem);margin:13px 0}
+.commercial-body p{color:var(--muted);font-size:.95rem}
+.commercial-question{font-weight:650;color:var(--petrol)!important;margin-top:auto;border-top:1px solid var(--line);padding-top:19px}
+.commercial-body>a{font-weight:700;font-size:.88rem;color:var(--terra)}
+.services-proof{background:#e6edeb;padding:95px 0}
+.services-proof-grid{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:8%}
+.services-proof-grid p{color:#516b73;line-height:1.85}
+.services-proof-image{position:relative;aspect-ratio:16/9;overflow:hidden}
+.services-proof-image img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.services-disclaimer{font-size:.74rem!important;margin-top:23px}
+@media(max-width:900px){.services-home-intro-inner{align-items:flex-start;flex-direction:column}.services-proof-grid{grid-template-columns:1fr;gap:28px}}
+@media(max-width:750px){.commercial-grid{grid-template-columns:1fr}.commercial-body{padding:24px}.services-home-intro{padding:45px 0}}
