@@ -1,17 +1,20 @@
-# ALARSI — Propuesta v2 (evaluación local)
+# ALARSI — Propuesta v2.2 · Héroes con video
 
-## Qué cambió respecto de v1
+Actualización: 12 de noviembre de 2026.
 
-- Recuperados los cuatro heroes gráficos originales (portada, creatividad, integración, desarrollo).
-- Recuperada la estética original de ondas multicolor + resplandor cambiante con canvas, con control de visibilidad, redimensionamiento y movimiento reducido.
-- Menú en overlay translúcido sobre el hero, también en móvil.
-- Debajo del hero continúa el diseño editorial aprobado de v1.
-- Eliminada la sección promocional completa de AXFRA de la portada y su CTA; se mantiene una sola mención contextual enlazada dentro del texto.
-- Footer reducido a una sola firma: «ALARSI® Pasión por Crear | Dirección de proyectos · Creatividad · Tecnología». No repite navegación ni contacto.
-- SoluByte y Paulina Dots no se presentan ni se enlazan.
+## Cambios
+- Portada y tres secciones: póster JPG proporcionado por ALARSI; video en `/video/` con **el mismo nombre base** que la imagen.
+- Video HTML5 autoplay + muted + loop + playsinline. El póster permanece hasta que el video empieza a reproducirse; es el fallback si falta el MP4.
+- Se mantienen menú overlay, contenido editorial v2, animación ambiental canvas, footer minimalista y llms.txt.
+- Preload de la imagen hero de cada página, fecha de modificación 2026-11-12 en datos estructurados disponibles y sitemap.
+- Sin `VideoObject` por ahora: faltan los archivos MP4 y las fechas reales de primera publicación de cada video. Evitamos inventar `uploadDate`.
+- Sin menciones de SoluByte ni Paulina Dots; AXFRA conserva una referencia contextual.
 
-## Revisión
+## IMPORTANTE: archivos de video faltantes
+En esta entrega solo se recibieron las cuatro imágenes JPG, no los videos. Lee `/video/README_VIDEOS.txt` para nombres exactos y coloca los MP4 homónimos en esa carpeta.
 
-Abrir `index.html` y recorrer las cuatro páginas desde el menú. Funcionamiento offline: no se cargan frameworks ni recursos externos para la animación.
+## Prueba
+Puedes abrir los HTML sin servidor para comprobar layout e imágenes. Para probar autoplay de video, usa un servidor local HTTP (por ejemplo `python3 -m http.server 8000` en la carpeta). El autoplay puede estar condicionado por políticas del navegador y preferencias del usuario.
 
-Propuesta para evaluar: no sustituir directamente los archivos de producción sin probar en un servidor de staging.
+## Publicación
+La fecha `dateModified` es una fecha de **modificación de esta propuesta**, no la fecha de grabación/publicación de los videos. Una vez publicados y verificadas sus URLs, se puede completar `VideoObject` con `uploadDate` real, `thumbnailUrl`, `contentUrl` y `duration` si está verificada.

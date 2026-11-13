@@ -37,3 +37,21 @@
 @media(max-width:900px){.animated-hero-stage{min-height:270px}.hero-intro{padding-bottom:75px}.page-hero{padding-top:70px}}
 @media(max-width:640px){.site-header-overlay{margin-bottom:-69px}.site-header-overlay .navrow{min-height:69px}.animated-hero-stage{min-height:240px;aspect-ratio:4/3}.animated-hero-art{width:100%;height:100%;object-fit:cover;object-position:center}.hero-wave{top:25%;height:40%}.hero-glow{filter:blur(31px)}.hero-intro{padding:37px 0 65px}.hero-intro h1{font-size:clamp(41px,10vw,59px)}.page-hero{padding-top:60px}.footer-minimal .footer-sep{display:none}.footer-minimal p span:last-child{display:block}}
 @media(prefers-reduced-motion:reduce){.hero-wave{opacity:.5}.hero-glow{opacity:.55}}
+
+
+/* ALARSI v2.2 — posters + hero motion. Display a real video only once playback succeeds. */
+.animated-hero-stage { aspect-ratio: 16 / 9; }
+.animated-hero-art, .hero-video { width:100%; height:100%; object-fit:cover; object-position:center; }
+.hero-video { position:absolute; inset:0; z-index:3; opacity:0; pointer-events:none; transition:opacity .65s ease; background:transparent; }
+.animated-hero-stage.is-video-playing .hero-video { opacity:1; }
+.animated-hero-stage.is-video-playing .hero-poster { opacity:0; transition:opacity .65s ease; }
+.animated-hero-stage .hero-poster { transition:opacity .65s ease; }
+.hero-bottom-fade { z-index:4; }
+@media (max-width:640px) {
+ .animated-hero-stage{aspect-ratio:4/3;min-height:240px;}
+ .hero-video,.animated-hero-art {object-fit:cover;}
+}
+@media (prefers-reduced-motion:reduce) {
+ .hero-video{display:none !important;}
+ .hero-poster{opacity:1 !important;}
+}
